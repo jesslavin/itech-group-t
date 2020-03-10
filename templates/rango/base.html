@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 {% load rango_template_tags %}
+
 <html>
+
 	<head>
+		<link href="{% static 'css/basic/basic.css' %}" rel="stylesheet" title="basicstyle" type="text/css" />
 		<title> 
-			Rango -
+			Vinyl Destination
             {% block title_block %}
-               How to Tango with Django!
-			{% endblock %} 
+			{% endblock %}
 		</title>
-	</head> 
+	</head>
 
 	<body>
+
+		<div id = "header">
+			Vinyl Destination
+				{% if user.is_authenticated %}
+    				!! USER BUTTONS (eg. home, my vinyl, browse, search bar etc) !!
+					{{ user.username }}
+				{% else %}
+    				!! LOGIN FUNCTIONALITY !!
+				{% endif %}
+		</div>
+
 		<div>
-		{% block body_block %}
+			{% block body_block %}
 			{% get_category_list category %}
-		{% endblock %}
+			{% endblock %}
 		</div>
-		<hr />
-		<div>
-			<ul>
-			{% if user.is_authenticated %}
-				<li><a href="{% url 'rango:add_category' %}">Add a New Category</a></li>
-				<li><a href="{% url 'rango:restricted' %}">Restricted Page</a></li>
-				<li><a href="{% url 'rango:logout' %}">Logout</a></li> 
-			{% else %}
-				<li><a href="{% url 'rango:register' %}">Sign Up</a></li>
-				<li><a href="{% url 'rango:login' %}">Login</a></li>
-			{% endif %}
-				<li><a href="{% url 'rango:about' %}">About</a></li>
-				<li><a href="{% url 'rango:index' %}">Index</a></li>
-			</ul>
-		</div>
+
 	</body>
+
 </html>
