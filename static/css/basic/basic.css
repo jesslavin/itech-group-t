@@ -1,0 +1,11 @@
+body
+    {
+        background-color: #FFFFFF;
+        font-family: "Georgia", Georgia, serif;
+        font-size: 14px;
+    }
+
+#loggedout
+    {
+        background-color: #BEBEBE;
+    }
