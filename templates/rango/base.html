@@ -15,14 +15,18 @@
 
 	<body>
 
-		<div id = "header">
-			Vinyl Destination
+		<div class = "header">
+			<div class = "title">
+				<img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/>
+			</div>
+			<div class = "nav">
 				{% if user.is_authenticated %}
     				!! USER BUTTONS (eg. home, my vinyl, browse, search bar etc) !!
 					{{ user.username }}
 				{% else %}
     				!! LOGIN FUNCTIONALITY !!
 				{% endif %}
+			</div>
 		</div>
 
 		<div>
