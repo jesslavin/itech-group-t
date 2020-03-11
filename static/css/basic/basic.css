@@ -1,11 +1,34 @@
 body
     {
-        background-color: #FFFFFF;
+        background-color: #DCDCDC;
         font-family: "Georgia", Georgia, serif;
         font-size: 14px;
+        margin: 0px;
     }
 
-#loggedout
+.title
     {
-        background-color: #BEBEBE;
+        float: left;
+    }
+
+.nav
+    {
+        font-size: 20px;
+        float: right;
+    }
+
+.header
+    {
+        background-color: #DCDCDC;
+        overflow: hidden;
+    }
+
+.register
+    {
+        float: right;
+    }
+
+.loggedout
+    {
+        background-color: #C0C0C0;
     }

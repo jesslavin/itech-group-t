@@ -7,30 +7,34 @@
 {% block body_block %}
 
 	{% if user.is_authenticated %}
-		<div id = "loggedin">
+		<div class = "loggedin">
 			!! EDIT !!
+			<div>
+				Most liked lists
+				{% if categories %}
+				<ul>
+					{% for category in categories %}
+					<li>
+						<a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a></li>
+					{% endfor %}
+				</ul>
+				{% else %}
+				There are no records present.
+				{% endif %}
+			</div>
 		</div>
+
 	{% else %}
-		<div id = "loggedout">
+		<div class = "loggedout">
 			Vinyl Destination, the most convenient way to manage and grow your vinyl collection.
-			<div id = "register">
+			<div class = "register">
 				!! REGISTER FUNCTIONALITY !!
 			</div>
 		</div>
 	{% endif %}
 
-	<div>
-		Most Liked Categories
-		{% if categories %}
-		<ul>
-			{% for category in categories %}
-			<li>
-				<a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a></li>
-		{% endfor %}
-		</ul>
-		{% else %}
-			There are no categories present.
-		{% endif %}
-	</div>
+		<div class = "trending">
+			!! TRENDING RECORDS !!
+		</div>
 
 {% endblock %}
