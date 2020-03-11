@@ -2,6 +2,48 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 
+# class Artist(models.Model):
+#     name = models.CharField(max_length=128, unique=True)
+#     views = models.IntegerField(default=0)
+#     likes = models.IntegerField(default=0)
+#     slug = models.SlugField(blank=True)
+
+#     class Meta:
+#         permissions = (
+#             ('perm_add_artist', 'Can add artist'),
+#         )
+
+#     def save(self, *args, **kwargs):
+#         self.slug = slugify(self.name)
+#         super(Artist, self).save(*args, **kwargs)
+
+#     def __str__(self): # For Python 2, use __unicode__ too
+#         return self.name
+
+#     def get_absolute_url(self):
+#         return reverse('artist-detail', kwargs={'slug': self.slug})
+
+# class Album(models.Model):
+#     name = models.CharField(max_length=128, unique=True)
+#     artist = models.ForeignKey(Artist)
+#     views = models.IntegerField(default=0)
+#     likes = models.IntegerField(default=0)
+#     slug = models.SlugField(blank=True)
+
+#     class Meta:
+#         permissions = (
+#             ('perm_add_album', 'Can add album'),
+#         )
+
+#     def save(self, *args, **kwargs):
+#         self.slug = slugify(self.name)
+#         super(Album, self).save(*args, **kwargs)
+
+#     def __str__(self): # For Python 2, use __unicode__ too
+#         return self.name
+
+#     def get_absolute_url(self):
+#         return reverse('album-detail', kwargs={'slug': self.slug})
 
 class Category(models.Model):
     NAME_MAX_LENGTH = 128
