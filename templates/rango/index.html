@@ -2,13 +2,14 @@
 {% load staticfiles %}
 
 {% block title_block %}
+	Vinyl Destination Homepage
 {% endblock %}
 
 {% block body_block %}
 
 	{% if user.is_authenticated %}
 		<div class = "loggedin">
-			!! EDIT !!
+			User slug
 			<div>
 				Most liked lists
 				{% if categories %}
@@ -27,9 +28,6 @@
 	{% else %}
 		<div class = "loggedout">
 			Vinyl Destination, the most convenient way to manage and grow your vinyl collection.
-			<div class = "register">
-				!! REGISTER FUNCTIONALITY !!
-			</div>
 		</div>
 	{% endif %}
 

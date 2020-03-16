@@ -21,15 +21,18 @@
 			</div>
 			<div class = "nav">
 				{% if user.is_authenticated %}
-    				!! USER BUTTONS (eg. home, my vinyl, browse, search bar etc) !!
+    				<!-- !! USER BUTTONS (eg. home, my vinyl, browse, search bar etc) !! --->
 					{{ user.username }}
+					<li><a href="{% url 'rango:logout' %}">Logout</a></li>
 				{% else %}
-    				!! LOGIN FUNCTIONALITY !!
+    				<!-- !! LOGIN FUNCTIONALITY !! --->
+    				<li><a href="{% url 'rango:register' %}">Sign Up</a></li>
+					<li><a href="{% url 'rango:login' %}">Login</a></li>
 				{% endif %}
 			</div>
 		</div>
 
-		<div>
+		<div class = "body">
 			{% block body_block %}
 			{% get_category_list category %}
 			{% endblock %}
