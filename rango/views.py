@@ -1,13 +1,30 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from rango.models import Category, Page
-from rango.forms import CategoryForm, PageForm, UserForm, UserProfileForm
+from rango.models import Artist, Page
+from rango.forms import ArtistForm, PageForm, UserForm, UserProfileForm
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
 
 # Create your views here.
+def index(request):
+	# Construct a dictionary to pass to the template engine as its context.
+	# Note the key boldmessage matches to {{ boldmessage }} in the template! 
+	category_list = Artist.objects.order_by('-likes')[:5]
+	page_list = Page.objects.order_by('-views')[:5]
+
+	context_dict = {}
+	context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
+	context_dict['categories'] = category_list
+	context_dict['pages'] = page_list
+
+	visitor_cookie_handler(request)
+
+	# Return a rendered response to send to the client.
+	# We make use of the shortcut function to make our lives easier. # Note that the first parameter is the template we wish to use.
+	response = render(request, 'rango/index.html', context=context_dict)
+	return response
 
 @login_required
 def restricted(request):
@@ -37,24 +54,6 @@ def visitor_cookie_handler(request):
 	# Update/set the visits cookie
 	request.session['visits'] = visits
 
-def index(request):
-	# Construct a dictionary to pass to the template engine as its context.
-	# Note the key boldmessage matches to {{ boldmessage }} in the template! 
-	category_list = Category.objects.order_by('-likes')[:5]
-	page_list = Page.objects.order_by('-views')[:5]
-
-	context_dict = {}
-	context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
-	context_dict['categories'] = category_list
-	context_dict['pages'] = page_list
-
-	visitor_cookie_handler(request)
-
-	# Return a rendered response to send to the client.
-	# We make use of the shortcut function to make our lives easier. # Note that the first parameter is the template we wish to use.
-	response = render(request, 'rango/index.html', context=context_dict)
-	return response
-
 @login_required
 def add_category(request):
 	form = CategoryForm()
@@ -70,7 +69,7 @@ def add_category(request):
 
 	return render(request, 'rango/add_category.html', {'form':form})
 
-def show_category(request, category_name_slug):
+def show_artist(request, category_name_slug):
 	context_dict = {}
 
 	try:
@@ -117,13 +116,15 @@ def add_page(request, category_name_slug):
 	context_dict = {'form':form,'category':category}
 	return render(request, 'rango/add_page.html', context=context_dict)
 
-def about(request):
+def artsits(request):
 	context_dict = {}
-	context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
 
 	visitor_cookie_handler(request)
 	context_dict['visits'] = request.session['visits']
-	return render(request, 'rango/about.html', context=context_dict)
+	context_dict['last_visit'] = request.session['last_visit']
+
+	response = render(request, 'vinyldestination/artists.html', context=context_dict)
+	return response
 
 def register(request):
 	# A boolean value for telling the template
@@ -202,7 +203,7 @@ def user_login(request):
 				# If the account is valid and active, we can log the user in. 
 				# We'll send the user back to the homepage.
 				login(request, user)
-				return redirect(reverse('rango:index'))
+				return redirect(reverse('rango:home'))
 			else:
 				# An inactive account was used - no logging in!
 				return HttpResponse("Your Rango account is disabled.")
@@ -221,4 +222,4 @@ def user_logout(request):
 	# Since we know the user is logged in, we can now just log them out.
 	logout(request)
 	# Take the user back to the homepage.
-	return redirect(reverse('rango:index'))
+	return redirect(reverse('rango:home'))
