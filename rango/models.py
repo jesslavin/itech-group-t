@@ -45,7 +45,7 @@ from django.contrib.auth.models import User
 #     def get_absolute_url(self):
 #         return reverse('album-detail', kwargs={'slug': self.slug})
 
-class Category(models.Model):
+class Artist(models.Model):
     NAME_MAX_LENGTH = 128
 
     name = models.CharField(max_length=NAME_MAX_LENGTH, unique=True)
@@ -68,7 +68,7 @@ class Page(models.Model):
     TITLE_MAX_LENGTH = 128
     URL_MAX_LENGTH = 200
 
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Artist, on_delete=models.CASCADE)
     title = models.CharField(max_length=TITLE_MAX_LENGTH)
     url = models.URLField()
     views = models.IntegerField(default=0)
