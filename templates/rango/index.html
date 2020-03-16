@@ -9,7 +9,7 @@
 
 	{% if user.is_authenticated %}
 		<div class = "loggedin">
-			User slug
+			{{ user.username }}'s Lastest Updates
 			<div>
 				Most liked lists
 				{% if categories %}
@@ -32,7 +32,7 @@
 	{% endif %}
 
 		<div class = "trending">
-			!! TRENDING RECORDS !!
+			<!-- !! TRENDING RECORDS !! -->
 		</div>
 
 {% endblock %}
