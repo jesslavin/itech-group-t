@@ -5,7 +5,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE',
 
 import django
 django.setup() 
-from rango.models import Category, Page
+from vinyldestination.models import Category, Page
 
 def populate():
 	# First, we will create lists of dictionaries containing the pages

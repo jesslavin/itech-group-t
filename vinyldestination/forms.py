@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from rango.models import Page,Artist, UserProfile
+from vinyldestination.models import Page,Artist, UserProfile
 
 class ArtistForm(forms.ModelForm):
 	name = forms.CharField(max_length=128,

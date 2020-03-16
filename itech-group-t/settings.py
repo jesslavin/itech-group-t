@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rango',
+    'vinyldestination',
 ]
 
 PASSWORD_HASHERS = [
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'vinyldestination.urls'
+ROOT_URLCONF = 'itech-group-t.urls'
 
 TEMPLATES = [
     {
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'vinyldestination.wsgi.application'
+WSGI_APPLICATION = 'itech-group-t.wsgi.application'
 
 
 # Database
@@ -131,8 +131,6 @@ STATICFILES_DIRS = [STATIC_DIR, ]
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = MEDIA_DIR
-
-LOGIN_URL = 'rango:login'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 

@@ -1,4 +1,4 @@
-{% extends 'rango/base.html' %}
+{% extends 'vinyldestination/base.html' %}
 {% load staticfiles %}
 
 {% block title_block %}
@@ -16,7 +16,7 @@
 				<ul>
 					{% for category in categories %}
 					<li>
-						<a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a></li>
+						<a href="{% url 'vinyldestination:show_category' category.slug %}">{{ category.name }}</a></li>
 					{% endfor %}
 				</ul>
 				{% else %}

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from rango.models import Artist, Page, UserProfile
+from vinyldestination.models import Artist, Page, UserProfile
 
 
 # Register your models here.
