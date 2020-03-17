@@ -27,6 +27,7 @@ class Album(models.Model):
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
     slug = models.SlugField(blank=True)
+    url = models.URLField(default=0)
 
     class Meta:
         # permissions = (

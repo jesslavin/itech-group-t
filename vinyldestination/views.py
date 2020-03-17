@@ -78,12 +78,12 @@ def show_artist(request, artist_name_slug):
 		album = Album.objects.filter(artist=artist)
 
 		context_dict['artist'] = artist
-		context_dict['pages'] = pages
+		context_dict['albums'] = album
 	except Category.DoesNotExist:
-		context_dict['category'] = None
-		context_dict['pages'] = None
+		context_dict['artist'] = None
+		context_dict['albums'] = None
 
-	return render(request, 'vinyldestination/category.html', context=context_dict)
+	return render(request, 'vinyldestination/artist.html', context=context_dict)
 
 @login_required
 def add_page(request, category_name_slug):
@@ -116,12 +116,12 @@ def add_page(request, category_name_slug):
 	context_dict = {'form':form,'artist':artist}
 	return render(request, 'vinyldestination/add_page.html', context=context_dict)
 
-def artsits(request):
+def artists(request):
 	context_dict = {}
+	artist_list = Artist.objects.order_by('-likes')[:5]
 
+	context_dict['artists'] = artist_list
 	visitor_cookie_handler(request)
-	context_dict['visits'] = request.session['visits']
-	context_dict['last_visit'] = request.session['last_visit']
 
 	response = render(request, 'vinyldestination/artists.html', context=context_dict)
 	return response

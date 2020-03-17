@@ -1,0 +1,20 @@
+<ul>
+	{% if artists %}
+		{% for c in artists %}
+			{% if c == current_artist %} 
+				<li>
+				<strong>
+					<a href="{% url 'vinyldestination:show_artist' c.slug %}">{{ c.name }}</a>
+				</strong>
+				</li>
+			{% else %}
+				<li>
+					<a href="{% url 'vinyldestination:show_artist' c.slug %}">{{ c.name }}</a>
+				</li>
+    		{% endif %}
+			<li><a href="{% url 'vinyldestination:show_artist' c.slug %}">{{ c.name }}</a></li>
+		{% endfor %}
+	{% else %}
+		<li><strong>There are no artist(s) present.</strong></li>
+	{% endif %}
+</ul>
