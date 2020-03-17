@@ -1,11 +1,11 @@
 import os 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE',
-					  'vinyldestination.settings')
+					  'itech-group-t.settings')
 
 import django
 django.setup() 
-from vinyldestination.models import Category, Page
+from vinyldestination.models import Artist, Album
 
 def populate():
 	# First, we will create lists of dictionaries containing the pages
@@ -14,43 +14,34 @@ def populate():
 	# This might seem a little bit confusing, but it allows us to iterate 
 	# through each data structure, and add the data to our models.
 
-	python_pages = [
-		{'title': 'Official Python Tutorial',
+	nirvana = [
+		{'name':'Nevermind',
 		 'url':'http://docs.python.org/3/tutorial/',
-		 'views':12},
-		{'title':'How to Think like a Computer Scientist',
-		 'url':'http://www.greenteapress.com/thinkpython/',
-		 'views':12},
-		{'title':'Learn Python in 10 Minutes',
-		 'url':'http://www.korokithakis.net/tutorials/python/',
 		 'views':12} ]
 
-	django_pages = [
-		{'title':'Official Django Tutorial',
-		 'url':'https://docs.djangoproject.com/en/2.1/intro/tutorial01/',
+	faith_no_more = [
+		{'name':'Angel Dust',
+		 'url':'https://www.discogs.com/Faith-No-More-Angel-Dust/master/15659', 
 		 'views':3},
-		{'title':'Django Rocks',
-		 'url':'http://www.djangorocks.com/',
-		 'views':3},
-		{'title':'How to Tango with Django',
-		 'url':'http://www.tangowithdjango.com/',
+		{'title':'King For A Day Fool For A Lifetime',
+		 'url':'https://www.discogs.com/Faith-No-More-Final-Mixes/master/15723',
 		 'views':3} ]
 
-	other_pages = [
-		{'title':'Bottle',
+	aphex_twin = [
+		{'name':'Analord',
 		 'url':'http://bottlepy.org/docs/dev/',
 		 'views':3},
-		{'title':'Flask',
+		{'name':'Flask',
 		 'url':'http://flask.pocoo.org',
 		 'views':3} ]
 
-	cats = {'Python': {'pages': python_pages, 
+	artists = {'Nivana': {'Albums': nirvana, 
 			'views': 128, 
 			'likes': 64},
-			'Django': {'pages': django_pages,
+			'Faith No More': {'Albums': faith_no_more,
 			'views': 64, 
 			'likes': 32},
-			'Other Frameworks': {'pages': other_pages,
+			'Aphex Twin': {'Albums': aphex_twin,
 			'views': 32,
 			'likes': 16 } }
 
@@ -59,25 +50,24 @@ def populate():
 
 	# The code below goes through the cats dictionary, then adds each category, 
 	# and then adds all the associated pages for that category.
-	for cat, cat_data in cats.items():
-		c = add_cat(cat,cat_data['views'],cat_data['likes'])
-		for p in cat_data['pages']:
-			add_page(c, p['title'], p['url'], p['views'])
+	for cat, cat_data in artists.items():
+		c = add_artist(cat,cat_data['views'],cat_data['likes'])
+		for p in cat_data['Albums']:
+			add_album(c, p['url'], p['views'])
 
 	# Print out the categories we have added.
-	for c in Category.objects.all():
-		for p in Page.objects.filter(category=c):
+	for c in Artist.objects.all():
+		for p in Album.objects.filter(artist=c):
 			print(f'- {c}: {p}')
 
-def add_page(cat,title,url,views=0):
-	p = Page.objects.get_or_create(category=cat, title=title)[0] 
-	p.url=url
+def add_album(cat,name,url,views=0):
+	p = Album.objects.get_or_create(artist=cat, name=name)[0] 
 	p.views=views
 	p.save()
 	return p
 
-def add_cat(name,views=0,likes=0):
-	c = Category.objects.get_or_create(name=name)[0] 
+def add_artist(name,views=0,likes=0):
+	c = Artist.objects.get_or_create(name=name)[0] 
 	c.name=name
 	c.views=views
 	c.likes=likes

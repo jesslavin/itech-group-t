@@ -1,7 +1,7 @@
 <ul>
-	{% if categories %}
-		{% for c in categories %}
-			{% if c == current_category %} 
+	{% if artists %}
+		{% for c in artists %}
+			{% if c == current_artist %} 
 				<li>
 				<strong>
 					<a href="{% url 'vinyldestination:show_category' c.slug %}">{{ c.name }}</a>
@@ -15,6 +15,6 @@
 			<li><a href="{% url 'vinyldestination:show_category' c.slug %}">{{ c.name }}</a></li>
 		{% endfor %}
 	{% else %}
-		<li><strong>There are no categories present.</strong></li>
+		<li><strong>There are no artist(s) present.</strong></li>
 	{% endif %}
 </ul>
