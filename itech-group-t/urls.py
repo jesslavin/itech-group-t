@@ -24,5 +24,8 @@ urlpatterns = [
 	path('', views.index, name='index'),
 	path('vinyldestination/', include('vinyldestination.urls')),
 	# The above maps any URLs starting with vinyldestination/ to be handled by vinyldestination.
+    path('oauth/', include('social_django.urls')), 
     path('admin/', admin.site.urls),
+    path('settings/', views.settings, name='settings'),
+    path('settings/password/', views.password, name='password'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vinyldestination',
+    'social_django',
 ]
 
 PASSWORD_HASHERS = [
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'itech-group-t.urls'
@@ -69,6 +71,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -87,6 +91,13 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -135,3 +146,23 @@ MEDIA_ROOT = MEDIA_DIR
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 SESSION_COOKIE_AGE = 1209600
+
+LOGIN_URL = 'login'
+
+LOGOUT_URL = 'logout'
+
+LOGIN_REDIRECT_URL = 'index'
+
+SOCIAL_AUTH_GITHUB_KEY = '9fc4d1accec482d309f2'
+
+SOCIAL_AUTH_GITHUB_SECRET = '3a4b21ffbb90f5e3d326e8989b623463a237a172'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '200431681286063'  # App ID
+
+SOCIAL_AUTH_FACEBOOK_SECRET = '9c2bab10ceb9fd2eeaec4218fa632cb8'  # App Secret
+
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/settings/'
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/settings/'
+
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False

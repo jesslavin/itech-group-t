@@ -23,8 +23,8 @@ s<!DOCTYPE html>
 				{% if user.is_authenticated %}
     				<!-- !! USER BUTTONS (eg. home, my vinyl, browse, search bar etc) !! --->
 					{{ user.username }}
-					<li><a href="{% url 'vinyldestination
-						:logout' %}">Logout</a></li>
+					<li><a href="{% url 'vinyldestination:logout' %}">Logout</a></li>
+					<li><a href="{% url 'settings' %}">Settings</a></li>
 				{% else %}
     				<!-- !! LOGIN FUNCTIONALITY !! --->
     				<li><a href="{% url 'vinyldestination:register' %}">Sign Up</a></li>
