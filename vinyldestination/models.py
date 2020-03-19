@@ -63,6 +63,26 @@ class Artist(models.Model):
     def __str__(self):
         return self.name
 
+class Record(models.Model):
+    NAME_MAX_LENGTH = 128
+
+    r_id = models.IntegerField(unique=True)
+    name = models.CharField(max_length=NAME_MAX_LENGTH, unique=True)
+    year = models.IntegerField(default=0)
+    views = models.IntegerField(default=0)
+    likes = models.IntegerField(default=0)
+    slug = models.SlugField(unique=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Record, self).save(*args, **kwargs)
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
+    def __str__(self):
+        return self.name
+
 
 class Page(models.Model):
     TITLE_MAX_LENGTH = 128
