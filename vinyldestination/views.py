@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from vinyldestination.models import Artist, Page
+from vinyldestination.models import Artist, Album
 from vinyldestination.forms import ArtistForm, PageForm, UserForm, UserProfileForm
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
@@ -15,13 +15,13 @@ from social_django.models import UserSocialAuth
 def index(request):
 	# Construct a dictionary to pass to the template engine as its context.
 	# Note the key boldmessage matches to {{ boldmessage }} in the template! 
-	category_list = Artist.objects.order_by('-likes')[:5]
-	page_list = Page.objects.order_by('-views')[:5]
+	artist_list = Artist.objects.order_by('-likes')[:5]
+	album_list = Album.objects.order_by('-views')[:5]
 
 	context_dict = {}
 	context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
-	context_dict['categories'] = category_list
-	context_dict['pages'] = page_list
+	context_dict['artists'] = artist_list
+	context_dict['albums'] = album_list
 
 	visitor_cookie_handler(request)
 
@@ -121,21 +121,21 @@ def add_category(request):
 
 	return render(request, 'vinyldestination/add_category.html', {'form':form})
 
-def show_artist(request, category_name_slug):
+def show_artist(request, artist_name_slug):
 	context_dict = {}
 
 	try:
-		category = Category.objects.get(slug=category_name_slug)
+		artist = Artist.objects.get(slug=artist_name_slug)
 
-		pages = Page.objects.filter(category=category)
+		album = Album.objects.filter(artist=artist)
 
-		context_dict['category'] = category
-		context_dict['pages'] = pages
+		context_dict['artist'] = artist
+		context_dict['albums'] = album
 	except Category.DoesNotExist:
-		context_dict['category'] = None
-		context_dict['pages'] = None
+		context_dict['artist'] = None
+		context_dict['albums'] = None
 
-	return render(request, 'vinyldestination/category.html', context=context_dict)
+	return render(request, 'vinyldestination/artist.html', context=context_dict)
 
 @login_required
 def add_page(request, category_name_slug):
@@ -165,15 +165,15 @@ def add_page(request, category_name_slug):
 		else:
 			print(form.errors)
 
-	context_dict = {'form':form,'category':category}
+	context_dict = {'form':form,'artist':artist}
 	return render(request, 'vinyldestination/add_page.html', context=context_dict)
 
-def artsits(request):
+def artists(request):
 	context_dict = {}
+	artist_list = Artist.objects.order_by('-likes')[:5]
 
+	context_dict['artists'] = artist_list
 	visitor_cookie_handler(request)
-	context_dict['visits'] = request.session['visits']
-	context_dict['last_visit'] = request.session['last_visit']
 
 	response = render(request, 'vinyldestination/artists.html', context=context_dict)
 	return response
