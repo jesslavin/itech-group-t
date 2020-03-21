@@ -1,11 +1,11 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 {% load staticfiles %}
 {% load vinyldestination_template_tags %}
 
 <html>
 
 	<head>
-		<link href="{% static 'css/basic/basic.css' %}" rel="stylesheet" title="basicstyle" type="text/css" />
+		<link href="{% static 'css/basic/basic.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
 		<title> 
 			Vinyl Destination
             {% block title_block %}
@@ -23,8 +23,7 @@ s<!DOCTYPE html>
 				{% if user.is_authenticated %}
     				<!-- !! USER BUTTONS (eg. home, my vinyl, browse, search bar etc) !! --->
 					{{ user.username }}
-					<li><a href="{% url 'vinyldestination
-						:logout' %}">Logout</a></li>
+					<li><a href="{% url 'vinyldestination:logout' %}">Logout</a></li>
 				{% else %}
     				<!-- !! LOGIN FUNCTIONALITY !! --->
     				<li><a href="{% url 'vinyldestination:register' %}">Sign Up</a></li>

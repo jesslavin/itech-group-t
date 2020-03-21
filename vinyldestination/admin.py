@@ -1,5 +1,5 @@
 from django.contrib import admin
-from vinyldestination.models import Artist, Page, UserProfile, Record
+from vinyldestination.models import Artist, Album, UserProfile
 
 
 # Register your models here.
@@ -11,8 +11,8 @@ class PageAdmin(admin.ModelAdmin):
 	list_display = ('title', 'category', 'url')
 
 admin.site.register(Artist, ArtistAdmin)
-admin.site.register(Page, PageAdmin)
+admin.site.register(Album)
 admin.site.register(UserProfile)
-admin.site.register(Record)
+	
 	
 
