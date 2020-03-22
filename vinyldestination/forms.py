@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from vinyldestination.models import Page,Artist, UserProfile
+from vinyldestination.models import Page,Artist, UserProfile, Review
 
 class ArtistForm(forms.ModelForm):
 	name = forms.CharField(max_length=128,
@@ -14,6 +14,15 @@ class ArtistForm(forms.ModelForm):
 		# Provide an association 
 		model = Artist
 		fields = ('name',)
+
+class ReviewForm(forms.ModelForm):
+	title = forms.CharField(max_length=50, help_text="Please give your review a title.")
+	review = forms.TextInput()
+	rating = forms.IntegerField(max_length=1)
+
+	class Meta:
+		model = Review
+		fields = ('title', 'user', 'rating')
 
 class PageForm(forms.ModelForm):
 	title = forms.CharField(max_length=128,
@@ -54,3 +63,4 @@ class UserProfileForm(forms.ModelForm):
 	class Meta:
 		model = UserProfile
 		fields = ('website', 'picture',)
+

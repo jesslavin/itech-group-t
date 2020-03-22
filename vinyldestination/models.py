@@ -1,6 +1,8 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # class Artist(models.Model):
 #     name = models.CharField(max_length=128, unique=True)
@@ -78,11 +80,51 @@ class Record(models.Model):
         super(Record, self).save(*args, **kwargs)
 
     class Meta:
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = 'Records'
 
     def __str__(self):
         return self.name
 
+class Shop (models.Model):
+    NAME_MAX_LENGTH = 128
+    DESCRIPTION_MAX_LENGTH = 1000
+
+    s_id = models.IntegerField(unique=True)
+    name = models.CharField(max_length=NAME_MAX_LENGTH)
+    description = models.CharField(max_length=DESCRIPTION_MAX_LENGTH)
+    views = models.IntegerField(default=0)
+    likes = models.IntegerField(default=0)
+    slug = models.SlugField(unique=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Shop, self).save(*args, **kwargs)
+
+    class Meta:
+        verbose_name_plural = 'Shops'
+
+    def __str__(self):
+        return self.name
+
+class Review (models.Model):
+
+    TITLE_MAX_LENGTH = 50
+    RATING = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5')
+    )
+#or try to sub get_user_model() with User, if this doesn't work
+    record = models.ForeignKey(Record)
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    title = models.CharField(max_length=TITLE_MAX_LENGTH)
+    review = models.TextField()
+    rating = models.IntegerField(choices=RATING, validators=[MaxValueValidator(100), MinValueValidator(1)])
+
+    def __str__(self):
+        return self.title
 
 class Page(models.Model):
     TITLE_MAX_LENGTH = 128
