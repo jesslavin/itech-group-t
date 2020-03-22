@@ -11,15 +11,11 @@
 
 {% block body_block %}
 	{% if record %}
-	<h1>{{ record.name }}h1> 
-		{% if records %}
-		<ul>
-			{% for record in records %}
-			<li><a href="/vinyldestination/artists/{{artist.slug }}/{{record.slug}}">{{ record.title }}</a></li>
-			{% endfor %}
-		</ul>
-		{% else %}
-		<strong>This artist has no albums.</strong>
-		{% endif %}
+	<h1>{{ record.name }}<h1> 
+		
+	<h2>Came out in {{record.year}}</h2>
+	<h2>Genre: {{record.genre}}</h2>
+	<h3>Likes: {{record.likes}}</h3>
+	<h3>Views: {{record.views}}</h3>
 	{% endif %}
 {% endblock %}

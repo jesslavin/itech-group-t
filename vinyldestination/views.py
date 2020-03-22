@@ -195,11 +195,11 @@ def show_record(request, record_name_slug):
 	context_dict = {}
 
 	try:
-		record = Record.objects.filter(name=name)
+		record = Record.objects.get(slug=record_name_slug)
 
-		context_dict['records'] = record
+		context_dict['record'] = record
 	except Record.DoesNotExist:
-		context_dict['records'] = None
+		context_dict['record'] = None
 
 	return render(request, 'vinyldestination/record.html', context=context_dict)
 
