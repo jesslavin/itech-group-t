@@ -170,7 +170,7 @@ def add_page(request, category_name_slug):
 
 def artists(request):
 	context_dict = {}
-	artist_list = Artist.objects.order_by('-likes')[:10]
+	artist_list = Artist.objects
 
 	context_dict['artists'] = artist_list
 	visitor_cookie_handler(request)
@@ -181,12 +181,27 @@ def artists(request):
 def records(request):
 	context_dict = {}
 	record_list = Record.objects.order_by('-likes')[:10]
+	all_record_list = Record.objects.order_by('name')
 
-	context_dict['records'] = record_list
+	context_dict['records_pop'] = record_list
+	context_dict['records_all'] = all_record_list
+
 	visitor_cookie_handler(request)
 
 	response = render(request, 'vinyldestination/records.html', context=context_dict)
 	return response
+
+def show_record(request, record_name_slug):
+	context_dict = {}
+
+	try:
+		record = Record.objects.filter(name=name)
+
+		context_dict['records'] = record
+	except Record.DoesNotExist:
+		context_dict['records'] = None
+
+	return render(request, 'vinyldestination/record.html', context=context_dict)
 
 def register(request):
 	# A boolean value for telling the template

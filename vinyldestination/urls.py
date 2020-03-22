@@ -8,6 +8,9 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('artists/', views.artists, name='artists'),
     path('records/', views.records, name='records'),
+    path('records/<slug:record_name_slug>/', views.show_record,
+        name='show_record'),
+    
     path('artists/<slug:artist_name_slug>/', views.show_artist,
         name='show_artist'),
 

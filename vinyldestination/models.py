@@ -49,11 +49,11 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Artist(models.Model):
     NAME_MAX_LENGTH = 128
-
+    DESCRIPTION_MAX_LENGTH = 1000
     name = models.CharField(max_length=NAME_MAX_LENGTH, unique=True)
-    views = models.IntegerField(default=0)
-    likes = models.IntegerField(default=0)
+    description = models.CharField(max_length=DESCRIPTION_MAX_LENGTH)
     slug = models.SlugField(unique=True)
+    insta = models.URLField(blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
@@ -67,16 +67,18 @@ class Artist(models.Model):
 
 class Record(models.Model):
     NAME_MAX_LENGTH = 128
-
+    GENRE_MAX_LENGTH = 16
     r_id = models.IntegerField(unique=True)
     name = models.CharField(max_length=NAME_MAX_LENGTH, unique=True)
-    year = models.IntegerField(default=0)
+    year = models.IntegerField(default=0, validators=[MaxValueValidator(2020)])
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
     slug = models.SlugField(unique=True)
+    a_id = models.ForeignKey(Artist, on_delete=models.CASCADE)
+    genre = models.CharField(max_length=GENRE_MAX_LENGTH)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.slug = slugify(self.a_id) + "-" + slugify(self.name)
         super(Record, self).save(*args, **kwargs)
 
     class Meta:

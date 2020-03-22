@@ -1,0 +1,25 @@
+{% extends 'vinyldestination/base.html' %} 
+{% load staticfiles %}
+
+{% block title_block %} 
+	{% if record %}
+        {{ record.name }}
+    {% else %}
+        Unknown Record
+    {% endif %}
+{% endblock %}
+
+{% block body_block %}
+	{% if record %}
+	<h1>{{ record.name }}h1> 
+		{% if records %}
+		<ul>
+			{% for record in records %}
+			<li><a href="/vinyldestination/artists/{{artist.slug }}/{{record.slug}}">{{ record.title }}</a></li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<strong>This artist has no albums.</strong>
+		{% endif %}
+	{% endif %}
+{% endblock %}
