@@ -196,11 +196,12 @@ def show_record(request, record_name_slug):
 
 	try:
 		record = Record.objects.get(slug=record_name_slug)
-
+		artist = Artist.objects.get(name=record.a_id)
 		context_dict['record'] = record
+		context_dict['artist'] = artist
 	except Record.DoesNotExist:
 		context_dict['record'] = None
-
+		context_dict['artist'] = None
 	return render(request, 'vinyldestination/record.html', context=context_dict)
 
 def register(request):
