@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from vinyldestination.models import Artist, Album
+from vinyldestination.models import Artist, Record
 from vinyldestination.forms import ArtistForm, PageForm, UserForm, UserProfileForm
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
@@ -16,12 +16,12 @@ def index(request):
 	# Construct a dictionary to pass to the template engine as its context.
 	# Note the key boldmessage matches to {{ boldmessage }} in the template! 
 	artist_list = Artist.objects.order_by('-likes')[:5]
-	album_list = Album.objects.order_by('-views')[:5]
+	record_list = Record.objects.order_by('-views')[:10]
 
 	context_dict = {}
 	context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
 	context_dict['artists'] = artist_list
-	context_dict['albums'] = album_list
+	context_dict['records'] = record_list
 
 	visitor_cookie_handler(request)
 
@@ -127,13 +127,13 @@ def show_artist(request, artist_name_slug):
 	try:
 		artist = Artist.objects.get(slug=artist_name_slug)
 
-		album = Album.objects.filter(artist=artist)
+		record = Record.objects.filter(artist=artist)
 
 		context_dict['artist'] = artist
-		context_dict['albums'] = album
-	except Category.DoesNotExist:
+		context_dict['records'] = record
+	except Artist.DoesNotExist:
 		context_dict['artist'] = None
-		context_dict['albums'] = None
+		context_dict['records'] = None
 
 	return render(request, 'vinyldestination/artist.html', context=context_dict)
 
@@ -170,12 +170,22 @@ def add_page(request, category_name_slug):
 
 def artists(request):
 	context_dict = {}
-	artist_list = Artist.objects.order_by('-likes')[:5]
+	artist_list = Artist.objects.order_by('-likes')[:10]
 
 	context_dict['artists'] = artist_list
 	visitor_cookie_handler(request)
 
 	response = render(request, 'vinyldestination/artists.html', context=context_dict)
+	return response
+
+def records(request):
+	context_dict = {}
+	record_list = Record.objects.order_by('-likes')[:10]
+
+	context_dict['records'] = record_list
+	visitor_cookie_handler(request)
+
+	response = render(request, 'vinyldestination/records.html', context=context_dict)
 	return response
 
 def register(request):

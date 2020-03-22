@@ -60,7 +60,7 @@ class Artist(models.Model):
         super(Artist, self).save(*args, **kwargs)
 
     class Meta:
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = 'Artists'
 
     def __str__(self):
         return self.name
@@ -117,7 +117,7 @@ class Review (models.Model):
         (5, '5')
     )
 #or try to sub get_user_model() with User, if this doesn't work
-    record = models.ForeignKey(Record)
+    record = models.ForeignKey(Record, on_delete=models.CASCADE)
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(max_length=TITLE_MAX_LENGTH)
     review = models.TextField()

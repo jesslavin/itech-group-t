@@ -7,11 +7,9 @@
 		{% if artists %}
 			<ul>
 					{% for artist in artists %}
-				<!-- <li>
+				<li>
 					<a href="/vinyldestination/artists/{{artist.slug }}/">{{ artist.name }}</a>
-				</li> -->
-				<li><a href="{{ album.name }}">{{ page.title }}</a></li>
-
+				</li>
 					{% endfor %}
 			</ul>
 		{% else %}

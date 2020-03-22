@@ -1,0 +1,19 @@
+{% extends 'vinyldestination/base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+<h2>Most Liked Records</h2>
+		<div>
+		{% if records %}
+			<ul>
+					{% for record in records %}
+				<li>
+					<a href="/vinyldestination/records/{{record.slug }}/">{{ record.name }}</a>
+				</li>
+					{% endfor %}
+			</ul>
+		{% else %}
+			<strong>There are no records present.</strong>
+			{% endif %}
+		</div>
+{% endblock %}

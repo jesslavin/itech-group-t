@@ -1,15 +1,17 @@
 import os
 
-from django.contrib.auth.models import User
-
 os.environ.setdefault('DJANGO_SETTINGS_MODULE',
                       'itech-group-t.settings')
+
+
+
+
 
 import django
 
 django.setup()
-from vinyldestination.models import Record, Shop
-
+from vinyldestination.models import Artist, Record, Shop, Review, Page, UserProfile
+from django.contrib.auth.models import User
 
 def populate():
     # First, we will create lists of dictionaries containing the pages
@@ -23,7 +25,7 @@ def populate():
          'name': 'record 1',
          'year': '2014',
          'views': '0',
-         'likes': '0'},
+         'likes': '10'},
         {'r_id': '1',
          'name': 'record 2',
          'year': '2014',
