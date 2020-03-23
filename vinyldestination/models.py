@@ -76,6 +76,7 @@ class Record(models.Model):
     slug = models.SlugField(unique=True)
     a_id = models.ForeignKey(Artist, on_delete=models.CASCADE)
     genre = models.CharField(max_length=GENRE_MAX_LENGTH)
+    image = models.ImageField(upload_to='images/records/', blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.a_id) + "-" + slugify(self.name)
