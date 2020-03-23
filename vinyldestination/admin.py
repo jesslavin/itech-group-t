@@ -5,13 +5,10 @@ from vinyldestination.models import Artist, Record, Shop, Review, Page, UserProf
 # Register your models here.
 
 class ArtistAdmin(admin.ModelAdmin):
-	prepopulated_fields = {'slug':('name',)}
-
-class PageAdmin(admin.ModelAdmin):
-	list_display = ('title', 'category', 'url')
+	list_display = ('name', 'description', 'slug', 'insta')
 
 class RecordAdmin(admin.ModelAdmin):
-	list_display = ('r_id', 'name', 'year', 'views', 'likes', 'slug')
+	list_display = ('name', 'year', 'views', 'likes', 'slug', 'a_id', 'genre')
 
 class ShopAdmin(admin.ModelAdmin):
 	list_display = ('s_id', 'name', 'description', 'views', 'likes', 'slug')
@@ -26,7 +23,7 @@ admin.site.register(Artist, ArtistAdmin)
 admin.site.register(Record, RecordAdmin)
 admin.site.register(Shop, ShopAdmin)
 admin.site.register(Review, ReviewAdmin)
-admin.site.register(UserProfile)
+admin.site.register(UserProfile, UserProfileAdmin)
 	
-	
+
 

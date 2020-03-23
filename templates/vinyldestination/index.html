@@ -11,20 +11,6 @@
 		<div class = "loggedin">
 			{{ user.username }}'s Lastest Updates
 			<div>
-				Most liked Artists
-				{% if artists %}
-				<ul>
-					{% for artist in artists %}
-					<li>
-						<a href="/vinyldestination/artists/{{artist.slug }}/">{{ artist.name }}</a></li>
-					{% endfor %}
-				</ul>
-				{% else %}
-				There are no artists present.
-				{% endif %}
-			</div>
-
-			<div>
 				Most liked Records
 				{% if records %}
 				<ul>

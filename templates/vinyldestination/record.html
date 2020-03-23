@@ -1,0 +1,25 @@
+{% extends 'vinyldestination/base.html' %} 
+{% load staticfiles %}
+
+{% block title_block %} 
+	{% if record %}
+	<h1>{{record.name}}</h1> 
+    {% else %}
+    <h1>Unknown Record</h1>
+    {% endif %}
+{% endblock %}
+
+{% block body_block %}
+	{% if record %}
+	<h1>{{record.name}}</h1> 
+	<h2>by {{record.a_id}}</h2>
+	<h2>Came out in {{record.year}}</h2>
+	<h2>Genre: {{record.genre}}</h2>
+	<h3>Likes: {{record.likes}}</h3>
+	<h3>Views: {{record.views}}</h3>
+	{% endif %}
+	{% if artist %}
+	<p>About the artist: {{artist.description}}</p>
+	{% endif %}
+{% endblock %}
+

@@ -2,11 +2,26 @@
 {% load staticfiles %}
 
 {% block body_block %}
-<h2>Most Liked Records</h2>
+<h2>Top 10 Records</h2>
 		<div>
-		{% if records %}
+		{% if records_pop %}
 			<ul>
-					{% for record in records %}
+					{% for record in records_pop %}
+				<li>
+					<a href="/vinyldestination/records/{{record.slug }}/">{{ record.name }}</a>
+				</li>
+					{% endfor %}
+			</ul>
+		{% else %}
+			<strong>There are no records present.</strong>
+			{% endif %}
+		</div>
+
+<h2>All Records</h2>
+		<div>
+		{% if records_all %}
+			<ul>
+					{% for record in records_all %}
 				<li>
 					<a href="/vinyldestination/records/{{record.slug }}/">{{ record.name }}</a>
 				</li>
