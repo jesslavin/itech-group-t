@@ -5,7 +5,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE',
 import django
 
 django.setup()
-from vinyldestination.models import Artist, Record, Shop, Review, Page, UserProfile, Stock
+from vinyldestination.models import Artist, Record, Shop, Review, Page, UserProfile, Stock, List
 from django.contrib.auth.models import User
 
 
@@ -618,6 +618,73 @@ def populate():
                     'rating': 4}}
     }
 
+    lists = {
+        'Aitcho_TestUser':
+            {'0': {'list_name': 'my list',
+                   'record': '0'},
+             '1': {'list_name': 'my list',
+                   'record': '3'},
+             '2': {'list_name': 'my list',
+                   'record': '6'},
+             '3': {'list_name': 'my list',
+                   'record': '13'},
+             '4': {'list_name': 'my list',
+                   'record': '10'},
+             '5': {'list_name': 'my list',
+                   'record': '19'}},
+        'Kenny_TestUser':
+            {'0': {'list_name': 'my list',
+                   'record': '4'},
+             '1': {'list_name': 'my list',
+                   'record': '5'},
+             '2': {'list_name': 'my list',
+                   'record': '15'},
+             '3': {'list_name': 'my list',
+                   'record': '18'}},
+        'Maisles_TestUser':
+            {'0': {'list_name': 'my list',
+                   'record': '2'},
+             '1': {'list_name': 'my list',
+                   'record': '1'},
+             '2': {'list_name': 'my list',
+                   'record': '0'},
+             '3': {'list_name': 'my list',
+                   'record': '12'},
+             '4': {'list_name': 'my list',
+                   'record': '11'},
+             '5': {'list_name': 'must bring up in conversation',
+                   'record': '2'},
+             '6': {'list_name': 'must bring up in conversation',
+                   'record': '11'},
+             '7': {'list_name': 'must bring up in conversation',
+                   'record': '0'}},
+        'Charlie_TestUser':
+            {'0': {'list_name': 'got list',
+                   'record': '15'},
+             '1': {'list_name': 'got list',
+                   'record': '9'},
+             '2': {'list_name': 'got list',
+                   'record': '4'},
+             '3': {'list_name': 'got list',
+                   'record': '2'},
+             '4': {'list_name': 'got list',
+                   'record': '10'},
+             '5': {'list_name': 'get list',
+                   'record': '7'},
+             '6': {'list_name': 'get list',
+                   'record': '8'},
+             '7': {'list_name': 'get list',
+                   'record': '19'},
+             '8': {'list_name': 'get list',
+                   'record': '5'},
+             '9': {'list_name': 'get list',
+                   'record': '14'},
+             '10': {'list_name': 'get list',
+                    'record': '16'},
+             '11': {'list_name': 'get list',
+                    'record': '13'}}
+    }
+
     #    python_pages = [
     #        {'title': 'Official Python Tutorial',
     #         'url': 'http://docs.python.org/3/tutorial/',
@@ -695,6 +762,13 @@ def populate():
                 review = reviews[u['username']][rev]['review']
                 rating = reviews[u['username']][rev]['rating']
                 add_review(record, author, title, review, rating)
+        if u['username'] in lists.keys():
+            for li in lists[u['username']].keys():
+                author = User.objects.get(username=u['username'])
+                list_name = lists[u['username']][li]['list_name']
+                new_list_item = lists[u['username']][li]['record']
+                record = Record.objects.get(r_id=new_list_item)
+                add_list_item(author, list_name, record)
 
     # If you want to add more categories or pages,
     # add them to the dictionaries above.
@@ -730,6 +804,7 @@ def add_shop(s_id, name, description, views, likes, image):
                                    likes=likes, image=image)[0]
     return s
 
+
 def add_stock(shop, stock_item):
     st = Stock.objects.get_or_create(shop=shop, stock_item=stock_item)
     return st
@@ -743,6 +818,11 @@ def add_user(username, email, password):
 def add_review(record, author, title, review, rating):
     rev = Review.objects.get_or_create(record=record, author=author, title=title, review=review, rating=rating)[0]
     return rev
+
+
+def add_list_item(author, list_name, record):
+    l_i = List.objects.get_or_create(author=author, list_name=list_name, record=record)[0]
+    return l_i
 
 
 # def add_page(cat, title, url, views=0):
