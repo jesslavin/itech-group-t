@@ -1,24 +1,36 @@
-{% extends 'vinyldestination/base.html' %}
 {% load staticfiles %}
 
-{% block title_block %}
-	Register
-{% endblock %}
+<head>
+	<link href="{% static 'css/basic/admin.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+	<title>
+		Vinyl Destination - Register
+	</title>
+</head>
 
-{% block body_block %}
-	<h1>Register for vinyldestination</h1>
+
+<div class = admin>
+
+	<div class = "header">
+		<a href="{% url 'vinyldestination:index' %}"><img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/></a>
+	</div>
+
+	{% if user.is_authenticated %}
+	<p>You are already logged in as {{ user.username }}</p>
+	<a href="{% url 'vinyldestination:logout' %}">Logout?</a>
+	{% else %}
+	<h2>Register for vinyldestination</h2>
 	{% if registered %}
- 		vinyldestination says: <strong>thank you for registering!</strong>
- 		<a href="{% url 'vinyldestination:index' %}">Return to the homepage.</a><br />
- 	{% else %}
- 		vinyldestination says: <strong>register here!</strong><br />
- 		<form id="user_form" method="post" action="{% url 'vinyldestination:register' %}" 
- 			enctype="multipart/form-data">
+	Thank you for registering!
+	<a href="{% url 'vinyldestination:index' %}">Return to the homepage.</a><br />
+	{% else %}
+	<form id="form" method="post" action="{% url 'vinyldestination:register' %}"
+		  enctype="multipart/form-data">
 		{% csrf_token %}
-
 		{{ user_form.as_p }}
-    	{{ profile_form.as_p }}
-		<input type="submit" name="submit" value="Register" />
+		{{ profile_form.as_p }}
+		<input type="submit" id="button" name="submit" value="Register" />
 	</form>
-	{% endif %} 
-{% endblock %}
+	{% endif %}
+	{% endif %}
+
+</div>

@@ -8,7 +8,7 @@
 			<ul>
 					{% for record in records_pop %}
 				<li>
-					<a href="/vinyldestination/records/{{record.slug }}/">{{ record.name }}</a>
+					<a href="/vinyldestination/records/{{record.slug }}/">{{record.a_id}} - {{ record.name }}</a>
 				</li>
 					{% endfor %}
 			</ul>
@@ -23,7 +23,7 @@
 			<ul>
 					{% for record in records_all %}
 				<li>
-					<a href="/vinyldestination/records/{{record.slug }}/">{{ record.name }}</a>
+					<a href="/vinyldestination/records/{{record.slug }}/">{{record.a_id}} - {{ record.name }}</a>
 				</li>
 					{% endfor %}
 			</ul>

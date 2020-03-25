@@ -1,21 +1,38 @@
-{% extends 'vinyldestination/base.html' %}
 {% load staticfiles %}
 
-{% block title_block %}
-   	Login
-{% endblock %}
+<head>
+	<link href="{% static 'css/basic/admin.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+	<title>
+		Vinyl Destination - Login
+	</title>
+</head>
 
-{% block body_block %}
-<h1>Login to vinyldestination</h1>
-<form id="login_form" method="post" action="{% url 'vinyldestination:login' %}">
-	{% csrf_token %}
-		Username: <input type="text" name="username" value="" size="50" /> 
-		<br />
-		Password: <input type="password" name="password" value="" size="50" /> 
-		<br />
-	<input type="submit" value="submit" />
-</form>
-<p><strong>------- OR -------</strong></p>
-<a href="{% url 'social:begin' 'github' %}">Login with GitHub</a><br>
-<a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
-{% endblock %}
+<div class = admin>
+
+	<div class = "header">
+		<a href="{% url 'vinyldestination:index' %}"><img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/></a>
+	</div>
+
+	{% if user.is_authenticated %}
+	<p>You are already logged in as {{ user.username }}</p>
+	<a href="{% url 'vinyldestination:logout' %}">Logout?</a>
+	{% else %}
+	<h2>Login to vinyldestination</h2>
+	<form id="form" method="post" action="{% url 'vinyldestination:login' %}">
+		{% csrf_token %}
+		Username:
+		<br/>
+		<input type="text" name="username" value=""/>
+		<br/>
+		Password:
+		<br/>
+		<input type="password" name="password" value=""/>
+		<br/>
+		<p><input type="submit" id="button" value="submit" /></p>
+	</form>
+	<a href="{% url 'social:begin' 'github' %}">Login with GitHub</a>
+	<br/>
+	<a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+	{% endif %}
+
+</div>

@@ -185,8 +185,8 @@ def populate():
                                   "jazz chops ensures a higher level of musicianship that one usually finds on these "
                                   "sort of LPs.",
                    'genres': 'Alternative, Indie, Rock',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '10',
+                   'likes': '10'}},
         'Childish Gambino':
             {'2': {'r_id': '2',
                    'name': 'Because the internet',
@@ -224,8 +224,8 @@ def populate():
                                   "progressions and enjoy the bridge built between indie rock and pop punk. Over Easy "
                                   "is five songs, an EP if you will, and it was initially released in 2015.",
                    'genres': 'Alternative, Indie, Rock',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '10',
+                   'likes': '10'}},
         'Fleetwood Mac':
             {'5': {'r_id': '5',
                    'name': 'Rumours',
@@ -250,8 +250,8 @@ def populate():
                                   'identity, intertwined with unbelievable melodies that are modestly stated but '
                                   'deeply felt. Phew.',
                    'genres': 'Alternative, Indie, Rock',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '10',
+                   'likes': '10'}},
         'Janelle Monae':
             {'7': {'r_id': '7',
                    'name': 'Dirty Computer',
@@ -263,8 +263,8 @@ def populate():
                                   'by the late Prince himself. The album also hosts the dulcet tones of Brian Wilson, '
                                   'Zoë Kravitz, Grimes and Pharrell Williams.',
                    'genres': 'R&B, Soul, Hip-Hop',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '10',
+                   'likes': '10'}},
         'Kendrick Lamar':
             {'8': {'r_id': '8',
                    'name': 'DAMN',
@@ -305,7 +305,7 @@ def populate():
                                    'everyone) and instrumental help from guitarist Jacob Blizzard. LP and CD on '
                                    'Matador.',
                     'genres': 'Indie, Rock, Singer-Songwriter',
-                    'views': '0',
+                    'views': '10',
                     'likes': '10'}},
         'Pictish Trail':
             {'11': {'r_id': '11',
@@ -332,8 +332,8 @@ def populate():
                                    'tracks, their thoughtful, DIY indie approach has made them one of the most '
                                    'exciting new bands in Britain. ',
                     'genres': 'Alternative, Indie, Rock',
-                    'views': '0',
-                    'likes': '0'}},
+                    'views': '10',
+                    'likes': '10'}},
         'Proclaimers':
             {'13': {'r_id': '13',
                     'name': 'Sunshine On Leith',
