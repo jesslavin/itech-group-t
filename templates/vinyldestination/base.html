@@ -5,9 +5,8 @@
 <html>
 
 	<head>
-		<link href="{% static 'css/basic/basic.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
-		<title> 
-			Vinyl Destination
+		<link href="{% static 'css/basic/main.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+		<title>
             {% block title_block %}
 			{% endblock %}
 		</title>
@@ -15,31 +14,34 @@
 
 	<body>
 
+	<div class = "nav">
 		<div class = "header">
-			<div class = "title">
-				<img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/>
-			</div>
-			<div class = "nav">
-				{% if user.is_authenticated %}
-    				<!-- !! USER BUTTONS (eg. home, my vinyl, browse, search bar etc) !! --->
-					{{ user.username }}
-					<li><a href="{% url 'vinyldestination:logout' %}">Logout</a></li>
-					<li><a href="{% url 'settings' %}">Settings</a></li>
-				{% else %}
-    				<!-- !! LOGIN FUNCTIONALITY !! --->
-    				<li><a href="{% url 'vinyldestination:register' %}">Sign Up</a></li>
-					<li><a href="{% url 'vinyldestination:login' %}">Login</a></li>
-				{% endif %}
-					<li><a href="{% url 'vinyldestination:records' %}">Records</a></li>
-					<li><a href="{% url 'vinyldestination:index' %}">Home</a></li>
-			</div>
+		<a href="{% url 'vinyldestination:index' %}"><img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/></a>
 		</div>
+		<div class = "menu">
+			{% if user.is_authenticated %}
+			{{ user.username }}
+			<a href="{% url 'settings' %}">Settings</a>
+			<a href="{% url 'vinyldestination:logout' %}">Logout</a>
+			{% else %}
+			<form id="login_form" method="post" action="{% url 'vinyldestination:login' %}">
+				{% csrf_token %}
+				Username: <input type="text" id="input_field" name="username" value=""/>
+				Password: <input type="password" id="input_field" name="password" value=""/>
+				<input type="submit" id="button" value="submit"/>
+				</br>
+				</br>
+				or sign in using
+				<a href="{% url 'social:begin' 'github' %}"><img src="{% static 'images/github.png' %}" alt="github" style="width:20px;"/></a>
+				<a href="{% url 'social:begin' 'facebook' %}"><img src="{% static 'images/facebook.png' %}" alt="facebook" style="width:20px;"/></a>
+			</form>
+			{% endif %}
+		</div>
+	</div>
 
-		<div class = "body">
-			{% block body_block %}
-			{% get_artist_list artist %}
-			{% endblock %}
-		</div>
+	{% block body_block %}
+	{% get_artist_list artist %}
+	{% endblock %}
 
 	</body>
 

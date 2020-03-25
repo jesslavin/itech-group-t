@@ -1,19 +1,21 @@
-{% extends 'vinyldestination/base.html' %}
-{% load staticfiles %}
-
-{% block body_block %}
-<h2>Most Liked Artists</h2>
-		<div>
-		{% if artists %}
-			<ul>
-					{% for artist in artists %}
+<ul>
+	{% if categories %}
+		{% for c in categories %}
+			{% if c == current_category %} 
 				<li>
-					<a href="/vinyldestination/artists/{{artist.slug }}/">{{ artist.name }}</a>
+				<strong>
+					<a href="{% url 'vinyldestination:show_category' c.slug %}">{{ c.name }}</a>
+				</strong>
+					<a href="/vinyldestination/artists/{{ artist.slug }}/">{{ artist.name }}</a>
 				</li>
-					{% endfor %}
-			</ul>
-		{% else %}
-			<strong>There are no artists present.</strong>
-			{% endif %}
-		</div>
-{% endblock %}
+			{% else %}
+				<li>
+					<a href="{% url 'vinyldestination:show_category' c.slug %}">{{ c.name }}</a>
+				</li>
+    		{% endif %}
+			<li><a href="{% url 'vinyldestination:show_category' c.slug %}">{{ c.name }}</a></li>
+		{% endfor %}
+	{% else %}
+		<li><strong>There are no categories present.</strong></li>
+	{% endif %}
+</ul>

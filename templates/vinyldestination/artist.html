@@ -2,30 +2,32 @@
 {% load staticfiles %}
 
 {% block title_block %} 
-	{% if artist %}
-        {{ artist.name }}
+	{% if category %}
+        {{ category.name }}
     {% else %}
-        Unknown Artist
+        Unknown Category
     {% endif %}
 {% endblock %}
 
 {% block body_block %}
-	{% if artist %}
-	<h1>{{ artist.name }}'s Records</h1> 
-		{% if records %}
+	{% if category %}
+	<h1>{{ category.name }}</h1> 
+		{% if pages %}
 		<ul>
+			{% for page in pages %}
+			<li><a href="{{ page.url }}">{{ page.title }}</a></li>
 			{% for record in records %}
-			<li><a href="/vinyldestination/artists/{{artist.slug }}/{{record.slug}}">{{ record.title }}</a></li>
+			<li><a href="/vinyldestination/artists/{{ artist.slug }}/{{record.slug}}">{{ record.title }}</a></li>
 			{% endfor %}
 		</ul>
 		{% else %}
-		<strong>This artist has no albums.</strong>
+		<strong>No pages currently in category.</strong>
 		{% endif %}
 	{% endif %}
 
-	<!-- {% if user.is_authenticated %}
+	{% if user.is_authenticated %}
 	<a href="{% url 'vinyldestination:add_page' category.slug %}">Add Page</a> <br />
 	{% else %}
 		The specified category does not exist.
-	{% endif %} -->
+	{% endif %}
 {% endblock %}
