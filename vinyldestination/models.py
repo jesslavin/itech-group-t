@@ -5,7 +5,6 @@ from django.contrib.auth import get_user_model
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
-
 # class Artist(models.Model):
 #     name = models.CharField(max_length=128, unique=True)
 #     views = models.IntegerField(default=0)
@@ -144,7 +143,7 @@ class Review(models.Model):
         (4, '4'),
         (5, '5')
     )
-    # or try to sub get_user_model() with User, if this doesn't work
+
     record = models.ForeignKey(Record, on_delete=models.CASCADE)
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(max_length=TITLE_MAX_LENGTH)
@@ -153,6 +152,25 @@ class Review(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class List(models.Model):
+    LIST_NAME_MAX_LENGTH = 128
+
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    list_name = models.CharField(max_length=LIST_NAME_MAX_LENGTH)
+    record = models.ForeignKey(Record, on_delete=models.CASCADE)
+    slug = models.SlugField(unique=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.author) + "-" + slugify(self.list_name) + "-" + slugify(self.record)
+        super(List, self).save(*args, **kwargs)
+
+    class Meta:
+        verbose_name_plural = 'Lists'
+
+    def __str__(self):
+        return self.list_name
 
 
 class Page(models.Model):

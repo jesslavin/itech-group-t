@@ -1,5 +1,5 @@
 from django.contrib import admin
-from vinyldestination.models import Artist, Record, Shop, Stock, Review, Page, UserProfile
+from vinyldestination.models import Artist, Record, Shop, Stock, Review, Page, UserProfile, List
 
 
 # Register your models here.
@@ -28,9 +28,14 @@ class UserProfileAdmin(admin.ModelAdmin):
     list_display = ('user', 'website', 'picture')
 
 
+class ListAdmin(admin.ModelAdmin):
+    list_display = ('author', 'list_name', 'record')
+
+
 admin.site.register(Artist, ArtistAdmin)
 admin.site.register(Record, RecordAdmin)
 admin.site.register(Shop, ShopAdmin)
 admin.site.register(Stock, StockAdmin)
 admin.site.register(Review, ReviewAdmin)
 admin.site.register(UserProfile, UserProfileAdmin)
+admin.site.register(List, ListAdmin)
