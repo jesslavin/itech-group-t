@@ -36,9 +36,8 @@
     <a href="{% url 'social:begin' 'facebook' %}">Connect to Facebook</a>
   {% endif %}
     </div>
-{% endblock %}
 
-  <!-- <h3>Twitter</h3>
+  <h3>Twitter</h3>
   {% if twitter_login %}
     <p>Connected as <a href="https://twitter.com/{{ twitter_login.extra_data.access_token.screen_name }}/" target="_blank">@{{ twitter_login.extra_data.access_token.screen_name }}</a></p>
     {% if can_disconnect %}
@@ -52,6 +51,7 @@
     {% endif %}
   {% else %}
     <a href="{% url 'social:begin' 'twitter' %}">Connect to Twitter</a>
-  {% endif %} -->
+  {% endif %}
+  {% endblock %}
 
   
