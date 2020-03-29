@@ -170,7 +170,7 @@ def populate():
                                   "songwriting career for Stuart Murdoch, who was the only songwriter for the band at "
                                   "this point, and shows off soft, delicately made songs that hadn't quite become "
                                   "fanciful and twee yet. Also, the album artwork is really something, huh?",
-                   'genres': 'Alternative, Indie, Pop',
+                   'genre': 'Alternative',
                    'views': '0',
                    'likes': '0'}},
         'The Beths':
@@ -184,7 +184,7 @@ def populate():
                                   "Mitski. Nice harmonies, nice melodies, and the fact that the four members all have "
                                   "jazz chops ensures a higher level of musicianship that one usually finds on these "
                                   "sort of LPs.",
-                   'genres': 'Alternative, Indie, Rock',
+                   'genre': 'Alternative',
                    'views': '10',
                    'likes': '10'}},
         'Childish Gambino':
@@ -199,7 +199,7 @@ def populate():
                                   "features guest appearances from Chance The Rapper, Jhene Aiko and Azealia Banks, "
                                   "with production handled by Gambino himself, Christian Rich, Thundercat and Ludwig "
                                   "Goransson among others.",
-                   'genres': 'Hip-Hop, Rap, Alternative',
+                   'genre': 'Hip-Hop',
                    'views': '0',
                    'likes': '0'}},
         'Courtney Barnett':
@@ -211,7 +211,7 @@ def populate():
                                   "that thing she did with Kurt Vile. Here her witty observations are matched with a "
                                   "more serious tone capturing more obviously the beauty and warmth in her delivery. "
                                   "She's becoming increasingly popular so this will be a big 'un.",
-                   'genres': 'Alternative, Indie, Rock',
+                   'genre': 'Alternative',
                    'views': '0',
                    'likes': '0'}},
         'Diet Cig':
@@ -223,7 +223,7 @@ def populate():
                                   " they will essentially work for you if you like having feelings over decent chord "
                                   "progressions and enjoy the bridge built between indie rock and pop punk. Over Easy "
                                   "is five songs, an EP if you will, and it was initially released in 2015.",
-                   'genres': 'Alternative, Indie, Rock',
+                   'genre': 'Alternative',
                    'views': '10',
                    'likes': '10'}},
         'Fleetwood Mac':
@@ -236,7 +236,7 @@ def populate():
                                   "it is soft rock hit after soft rock hit. Most of these songs were FM radio smashes "
                                   "but the album has a dark lyrical undertone as the band's internal dynamic "
                                   "was..um..complicated to say the least.",
-                   'genres': 'Pop, Rock, Pop Rock',
+                   'genre': 'Pop',
                    'views': '0',
                    'likes': '0'}},
         'Girlpool':
@@ -249,7 +249,7 @@ def populate():
                                   'confrontational jangle pop, they offer more songs about personal growth and '
                                   'identity, intertwined with unbelievable melodies that are modestly stated but '
                                   'deeply felt. Phew.',
-                   'genres': 'Alternative, Indie, Rock',
+                   'genre': 'Alternative',
                    'views': '10',
                    'likes': '10'}},
         'Janelle Monae':
@@ -262,7 +262,7 @@ def populate():
                                   'celebrating the spectra of sexuality with rubbery pop - some of which co-written '
                                   'by the late Prince himself. The album also hosts the dulcet tones of Brian Wilson, '
                                   'Zoë Kravitz, Grimes and Pharrell Williams.',
-                   'genres': 'R&B, Soul, Hip-Hop',
+                   'genre': 'R&B',
                    'views': '10',
                    'likes': '10'}},
         'Kendrick Lamar':
@@ -274,7 +274,7 @@ def populate():
                                   'himself. Damn features fairly large guests like Rihanna and, um, U2, but Kendrick '
                                   'doesn’t need any big-name support to tell a narrative and craft wonderful beats. '
                                   'This soon-to-be-album-of-the-year record is released by Polydor.',
-                   'genres': 'Hip-Hop, Rap, Alternative',
+                   'genre': 'Hip-Hop',
                    'views': '0',
                    'likes': '0'}},
         'Lizzo':
@@ -290,7 +290,7 @@ def populate():
                                   'spirit, and soul. Embracing her vocal range like never before and celebrating '
                                   'herself to the fullest, she speaks her mind, censors nothing, and delivers an '
                                   'enviable level of honesty, pure passion, and fresh fire.',
-                   'genres': 'Pop, Funk, R&B',
+                   'genre': 'Pop',
                    'views': '0',
                    'likes': '0'}},
         'Lucy Dacus':
@@ -304,7 +304,7 @@ def populate():
                                    'about with mixing input from producer John Congleton (He’s worked with just about '
                                    'everyone) and instrumental help from guitarist Jacob Blizzard. LP and CD on '
                                    'Matador.',
-                    'genres': 'Indie, Rock, Singer-Songwriter',
+                    'genre': 'Indie',
                     'views': '10',
                     'likes': '10'}},
         'Pictish Trail':
@@ -318,7 +318,7 @@ def populate():
                                    'yet, Thumb World was forged alongside visual artist Swatpaz, a process that had '
                                    'them both imagining that the music was taking place in a retro ‘80s arcade game '
                                    'world.',
-                    'genres': 'Alternative, Indie, Psych-Folk',
+                    'genre': 'Alternative',
                     'views': '0',
                     'likes': '0'}},
         'Porridge Radio':
@@ -331,7 +331,7 @@ def populate():
                                    'an initial solo project by now-lead singer Dana Margolin and her bedroom-composed '
                                    'tracks, their thoughtful, DIY indie approach has made them one of the most '
                                    'exciting new bands in Britain. ',
-                    'genres': 'Alternative, Indie, Rock',
+                    'genre': 'Alternative',
                     'views': '10',
                     'likes': '10'}},
         'Proclaimers':
@@ -347,7 +347,7 @@ def populate():
                                    "on My Way\", and the Australian-exclusive \"Then I Met You\". The non-single "
                                    "\"Cap in Hand\" also came to prominence in 2014 with the Scottish Independence "
                                    "referendum.",
-                    'genres': 'Rock, Folk, Pop',
+                    'genre': 'Rock',
                     'views': '0',
                     'likes': '0'}},
         'Robyn':
@@ -360,7 +360,7 @@ def populate():
                                    "Body Talk-- which combines the five-song Body Talk Pt. 3 with, outside of Pt. 1's "
                                    "uncommonly wise \"Cry When You Get Older\", the highlights from the first two "
                                    "mini-albums-- is a deeply affecting pop record.",
-                    'genres': 'Dance, Electropop, Pop',
+                    'genre': 'Dance',
                     'views': '0',
                     'likes': '0'}},
         'Snail Mail':
@@ -374,7 +374,7 @@ def populate():
                                    'spinning with bold excitement and new beginnings at every turn. Lush feels at '
                                    'times like an emotional rollercoaster, only fitting for Jordan’s explosive, '
                                    'dynamic personality.',
-                    'genres': 'Indie, Rock, Singer-Songwriter',
+                    'genre': 'Indie',
                     'views': '0',
                     'likes': '0'}},
         'Soccer Mommy':
@@ -387,7 +387,7 @@ def populate():
                                    'unflinchingly honest lyrics that detail her struggles with mental health and her '
                                    'family. It seems that writing about these issues has been a cathartic process for '
                                    'the resilient 22 year-old.',
-                    'genres': 'Alternative, Indie, Rock',
+                    'genre': 'Alternative',
                     'views': '0',
                     'likes': '0'}},
         'Taylor Swift':
@@ -401,7 +401,7 @@ def populate():
                                    "us more than ever before. Heavily keyboard and beat-driven, the pop sensibilities "
                                    "that have always been the hallmark of Taylor’s music now move front and centre on "
                                    "'1989'.",
-                    'genres': 'Pop, Electropop, Dance',
+                    'genre': 'Pop',
                     'views': '0',
                     'likes': '0'}},
         'Waxahatchee':
@@ -416,7 +416,7 @@ def populate():
                                    "powerful recognition of where Crutchfield has currently found herself. The lament "
                                    "and grieving for her youth seem to have been replaced with control and sheer "
                                    "self-honesty.",
-                    'genres': 'Alternative, Indie, Folk',
+                    'genre': 'Alternative',
                     'views': '0',
                     'likes': '0'}},
         'Wolf Alice':
@@ -428,7 +428,7 @@ def populate():
                                    'rock territory following their folksy beginnings. Very in tune with the modern '
                                    'strain of motorik krautrock whilst retaining an ear for melody, it’s like a '
                                    'diluted Sonic Youth for the kids. Out on CD and vinyl double LP from Dirty Hit.',
-                    'genres': 'Alternative, Indie, Rock',
+                    'genre': 'Alternative',
                     'views': '0',
                     'likes': '0'}}}
 
@@ -462,7 +462,7 @@ def populate():
          'name': 'Lost + Found',
          'image': '/images/shops/Lost + Found.jpg',
          'description': 'At Lost + Found we like to put you back in touch with the records of yesteryear that you '
-                        'thought you would never hear again. Covering all genres - but specialising in the music of '
+                        'thought you would never hear again. Covering all genre - but specialising in the music of '
                         'the 60s to the 80s - our collection covers everything from Acid Folk to Zouk, and all points '
                         'in between.',
          'views': '0',
@@ -737,7 +737,8 @@ def populate():
                 views = records[a['name']][r]['views']
                 likes = records[a['name']][r]['likes']
                 description = records[a['name']][r]['description']
-                add_record(r_id, artist, name, year, image, views, likes, description)
+                genre = records[a['name']][r]['genre']
+                add_record(r_id, artist, name, year, image, views, likes, description,genre)
 
     #    for r in records:
     #        artist = Artist.objects.get(name=r['artist'])
@@ -792,10 +793,10 @@ def add_artist(name, description, image, insta):
     return a
 
 
-def add_record(r_id, artist, name, year, image, views, likes, description):
+def add_record(r_id, artist, name, year, image, views, likes, description, genre):
     r = Record.objects.get_or_create(r_id=r_id,
                                      a_id=artist, name=name, year=year, image=image, views=views,
-                                     likes=likes, description=description)[0]
+                                     likes=likes, description=description, genre=genre)[0]
     return r
 
 

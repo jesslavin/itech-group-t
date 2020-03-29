@@ -82,7 +82,6 @@ class Record(models.Model):
     genre = models.CharField(max_length=GENRE_MAX_LENGTH)
     image = models.ImageField(upload_to='images/records/', blank=True)
     description = models.CharField(max_length=DESCRIPTION_MAX_LENGTH, blank=True)
-
     def save(self, *args, **kwargs):
         self.slug = slugify(self.a_id) + "-" + slugify(self.name)
         super(Record, self).save(*args, **kwargs)
@@ -92,7 +91,6 @@ class Record(models.Model):
 
     def __str__(self):
         return self.name
-
 
 class Shop(models.Model):
     NAME_MAX_LENGTH = 128

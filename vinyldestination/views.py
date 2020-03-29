@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from vinyldestination.models import Artist, Record
+from vinyldestination.models import Artist, Record, Review
 from vinyldestination.forms import ArtistForm, PageForm, UserForm, UserProfileForm
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
@@ -197,11 +197,18 @@ def show_record(request, record_name_slug):
 	try:
 		record = Record.objects.get(slug=record_name_slug)
 		artist = Artist.objects.get(name=record.a_id)
+		similar = Record.objects.filter(genre=record.genre).exclude(name=record.name)
+		review = Review.objects.filter(record = record)
+
 		context_dict['record'] = record
 		context_dict['artist'] = artist
+		context_dict['similar'] = similar
+		context_dict['review'] = review
 	except Record.DoesNotExist:
 		context_dict['record'] = None
 		context_dict['artist'] = None
+		context_dict['similar'] = None
+		context_dict['review'] = None
 	return render(request, 'vinyldestination/record.html', context=context_dict)
 
 def register(request):

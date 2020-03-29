@@ -1,25 +1,120 @@
 {% extends 'vinyldestination/base.html' %} 
 {% load staticfiles %}
 
-{% block title_block %} 
+
+<!-- {% block title_block %} 
 	{% if record %}
 	<h1>{{record.name}}</h1> 
     {% else %}
     <h1>Unknown Record</h1>
     {% endif %}
-{% endblock %}
+{% endblock %} -->
 
 {% block body_block %}
 	{% if record %}
+	<img id="recordartwork" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
 	<h1>{{record.name}}</h1> 
 	<h2>by {{record.a_id}}</h2>
-	<h2>Came out in {{record.year}}</h2>
+	<p>{{record.description}}</p>
+	
+
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Font Awesome Icon Library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	* {
+	  box-sizing: border-box;
+	}
+
+	body {
+	  font-family: Arial;
+	  margin: 0 auto; /* Center website */
+	  max-width: 800px; /* Max width */
+	  padding: 20px;
+	}
+
+	.heading {
+	  font-size: 25px;
+	  margin-right: 25px;
+	}
+
+	.fa {
+	  font-size: 25px;
+	}
+
+	.checked {
+	  color: orange;
+	}
+
+	/* The bar container */
+	.bar-container {
+	  width: 100%;
+	  background-color: #f1f1f1;
+	  text-align: center;
+	  color: white;
+	}
+
+	/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+	@media (max-width: 400px) {
+	  .side, .middle {
+	    width: 100%;
+	  }
+	  .right {
+	    display: none;
+	  }
+	}
+	</style>
+	</head>
+	<body>
+
+	<span class="heading">User Rating</span>
+	<span class="fa fa-star checked"></span>
+	<span class="fa fa-star checked"></span>
+	<span class="fa fa-star checked"></span>
+	<span class="fa fa-star checked"></span>
+	<span class="fa fa-star"></span>
+	<p>4.1 average based on 254 reviews.</p>
+	<hr style="border:3px solid #f1f1f1">
+	
+	<h2>Released in {{record.year}}</h2>
 	<h2>Genre: {{record.genre}}</h2>
-	<h3>Likes: {{record.likes}}</h3>
-	<h3>Views: {{record.views}}</h3>
+	<h2>Likes: {{record.likes}}</h2>
+	<h2>Views: {{record.views}}</h2>
 	{% endif %}
+
+
+	<div>
+		<button type="button">Review</button>
+	</div>
+
 	{% if artist %}
+	<img id="recordartwork" src="{{MEDIA_URL}}{{ artist.image }}" alt="{{ record.name }}"></a>
 	<p>About the artist: {{artist.description}}</p>
 	{% endif %}
+
+	<div class = "similar">
+			{% if similar %}
+			<h2>Similar records in {{record.genre}}</h2>
+				{% for record in similar%}
+				<a href="/vinyldestination/records/{{ record.slug }}/"><img id="recordartwork" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
+					{% endfor %}
+			{% else %}
+			There are no records present.
+			{% endif %}
+	</div>
+
+	<div class = "review">
+			{% if review %}
+			<h2>Reviews of {{record.name}}</h2>
+				<ol type="1">
+				{% for review in review%}
+				<li><h3>{{review.title}} by {{review.author}}</h3><p>{{review.review}}</p>
+				</li>
+					{% endfor %}
+			{% else %}
+			There are no reviews present.
+			{% endif %}
+	</div>
 {% endblock %}
 
