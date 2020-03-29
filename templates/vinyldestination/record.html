@@ -83,11 +83,6 @@
 	<h2>Views: {{record.views}}</h2>
 	{% endif %}
 
-
-	<div>
-		<button type="button">Review</button>
-	</div>
-
 	{% if artist %}
 	<img id="recordartwork" src="{{MEDIA_URL}}{{ artist.image }}" alt="{{ record.name }}"></a>
 	<p>About the artist: {{artist.description}}</p>
@@ -104,7 +99,14 @@
 			{% endif %}
 	</div>
 
+	
+
 	<div class = "review">
+		{% if user.is_authenticated %}
+		<div class ="review button">
+			<a href="/vinyldestination/records/{{ record.slug }}/add_review" title="Add a review to this record">Add A Review</a>
+		</div>
+	{% endif %}
 			{% if review %}
 			<h2>Reviews of {{record.name}}</h2>
 				<ol type="1">

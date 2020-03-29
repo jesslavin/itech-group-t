@@ -10,7 +10,8 @@ urlpatterns = [
     path('records/', views.records, name='records'),
     path('records/<slug:record_name_slug>/', views.show_record,
         name='show_record'),
-    
+    path('records/<slug:record_name_slug>/add_review/', views.add_review,
+        name='add_review'),
     path('artists/<slug:artist_name_slug>/', views.show_artist,
         name='show_artist'),
 
@@ -19,11 +20,4 @@ urlpatterns = [
     path('login/', views.user_login, name='login'),
     path('logout/', views.user_logout, name='logout'),
 ]
-
-# path('', views.index, name='index'),
-#     path('about/', views.about, name='about'),
-#     path('category/<slug:category_name_slug>/add_page/', views.add_page,
-#         name='add_page'),
-#     path('category/<slug:category_name_slug>/', views.show_category,
-#         name='show_category'),
 

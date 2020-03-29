@@ -1,4 +1,5 @@
 from django import forms
+from django.core.validators import MaxValueValidator
 from django.contrib.auth.models import User
 from vinyldestination.models import Page, Artist, UserProfile, Review
 
@@ -19,8 +20,8 @@ class ArtistForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     title = forms.CharField(max_length=50, help_text="Please give your review a title.")
     review = forms.TextInput()
-    rating = forms.IntegerField()
-
+    rating = forms.IntegerField(validators=[MaxValueValidator(5)])
+    author = User.username
     class Meta:
         model = Review
         fields = ('title', 'review', 'rating')

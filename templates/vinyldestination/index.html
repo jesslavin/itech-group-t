@@ -39,7 +39,7 @@ Vinyl Destination
 		<div class = "trending">
 			{% if records %}
 				{% for record in records%}
-				<a href="/vinyldestination/records/{{ record.slug }}/"><img id="recordartwork" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
+				<a href="{% url 'vinyldestination:records' %}{{ record.slug }}/"><img id="recordartwork" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
 					{% endfor %}
 			{% else %}
 			There are no records present.

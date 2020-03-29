@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from vinyldestination.models import Artist, Record, Review
-from vinyldestination.forms import ArtistForm, PageForm, UserForm, UserProfileForm
+from vinyldestination.forms import ArtistForm, PageForm, UserForm, UserProfileForm, ReviewForm
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -138,35 +138,34 @@ def show_artist(request, artist_name_slug):
 	return render(request, 'vinyldestination/artist.html', context=context_dict)
 
 @login_required
-def add_page(request, category_name_slug):
+def add_review(request, record_name_slug):
 	try:
-		category = Category.objects.get(slug=category_name_slug)
-	except Category.DoesNotExist:
-		category = None
+		record = Record.objects.get(slug=record_name_slug)
+	except Record.DoesNotExist:
+		record = None
 
-	if category is None:
-		return redirect('/vinyldestination/')
+	if Record is None:
+		return redirect('/vinyldestination/records/record_name_slug')
 
-	form = PageForm()
+	form = ReviewForm()
 
 	if request.method == 'POST':
-		form = PageForm(request.POST)
+		form = ReviewForm(request.POST)
 
 		if form.is_valid():
-			if category:
-				page = form.save(commit=False)
-				page.category = category
-				page.views = 0
-				page.save()
+			if record:
+				review = form.save(commit=False)
+				review.record = record
+				review.save()
 
-				return redirect(reverse('vinyldestination:show_category',
-										kwargs={'category_name_slug':
-											category_name_slug}))
+				return redirect(reverse('vinyldestination:show_record',
+										kwargs={'record_name_slug':
+											record_name_slug}))
 		else:
 			print(form.errors)
 
-	context_dict = {'form':form,'artist':artist}
-	return render(request, 'vinyldestination/add_page.html', context=context_dict)
+	context_dict = {'form':form,'record':record}
+	return render(request, 'vinyldestination/add_review.html', context=context_dict)
 
 def artists(request):
 	context_dict = {}
