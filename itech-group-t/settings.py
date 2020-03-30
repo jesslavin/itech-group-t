@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'vinyldestination',
     'social_django',
+    'star_ratings'
 ]
 
 PASSWORD_HASHERS = [

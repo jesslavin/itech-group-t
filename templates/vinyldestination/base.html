@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 {% load vinyldestination_template_tags %}
-
+{% load static %}
 <html>
+
 
 	<head>
 		<link href="{% static 'css/basic/main.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+		<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
 		<title>
             {% block title_block %}
 			{% endblock %}
@@ -43,7 +45,9 @@
 	{% block body_block %}
 	{% get_artist_list artist %}
 	{% endblock %}
-
+	{% block content %}
+    {% endblock content %}
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.js' %}"></script>
 	</body>
 
 </html>
