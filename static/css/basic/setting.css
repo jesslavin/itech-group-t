@@ -11,6 +11,11 @@ body
     align-items:center;
     }
 
+a
+    {
+    color: white;
+    }
+
 .admin
     {
     padding:60px 40px;

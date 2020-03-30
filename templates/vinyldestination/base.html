@@ -4,7 +4,7 @@
 {% load static %}
 <html>
 
-		<link href="{% static 'css/basic/basic.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+		<link href="{% static 'css/basic/master.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
 		<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
 
 		<title>
@@ -21,9 +21,12 @@
 		</div>
 		<div class = "menu">
 			{% if user.is_authenticated %}
-			{{ user.username }}
-			<a href="{% url 'settings' %}">Settings</a>
-			<a href="{% url 'vinyldestination:logout' %}">Logout</a>
+			<ul>
+				<li><a href="{% url 'vinyldestination:index' %}">{{ user.username }}</a></li>
+				<li><a href="{% url 'vinyldestination:records' %}">Browse</a></li>
+				<li><a href="{% url 'settings' %}">Settings</a></li>
+				<li><a href="{% url 'vinyldestination:logout' %}">Logout</a></li>
+			</ul>
 			{% else %}
 			<form id="login_form" method="post" action="{% url 'vinyldestination:login' %}">
 				{% csrf_token %}
@@ -35,7 +38,7 @@
 				or sign in using
 				<a href="{% url 'social:begin' 'github' %}"><img src="{% static 'images/github.png' %}" alt="github" style="width:20px;"/></a>
 				<a href="{% url 'social:begin' 'facebook' %}"><img src="{% static 'images/facebook.png' %}" alt="facebook" style="width:20px;"/></a>
-				<a href="{% url 'social:begin' 'twitter' %}"><img src="{% static 'images/twitter.png' %}" alt="twitter" style="width:20px;"/></a>
+				<a href="{% url 'social:begin' 'twitter' %}"><img src="{% static 'images/twit.png' %}" alt="twitter" style="width:20px;"/></a>
 			</form>
 			{% endif %}
 		</div>
@@ -47,6 +50,6 @@
 	{% block content %}
     {% endblock content %}
     <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.js' %}"></script>
-	</body>
 
+	</body>
 </html>

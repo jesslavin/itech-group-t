@@ -2,33 +2,19 @@
 {% load staticfiles %}
 
 {% block body_block %}
-<h2>Top 10 Records</h2>
-		<div>
-		{% if records_pop %}
-			<ul>
-					{% for record in records_pop %}
-				<li>
-					<a href="/vinyldestination/records/{{record.slug }}/">{{record.a_id}} - {{ record.name }}</a>
-				</li>
-					{% endfor %}
-			</ul>
-		{% else %}
-			<strong>There are no records present.</strong>
-			{% endif %}
-		</div>
 
-<h2>All Records</h2>
-		<div>
-		{% if records_all %}
-			<ul>
-					{% for record in records_all %}
-				<li>
-					<a href="/vinyldestination/records/{{record.slug }}/">{{record.a_id}} - {{ record.name }}</a>
-				</li>
-					{% endfor %}
-			</ul>
-		{% else %}
-			<strong>There are no records present.</strong>
-			{% endif %}
-		</div>
+<h1>All Records</h1>
+
+<div>
+	{% if records_all %}
+	<ul>
+		{% for record in records_all %}
+		<a href="{% url 'vinyldestination:records' %}{{ record.slug }}/"><img id="recordartwork" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
+		{% endfor %}
+	</ul>
+	{% else %}
+	<strong>There are no records present.</strong>
+	{% endif %}
+</div>
+
 {% endblock %}
