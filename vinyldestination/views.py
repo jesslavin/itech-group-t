@@ -169,25 +169,33 @@ def show_artist(request, artist_name_slug):
 
 @login_required
 def add_review(request, record_name_slug):
+	try:
+		record = Record.objects.get(slug=record_name_slug)
+	except Record.DoesNotExist:
+		record = None
 
-	record = Record.objects.get(slug=record_name_slug)
+	if Record is None:
+		return redirect('/vinyldestination/records/record_name_slug')
+
+	form = ReviewForm()
 
 	if request.method == 'POST':
-		review_form = ReviewForm(request.POST)
+		form = ReviewForm(request.POST)
 
-		if review_form.is_valid():
-			review = review_form.save()
-			review.author = get_user_model()
-			review.record = record
-			review_form.save()
-			return HttpResponseRedirect('/thanks/')
+		if form.is_valid():
+			if record:
+				review = form.save(commit=False)
+				review.record = record
+				review.author
+				review.save()
+
+				return redirect(reverse('vinyldestination:show_record',
+										kwargs={'record_name_slug':
+											record_name_slug}))
 		else:
-			print()
-	else:
-		review_form = ReviewForm()
-	context_dict = {}
-	context_dict['review_form'] = review_form
-	context_dict['record'] = record
+			print(form.errors)
+
+	context_dict = {'form':form,'record':record}
 	return render(request, 'vinyldestination/add_review.html', context=context_dict)
 
 def artists(request):

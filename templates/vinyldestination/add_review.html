@@ -5,30 +5,16 @@
 {% endblock %}
 
 {% block body_block %}
+		<h1>Add a Review</h1>
 		<div>
-		<h1>Add a Review...</h1>
-		<img id="recordartwork" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}">
-		<h2>You are leaving a review for {{record.name}} by {{record.a_id}}</h2>
-		</div>
-		<hr>
-		<div>
-			<form id="review_form" method="post" action="{% url 'vinyldestination:records' %}"
-		  enctype="multipart/form-data">
-		  {% csrf_token %}
-		  {{ review_form.non_field_errors }}
-		<div class="fieldWrapper">
-		    {{ review_form.title.errors }}
-		    <label for="{{ review_form.title.id_for_label }}">Title of review:</label>
-		    {{ review_form.title }}
-		</div>
-		<br>
-		<div class="fieldWrapper">
-		    {{ review_form.non_field.errors }}
-		    <label for="{{ form.review.id_for_label }}">Your review:</label>
-		    {{ review_form.review }}
-		</div>
-		<br>
-		<input type="submit" id="button" name="submit" value="Submit Review" />
-			<form>
+			<h2>You are leaving a review for {{record.name}} by {{record.a_id}}
+			<form id="page_form" method="post" action="/vinyldestination/records/{{record.slug}}/add_review/">
+				{% csrf_token %}
+                {% for field in form.visible_fields %}
+                    {{ field.help_text }}
+                    {{ field }}
+				{% endfor %}
+				<input type="submit" name="submit" value="Create Review"/>
+			</form>
 		</div>
 {% endblock %}
