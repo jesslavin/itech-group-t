@@ -62,7 +62,8 @@ body
     flex-wrap:nowrap;
     justify-content:center;
     align-items:center;
-	background-color:#c3c3c3;
+   background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(252,150,120,1) 0%, rgba(247,108,127,1) 100.4% );
+
     }
 
 .info

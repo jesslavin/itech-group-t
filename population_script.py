@@ -171,10 +171,23 @@ def populate():
                                   "this point, and shows off soft, delicately made songs that hadn't quite become "
                                   "fanciful and twee yet. Also, the album artwork is really something, huh?",
                    'genre': 'Alternative',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '59',
+                   'likes': '32'},
+             '1': {'r_id': '20',
+                   'name': 'Dear Catastrophe Waitress',
+                   'year': '2003',
+                   'image': '/images/records/Belle and Sebastian - Dear Catastrophe Waitress.jpg',
+                   'description': "Belle and Sebastian called upon Trevor Horn to produce Dear Catastrophe Waitress, "
+                                  "the band's sixth album. The resulting sound was one that exhibited the strong pop "
+                                  "sensabilities that had always been at the band's heart. While some fans recoiled "
+                                  "at the move away from the lo-fi sounds of the band's previous work, songs such as "
+                                  "'Step into My Office Baby' and 'I'm a Cuckoo', brought a new audience, "
+                                  "without betraying their indie-disco cred.",
+                   'genre': 'Alternative',
+                   'views': '43',
+                   'likes': '12'}},
         'The Beths':
-            {'1': {'r_id': '1',
+            {'0': {'r_id': '1',
                    'name': 'Future Me Hates Me',
                    'year': '2018',
                    'image': '/images/records/The Beths - Future Me Hates Me.jpg',
@@ -185,10 +198,10 @@ def populate():
                                   "jazz chops ensures a higher level of musicianship that one usually finds on these "
                                   "sort of LPs.",
                    'genre': 'Alternative',
-                   'views': '10',
-                   'likes': '10'}},
+                   'views': '171',
+                   'likes': '75'}},
         'Childish Gambino':
-            {'2': {'r_id': '2',
+            {'0': {'r_id': '2',
                    'name': 'Because the internet',
                    'year': '2013',
                    'image': '/images/records/Childish Gambino - Because the internet.jpg',
@@ -200,10 +213,35 @@ def populate():
                                   "with production handled by Gambino himself, Christian Rich, Thundercat and Ludwig "
                                   "Goransson among others.",
                    'genre': 'Hip-Hop',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '76',
+                   'likes': '35'},
+             '1': {'r_id': '21',
+                   'name': 'Awaken, My Love',
+                   'year': '2016',
+                   'image': '/images/records/Childish Gambino - Awaken My Love.jpg',
+                   'description': "Donald Glover's 3rd album as Childish Gambino leant heavily into a psych-funk "
+                                  "lineage, from the Afro-futurist inspired cover, to the instrumental workouts on "
+                                  "many of the tracks. Gambino's dominant role throughout exhibited the record's "
+                                  "discontinuity with the p-funk influences, so clear on the arrangements, "
+                                  "bringing to mind instead the roles of Prince, or even - whisper - Frank Zappa, "
+                                  "as band-leader.  ",
+                   'genre': 'Hip-Hop',
+                   'views': '189',
+                   'likes': '89'}},
         'Courtney Barnett':
-            {'3': {'r_id': '3',
+            {'0': {'r_id': '22',
+                   'name': 'The Double EP: A Sea of Split Peas',
+                   'year': '2013',
+                   'image': '/images/records/Courtney Barnett - A Sea of Split Peas.jpg',
+                   'description': "Bringing together Barnett's first two EPs 'A Sea of Split Peas' drew greater "
+                                  "attention to the lyrical prowess the Australian singer/songwriter was already "
+                                  "demonstrating, so early in her career. Though not intended to serve as full-length "
+                                  "debut, the near hour-long runtime was suggestive of the productivity Barnett has "
+                                  "continued to achieve in her recording and touring.",
+                   'genre': 'Alternative',
+                   'views': '69',
+                   'likes': '34'},
+             '1': {'r_id': '3',
                    'name': 'Tell Me How You Really Feel',
                    'year': '2018',
                    'image': '/images/records/Courtney Barnett - Tell Me How You Really Feel.jpg',
@@ -212,10 +250,10 @@ def populate():
                                   "more serious tone capturing more obviously the beauty and warmth in her delivery. "
                                   "She's becoming increasingly popular so this will be a big 'un.",
                    'genre': 'Alternative',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '63',
+                   'likes': '23'}},
         'Diet Cig':
-            {'4': {'r_id': '4',
+            {'0': {'r_id': '4',
                    'name': ' Over Easy',
                    'year': '2015',
                    'image': '/images/records/Diet Cig - Over Easy.jpg',
@@ -224,10 +262,10 @@ def populate():
                                   "progressions and enjoy the bridge built between indie rock and pop punk. Over Easy "
                                   "is five songs, an EP if you will, and it was initially released in 2015.",
                    'genre': 'Alternative',
-                   'views': '10',
-                   'likes': '10'}},
+                   'views': '37',
+                   'likes': '12'}},
         'Fleetwood Mac':
-            {'5': {'r_id': '5',
+            {'0': {'r_id': '5',
                    'name': 'Rumours',
                    'year': '1977',
                    'image': '/images/records/Fleetwood Mac - Rumours.jpg',
@@ -237,10 +275,38 @@ def populate():
                                   "but the album has a dark lyrical undertone as the band's internal dynamic "
                                   "was..um..complicated to say the least.",
                    'genre': 'Pop',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '90',
+                   'likes': '54'},
+             '1': {'r_id': '23',
+                   'name': 'Tusk',
+                   'year': '1979',
+                   'image': '/images/records/Fleetwood Mac - Tusk.jpg',
+                   'description': "Without the gravitational distortion effected upon Fleetwood Mac's catalogue by "
+                                  "the band's previous album 'Rumours', its easy to imagine this record enjoying "
+                                  "similar levels of sales and acclaim to its more celebrated predecessor. However its "
+                                  "hard to imagine that Tusk would take the form that it does without 'Rumours'"
+                                  "looming over proceedings. A sense of exhaustion pervades across the album's 20 "
+                                  "tracks. While that may help to explain the lack of comparable commercial success, "
+                                  "the sounds of a band struggling to come to terms with success, and each other, have "
+                                  "seldom sounded so true to its talent.",
+                   'genre': 'Pop',
+                   'views': '87',
+                   'likes': '64'},
+             '2': {'r_id': '24',
+                   'name': 'Tango in the Night',
+                   'year': '1987',
+                   'image': '/images/records/Fleetwood Mac - Tango in the Night.jpg',
+                   'description': "A decade on from 'Rumours', 'Tango in the Night' brought to an end the recorded "
+                                  "output of this most celebrated line-up of Fleetwood Mac. Lead single 'Big Love' "
+                                  "found an unexpected audience in the flourishing European rave scene, indicating "
+                                  "both the band's continued success at harmonising melody and rhythm, and the its "
+                                  "increasing dislocation within the musical landscape.",
+                   'genre': 'Pop',
+                   'views': '199',
+                   'likes': '89'}
+             },
         'Girlpool':
-            {'6': {'r_id': '6',
+            {'0': {'r_id': '6',
                    'name': 'Before The World Was Big',
                    'year': '2015',
                    'image': '/images/records/Girlpool - Before The World Was Big.jpg',
@@ -250,10 +316,10 @@ def populate():
                                   'identity, intertwined with unbelievable melodies that are modestly stated but '
                                   'deeply felt. Phew.',
                    'genre': 'Alternative',
-                   'views': '10',
-                   'likes': '10'}},
+                   'views': '77',
+                   'likes': '34'}},
         'Janelle Monae':
-            {'7': {'r_id': '7',
+            {'0': {'r_id': '7',
                    'name': 'Dirty Computer',
                    'year': '2018',
                    'image': '/images/records/Janelle Monae - Dirty Computer.jpg',
@@ -263,10 +329,10 @@ def populate():
                                   'by the late Prince himself. The album also hosts the dulcet tones of Brian Wilson, '
                                   'Zoë Kravitz, Grimes and Pharrell Williams.',
                    'genre': 'R&B',
-                   'views': '10',
-                   'likes': '10'}},
+                   'views': '176',
+                   'likes': '67'}},
         'Kendrick Lamar':
-            {'8': {'r_id': '8',
+            {'0': {'r_id': '8',
                    'name': 'DAMN',
                    'year': '2017',
                    'image': '/images/records/Kendrick Lamar - DAMN.jpg',
@@ -275,13 +341,26 @@ def populate():
                                   'doesn’t need any big-name support to tell a narrative and craft wonderful beats. '
                                   'This soon-to-be-album-of-the-year record is released by Polydor.',
                    'genre': 'Hip-Hop',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '164',
+                   'likes': '89'},
+             '1': {'r_id': '25',
+                   'name': 'To Pimp a Butterfly',
+                   'year': '2015',
+                   'image': '/images/records/Kendrick Lamar - To Pimp A Butterfly.jpg',
+                   'description': "Lamar's third full-length album seemed to pick up plaudits and awards as easily as "
+                                  "the Compton-born rapper appeared to reassert West Coast Hip-hop's claim to "
+                                  "preeminence, past and present. Such success serves to obscure the technical "
+                                  "accomplishment of the record, brought together over five studios and utilising the "
+                                  "production talent of KOZ, Pharell Williams, Thundercat and many others.",
+                   'genre': 'Hip-Hop',
+                   'views': '99',
+                   'likes': '45'}
+             },
         'Lizzo':
-            {'9': {'r_id': '9',
+            {'0': {'r_id': '9',
                    'name': 'Cuz I Love You',
                    'year': '2019',
-                   'image': '/images/records/Lizzo - Cuz I Love You.jpg',
+                   'image': '/images/records/Lizzo - Cuz I Love Yo.jpg',
                    'description': 'The debut album from Lizzo, featuring the hit singles "Juice," "Truth Hurts,'
                                   '" and a brand new version of “Good As Hell” featuring Arianna Grande. When you '
                                   'love yourself, anything becomes possible. Channeling boundless self-confidence '
@@ -291,146 +370,202 @@ def populate():
                                   'herself to the fullest, she speaks her mind, censors nothing, and delivers an '
                                   'enviable level of honesty, pure passion, and fresh fire.',
                    'genre': 'Pop',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '86',
+                   'likes': '60'}},
         'Lucy Dacus':
-            {'10': {'r_id': '10',
-                    'name': 'Historian',
-                    'year': '2019',
-                    'image': '/images/records/Lucy Dacus - Historian.jpg',
-                    'description': 'Indie-rock sensation Lucy Dacus returns with her second album, Historian. She '
-                                   'feels as though, she left every bit of herself on the tape, saying everything she '
-                                   'wanted to say. A fuller sound than debut record, No Burden, has been brought '
-                                   'about with mixing input from producer John Congleton (He’s worked with just about '
-                                   'everyone) and instrumental help from guitarist Jacob Blizzard. LP and CD on '
-                                   'Matador.',
-                    'genre': 'Indie',
-                    'views': '10',
-                    'likes': '10'}},
+            {'0': {'r_id': '10',
+                   'name': 'Historian',
+                   'year': '2019',
+                   'image': '/images/records/Lucy Dacus - Historian.jpg',
+                   'description': 'Indie-rock sensation Lucy Dacus returns with her second album, Historian. She '
+                                  'feels as though, she left every bit of herself on the tape, saying everything she '
+                                  'wanted to say. A fuller sound than debut record, No Burden, has been brought '
+                                  'about with mixing input from producer John Congleton (He’s worked with just about '
+                                  'everyone) and instrumental help from guitarist Jacob Blizzard. LP and CD on '
+                                  'Matador.',
+                   'genre': 'Indie',
+                   'views': '143',
+                   'likes': '89'}},
         'Pictish Trail':
-            {'11': {'r_id': '11',
-                    'name': 'Thumb World',
-                    'year': '2020',
-                    'image': '/images/records/Pictish Trail - Thumb World.jpg',
-                    'description': 'Scottish producer Johnny Lynch prepares the release of his eighth album as '
-                                   'Pictish Trail, following four years on from his Scottish Album of the '
-                                   'Year-winning Future Echoes. Probably his weirdest and most collaborative work '
-                                   'yet, Thumb World was forged alongside visual artist Swatpaz, a process that had '
-                                   'them both imagining that the music was taking place in a retro ‘80s arcade game '
-                                   'world.',
-                    'genre': 'Alternative',
-                    'views': '0',
-                    'likes': '0'}},
+            {'0': {'r_id': '11',
+                   'name': 'Thumb World',
+                   'year': '2020',
+                   'image': '/images/records/Pictish Trail - Thumb World.jpg',
+                   'description': 'Scottish producer Johnny Lynch prepares the release of his eighth album as '
+                                  'Pictish Trail, following four years on from his Scottish Album of the '
+                                  'Year-winning Future Echoes. Probably his weirdest and most collaborative work '
+                                  'yet, Thumb World was forged alongside visual artist Swatpaz, a process that had '
+                                  'them both imagining that the music was taking place in a retro ‘80s arcade game '
+                                  'world.',
+                   'genre': 'Alternative',
+                   'views': '45',
+                   'likes': '20'}},
         'Porridge Radio':
-            {'12': {'r_id': '12',
-                    'name': 'Every Bad',
-                    'year': '2020',
-                    'image': '/images/records/Porridge Radio - Every Bad.jpg',
-                    'description': 'Heavily tipped newcomers Porridge Radio announce their debut studio album Every '
-                                   'Bad, following exposure from BBC 6 Music and Radio X among others. Formed around '
-                                   'an initial solo project by now-lead singer Dana Margolin and her bedroom-composed '
-                                   'tracks, their thoughtful, DIY indie approach has made them one of the most '
-                                   'exciting new bands in Britain. ',
-                    'genre': 'Alternative',
-                    'views': '10',
-                    'likes': '10'}},
+            {'0': {'r_id': '12',
+                   'name': 'Every Bad',
+                   'year': '2020',
+                   'image': '/images/records/Porridge Radio - Every Bad.jpg',
+                   'description': 'Heavily tipped newcomers Porridge Radio announce their debut studio album Every '
+                                  'Bad, following exposure from BBC 6 Music and Radio X among others. Formed around '
+                                  'an initial solo project by now-lead singer Dana Margolin and her bedroom-composed '
+                                  'tracks, their thoughtful, DIY indie approach has made them one of the most '
+                                  'exciting new bands in Britain. ',
+                   'genre': 'Alternative',
+                   'views': '135',
+                   'likes': '62'}},
         'Proclaimers':
-            {'13': {'r_id': '13',
-                    'name': 'Sunshine On Leith',
-                    'year': '1988',
-                    'image': '/images/records/Proclaimers - Sunshine on Leith.jpg',
-                    'description': "Sunshine on Leith is the second studio album by Scottish folk rock duo The "
-                                   "Proclaimers, released in August 1988 though Chrysalis Records. The record spawned "
-                                   "four singles, \"I\'m Gonna Be (500 Miles)\", which topped charts in Australia, "
-                                   "New Zealand and Iceland, \"Sunshine on Leith\", a ballad which has become an "
-                                   "anthem for Scottish football club Hibernian F.C., the No. 3 Australian hit \"I\'m "
-                                   "on My Way\", and the Australian-exclusive \"Then I Met You\". The non-single "
-                                   "\"Cap in Hand\" also came to prominence in 2014 with the Scottish Independence "
-                                   "referendum.",
-                    'genre': 'Rock',
-                    'views': '0',
-                    'likes': '0'}},
+            {'0': {'r_id': '13',
+                   'name': 'Sunshine On Leith',
+                   'year': '1988',
+                   'image': '/images/records/Proclaimers - Sunshine on Leith.jpg',
+                   'description': "Sunshine on Leith is the second studio album by Scottish folk rock duo The "
+                                  "Proclaimers, released in August 1988 though Chrysalis Records. The record spawned "
+                                  "four singles, \"I\'m Gonna Be (500 Miles)\", which topped charts in Australia, "
+                                  "New Zealand and Iceland, \"Sunshine on Leith\", a ballad which has become an "
+                                  "anthem for Scottish football club Hibernian F.C., the No. 3 Australian hit \"I\'m "
+                                  "on My Way\", and the Australian-exclusive \"Then I Met You\". The non-single "
+                                  "\"Cap in Hand\" also came to prominence in 2014 with the Scottish Independence "
+                                  "referendum.",
+                   'genre': 'Rock',
+                   'views': '78',
+                   'likes': '41'}},
         'Robyn':
-            {'14': {'r_id': '14',
-                    'name': 'Body Talk',
-                    'year': '2010',
-                    'image': '/images/records/Robyn - Body Talk.jpg',
-                    'description': "Melding dancehall with bubblegum pop, heartbroken love songs with hilariously "
-                                   "catty weirdness, and euphorically catchy melodies with propulsive rhythms, "
-                                   "Body Talk-- which combines the five-song Body Talk Pt. 3 with, outside of Pt. 1's "
-                                   "uncommonly wise \"Cry When You Get Older\", the highlights from the first two "
-                                   "mini-albums-- is a deeply affecting pop record.",
-                    'genre': 'Dance',
-                    'views': '0',
-                    'likes': '0'}},
+            {'0': {'r_id': '14',
+                   'name': 'Body Talk',
+                   'year': '2010',
+                   'image': '/images/records/Robyn - Body Talk.jpg',
+                   'description': "Melding dancehall with bubblegum pop, heartbroken love songs with hilariously "
+                                  "catty weirdness, and euphorically catchy melodies with propulsive rhythms, "
+                                  "Body Talk-- which combines the five-song Body Talk Pt. 3 with, outside of Pt. 1's "
+                                  "uncommonly wise \"Cry When You Get Older\", the highlights from the first two "
+                                  "mini-albums-- is a deeply affecting pop record.",
+                   'genre': 'Dance',
+                   'views': '89',
+                   'likes': '47'},
+             '1': {'r_id': '26',
+                   'name': 'Robyn',
+                   'year': '2005',
+                   'image': '/images/records/Robyn - Robyn.jpg',
+                   'description': "Robyn's move to a more dance-pop orientated sound succeeded in bringing widespread "
+                                  "attention to the Swedish singer-songwriter on this, her first release on her own "
+                                  "Konichiwa Records. Boasting the breakout hit 'With Every Heartbeat', 'Robyn' gave "
+                                  "credence to the new dawn of synth-led dance-pop, spawning a host of pale imitators, "
+                                  " if only to leave them in the dust on every subsequent outing. ",
+                   'genre': 'Pop',
+                   'views': '76',
+                   'likes': '37'}},
         'Snail Mail':
-            {'15': {'r_id': '15',
-                    'name': 'Lush',
-                    'year': '2018',
-                    'image': '/images/records/Snail Mail - Lush.jpg',
-                    'description': 'Snail Mail’s full-length debut album, Lush, is a debut for the record books — a '
-                                   'refreshing marvel of songwriting and technical composition, that’s both cohesive '
-                                   'and explosive — Her voice rises and falls with electricity throughout, '
-                                   'spinning with bold excitement and new beginnings at every turn. Lush feels at '
-                                   'times like an emotional rollercoaster, only fitting for Jordan’s explosive, '
-                                   'dynamic personality.',
-                    'genre': 'Indie',
-                    'views': '0',
-                    'likes': '0'}},
+            {'0': {'r_id': '15',
+                   'name': 'Lush',
+                   'year': '2018',
+                   'image': '/images/records/Snail Mail - Lush.jpg',
+                   'description': 'Snail Mail’s full-length debut album, Lush, is a debut for the record books — a '
+                                  'refreshing marvel of songwriting and technical composition, that’s both cohesive '
+                                  'and explosive — Her voice rises and falls with electricity throughout, '
+                                  'spinning with bold excitement and new beginnings at every turn. Lush feels at '
+                                  'times like an emotional rollercoaster, only fitting for Jordan’s explosive, '
+                                  'dynamic personality.',
+                   'genre': 'Indie',
+                   'views': '122',
+                   'likes': '88'}},
         'Soccer Mommy':
-            {'16': {'r_id': '16',
-                    'name': 'color theory',
-                    'year': '2020',
-                    'image': '/images/records/Soccer Mommy - Color theory.jpg',
-                    'description': 'color theory by Soccer Mommy (AKA Sophie Allison) is the follow up to 2018’s '
-                                   'rather marvellous Clean. Here she lays herself bare to listeners through '
-                                   'unflinchingly honest lyrics that detail her struggles with mental health and her '
-                                   'family. It seems that writing about these issues has been a cathartic process for '
-                                   'the resilient 22 year-old.',
-                    'genre': 'Alternative',
-                    'views': '0',
-                    'likes': '0'}},
+            {'0': {'r_id': '16',
+                   'name': 'color theory',
+                   'year': '2020',
+                   'image': '/images/records/Soccer Mommy - Color theory.jpg',
+                   'description': 'color theory by Soccer Mommy (AKA Sophie Allison) is the follow up to 2018’s '
+                                  'rather marvellous Clean. Here she lays herself bare to listeners through '
+                                  'unflinchingly honest lyrics that detail her struggles with mental health and her '
+                                  'family. It seems that writing about these issues has been a cathartic process for '
+                                  'the resilient 22 year-old.',
+                   'genre': 'Alternative',
+                   'views': '123',
+                   'likes': '76'},
+             '1': {'r_id': '27',
+                   'name': 'Clean',
+                   'year': '2018',
+                   'image': '/images/records/Soccer Mommy - Clean.jpg',
+                   'description': "With her official debut album, Sophia Regina Allison added studio polish and the "
+                                  "support of a full band to the distinctive melodic sound - by turns plaintive and "
+                                  "playful - she had honed on a slew of self-released Bandcamp offerings EPs. 'Clean' "
+                                  "demonstrates the ongoing development of an artist already in command of "
+                                  "considerable songwriting purpose.",
+                   'genre': 'Alternative',
+                   'views': '35',
+                   'likes': '9'}
+             },
         'Taylor Swift':
-            {'17': {'r_id': '17',
-                    'name': '1989',
-                    'year': '2014',
-                    'image': '/images/records/Taylor Swift - 1989.jpg',
-                    'description': "Taylor Swift, seven-time GRAMMY award winner, and the youngest recipient in "
-                                   "history of the music industry’s highest honor, the GRAMMY Award for Album of the "
-                                   "Year. '1989' is a touchstone - Taylor's songwriting and sonic evolution surprises "
-                                   "us more than ever before. Heavily keyboard and beat-driven, the pop sensibilities "
-                                   "that have always been the hallmark of Taylor’s music now move front and centre on "
-                                   "'1989'.",
-                    'genre': 'Pop',
-                    'views': '0',
-                    'likes': '0'}},
+            {'0': {'r_id': '17',
+                   'name': '1989',
+                   'year': '2014',
+                   'image': '/images/records/Taylor Swift - 1989.jpg',
+                   'description': "Taylor Swift, seven-time GRAMMY award winner, and the youngest recipient in "
+                                  "history of the music industry’s highest honor, the GRAMMY Award for Album of the "
+                                  "Year. '1989' is a touchstone - Taylor's songwriting and sonic evolution surprises "
+                                  "us more than ever before. Heavily keyboard and beat-driven, the pop sensibilities "
+                                  "that have always been the hallmark of Taylor’s music now move front and centre on "
+                                  "'1989'.",
+                   'genre': 'Pop',
+                   'views': '97',
+                   'likes': '58'},
+             '1': {'r_id': '28',
+                   'name': 'Red',
+                   'year': '2012',
+                   'image': '/images/records/Taylor Swift - Red.jpg',
+                   'description': "'Red' served as Taylor Swift's first full-throated assault on the pop market, "
+                                  "bringing the vocal and songwriting charm she had already honed on her three "
+                                  "previous, decreasingly country-situated outings. The attempt was disarmingly "
+                                  "successful, converting countless new listeners to the brio and chops many had been "
+                                  "disinclined to credit on her earlier releases. The release of seven singles from "
+                                  "album testifies not only to its strength, and the commercial bent of the "
+                                  "Swift-machine, but to the enlarged and enraptured audience Swift had found."
+                 ,
+                   'genre': 'Pop',
+                   'views': '73',
+                   'likes': '33'},
+             '2': {'r_id': '29',
+                   'name': 'Lover',
+                   'year': '2019',
+                   'image': '/images/records/Taylor Swift - Lover.jpg',
+                   'description': "Attempting to rehabilitate Taylor Swift after 2017's poorly received 'reputation', "
+                                  "'Lover' served to reassure her fanbase that the previous album was nothing but a "
+                                  "stumble for the Swift-juggernaut. While many struggled to hide their titters at the "
+                                  "musician's gushing over what they hope is her apex-Englishboy, 'Lover' offered "
+                                  "evidence - if it were still required - of Swift's control of her songwriting "
+                                  "talent. 'The Man', 'Paper Rings' and 'Soon You'll Get Better' stand as particular "
+                                  "highlights across the 18 tracks with which Swift indicates how fertile her "
+                                  "marriage of pop and AOR has been.",
+                   'genre': 'Pop',
+                   'views': '193',
+                   'likes': '80'}
+             },
         'Waxahatchee':
-            {'18': {'r_id': '18',
-                    'name': 'Ivy Trip',
-                    'year': '2015',
-                    'image': '/images/records/Waxahatchee - Ivy Trip.jpg',
-                    'description': "Katie Crutchfield's southern roots are undeniable. The name of her solo musical "
-                                   "project Waxahatchee comes from a creek not far from her childhood home in Alabama "
-                                   "and seems to represent both where she came from and where she's going. Ivy Tripp, "
-                                   "drifts confidently from its predecessors and brings forth a more informed and "
-                                   "powerful recognition of where Crutchfield has currently found herself. The lament "
-                                   "and grieving for her youth seem to have been replaced with control and sheer "
-                                   "self-honesty.",
-                    'genre': 'Alternative',
-                    'views': '0',
-                    'likes': '0'}},
+            {'0': {'r_id': '18',
+                   'name': 'Ivy Trip',
+                   'year': '2015',
+                   'image': '/images/records/Waxahatchee - Ivy Trip.jpg',
+                   'description': "Katie Crutchfield's southern roots are undeniable. The name of her solo musical "
+                                  "project Waxahatchee comes from a creek not far from her childhood home in Alabama "
+                                  "and seems to represent both where she came from and where she's going. Ivy Tripp, "
+                                  "drifts confidently from its predecessors and brings forth a more informed and "
+                                  "powerful recognition of where Crutchfield has currently found herself. The lament "
+                                  "and grieving for her youth seem to have been replaced with control and sheer "
+                                  "self-honesty.",
+                   'genre': 'Alternative',
+                   'views': '77',
+                   'likes': '23'}},
         'Wolf Alice':
-            {'19': {'r_id': '19',
-                    'name': 'My Love Is Cool',
-                    'year': '2015',
-                    'image': '/images/records/Wolf Alice - My Love Is Cool.jpg',
-                    'description': 'The debut album from London’s Wolf Alice, My Love Is Cool take further leaps into '
-                                   'rock territory following their folksy beginnings. Very in tune with the modern '
-                                   'strain of motorik krautrock whilst retaining an ear for melody, it’s like a '
-                                   'diluted Sonic Youth for the kids. Out on CD and vinyl double LP from Dirty Hit.',
-                    'genre': 'Alternative',
-                    'views': '0',
-                    'likes': '0'}}}
+            {'0': {'r_id': '19',
+                   'name': 'My Love Is Cool',
+                   'year': '2015',
+                   'image': '/images/records/Wolf Alice - My Love Is Cool.jpg',
+                   'description': 'The debut album from London’s Wolf Alice, My Love Is Cool take further leaps into '
+                                  'rock territory following their folksy beginnings. Very in tune with the modern '
+                                  'strain of motorik krautrock whilst retaining an ear for melody, it’s like a '
+                                  'diluted Sonic Youth for the kids. Out on CD and vinyl double LP from Dirty Hit.',
+                   'genre': 'Alternative',
+                   'views': '78',
+                   'likes': '42'}}}
 
     shops = [
         {'s_id': '0',
@@ -474,13 +609,27 @@ def populate():
              '1': {'stock_item': '1'},
              '2': {'stock_item': '2'},
              '3': {'stock_item': '3'},
-             '4': {'stock_item': '4'},
-             '5': {'stock_item': '5'}},
+             '5': {'stock_item': '4'},
+             '6': {'stock_item': '25'},
+             '7': {'stock_item': '26'},
+             '8': {'stock_item': '27'},
+             '9': {'stock_item': '28'},
+             '10': {'stock_item': '29'},
+             '11': {'stock_item': '10'},
+             '12': {'stock_item': '15'},
+             '13': {'stock_item': '20'},
+             '14': {'stock_item': '22'},
+             '15': {'stock_item': '8'}},
         'Roundabout Records':
             {'0': {'stock_item': '6'},
              '1': {'stock_item': '7'},
              '2': {'stock_item': '8'},
-             '3': {'stock_item': '9'}},
+             '3': {'stock_item': '19'},
+             '4': {'stock_item': '21'},
+             '5': {'stock_item': '23'},
+             '6': {'stock_item': '24'},
+             '7': {'stock_item': '25'},
+             '8': {'stock_item': '28'}},
         'Whiteinch 12inch':
             {'0': {'stock_item': '9'},
              '1': {'stock_item': '10'},
@@ -615,7 +764,43 @@ def populate():
                     'rating': 4},
              '19': {'title': 'Should be getting more love.',
                     'review': 'Just wish I had a turntable setup for the bath!',
-                    'rating': 4}}
+                    'rating': 4}},
+        'Charlie_TestUser':
+            {'20': {'title': 'Pose a question',
+                    'review': "These poseurs have been chancing their arm for far to long. Beat it.",
+                    'rating': 1},
+             '21': {'title': 'Pleasantly surprised',
+                    'review': "When someone told me Danny Glover had released a p-funk album, I couldn't believe it. "
+                              "And on hearing this, I still can't. ",
+                    'rating': 1},
+             '22': {'title': 'No extras',
+                    'review': "Having been there from the start, I already had 'I've Got a Friend Called Emily Ferris' "
+                              "and 'How to Carve a Carrot into a Rose' (that one's signed). I'm glad people have a "
+                              "chance to pick these up, but c'mon, where were you?",
+                    'rating': 3},
+             '23': {'title': 'snaggle-tooth',
+                    'review': "'Rumours' went straight to their head, apparently. Presumably up their noses.",
+                    'rating': 1},
+             '24': {'title': 'Tango in the Night',
+                    'review': "Candle in the wind more like.",
+                    'rating': 1},
+             '25': {'title': 'Slathered',
+                    'review': "Like an all-you-can-eat buffet, this seems like a good idea at the time, if that time "
+                              "was the early 90s. Or wanted to be.",
+                    'rating': 1},
+             '26': {'title': 'Still sounds fresh',
+                    'review': "Worn in to brain from too many listens. I can switch the amp off and still hear every "
+                              "beat.",
+                    'rating': 5},
+             '27': {'title': '6 (out of 10) Music',
+                    'review': "This is a real Soccer Mommy or chips moment.",
+                    'rating': 3},
+             '28': {'title': 'No Country for Old Men',
+                    'review': "So glad she's pivoted to pop.",
+                    'rating': 4},
+             '29': {'title': 'Should be the theme to IndyRef2.',
+                    'review': 'What a fall from grace! Am I the only one who can hear it?',
+                    'rating': 1}}
     }
 
     lists = {
@@ -631,7 +816,17 @@ def populate():
              '4': {'list_name': 'my list',
                    'record': '10'},
              '5': {'list_name': 'my list',
-                   'record': '19'}},
+                   'record': '19'},
+             '6': {'list_name': 'PRESENTS',
+                   'record': '21'},
+             '7': {'list_name': 'PRESENTS',
+                   'record': '25'},
+             '8': {'list_name': 'PRESENTS',
+                   'record': '26'},
+             '9': {'list_name': 'PRESENTS',
+                   'record': '28'},
+             '10': {'list_name': 'PRESENTS',
+                    'record': '29'}},
         'Kenny_TestUser':
             {'0': {'list_name': 'my list',
                    'record': '4'},
@@ -659,71 +854,31 @@ def populate():
              '7': {'list_name': 'must bring up in conversation',
                    'record': '0'}},
         'Charlie_TestUser':
-            {'0': {'list_name': 'got list',
+            {'0': {'list_name': 'Owned',
                    'record': '15'},
-             '1': {'list_name': 'got list',
+             '1': {'list_name': 'Owned',
                    'record': '9'},
-             '2': {'list_name': 'got list',
+             '2': {'list_name': 'Owned',
                    'record': '4'},
-             '3': {'list_name': 'got list',
+             '3': {'list_name': 'Owned',
                    'record': '2'},
-             '4': {'list_name': 'got list',
+             '4': {'list_name': 'Owned',
                    'record': '10'},
-             '5': {'list_name': 'get list',
+             '5': {'list_name': 'Owned',
                    'record': '7'},
-             '6': {'list_name': 'get list',
+             '6': {'list_name': 'When I get paid...',
                    'record': '8'},
-             '7': {'list_name': 'get list',
+             '7': {'list_name': 'When I get paid...',
                    'record': '19'},
-             '8': {'list_name': 'get list',
+             '8': {'list_name': 'When I get paid...',
                    'record': '5'},
-             '9': {'list_name': 'get list',
+             '9': {'list_name': 'When I get paid...',
                    'record': '14'},
-             '10': {'list_name': 'get list',
+             '10': {'list_name': 'When I get paid...',
                     'record': '16'},
-             '11': {'list_name': 'get list',
+             '11': {'list_name': 'When I get paid...',
                     'record': '13'}}
     }
-
-    #    python_pages = [
-    #        {'title': 'Official Python Tutorial',
-    #         'url': 'http://docs.python.org/3/tutorial/',
-    #         'views': 12},
-    #        {'title': 'How to Think like a Computer Scientist',
-    #         'url': 'http://www.greenteapress.com/thinkpython/',
-    #         'views': 12},
-    #        {'title': 'Learn Python in 10 Minutes',
-    #         'url': 'http://www.korokithakis.net/tutorials/python/',
-    #         'views': 12}]
-
-    #    django_pages = [
-    #        {'title': 'Official Django Tutorial',
-    #         'url': 'https://docs.djangoproject.com/en/2.1/intro/tutorial01/',
-    #         'views': 3},
-    #        {'title': 'Django Rocks',
-    #         'url': 'http://www.djangorocks.com/',
-    #         'views': 3},
-    #        {'title': 'How to Tango with Django',
-    #         'url': 'http://www.tangowithdjango.com/',
-    #         'views': 3}]
-
-    #    other_pages = [
-    #        {'title': 'Bottle',
-    #         'url': 'http://bottlepy.org/docs/dev/',
-    #         'views': 3},
-    #        {'title': 'Flask',
-    #         'url': 'http://flask.pocoo.org',
-    #         'views': 3}]
-
-    #    cats = {'Python': {'pages': python_pages,
-    #                       'views': 128,
-    #                       'likes': 64},
-    #            'Django': {'pages': django_pages,
-    #                       'views': 64,
-    #                       'likes': 32},
-    #            'Other Frameworks': {'pages': other_pages,
-    #                                 'views': 32,
-    #                                 'likes': 16}}
 
     for a in artists:
         add_artist(a['name'], a['description'], a['image'], a['insta'])
@@ -738,7 +893,7 @@ def populate():
                 likes = records[a['name']][r]['likes']
                 description = records[a['name']][r]['description']
                 genre = records[a['name']][r]['genre']
-                add_record(r_id, artist, name, year, image, views, likes, description,genre)
+                add_record(r_id, artist, name, year, image, views, likes, description, genre)
 
     #    for r in records:
     #        artist = Artist.objects.get(name=r['artist'])
