@@ -1,9 +1,19 @@
-{% extends 'vinyldestination/base.html' %}
+{% load staticfiles %}
 
-{% block body_block %}
-    <h2>Settings</h2>
-    <div>
-      <h3>GitHub</h3>
+<head>
+  <link href="{% static 'css/basic/setting.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+  <title>
+    Vinyl Destination - Settings
+  </title>
+</head>
+
+<div class = admin>
+
+  <div class = "header">
+    <a href="{% url 'vinyldestination:index' %}"><img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/></a>
+  </div>
+
+  <h3>GitHub</h3>
   {% if github_login %}
     <p>Connected as <a href="https://github.com/{{ github_login.extra_data.login }}/" target="_blank">{{ github_login.extra_data.login }}</a></p>
     {% if can_disconnect %}
@@ -18,9 +28,8 @@
   {% else %}
     <a href="{% url 'social:begin' 'github' %}">Connect to GitHub</a>
   {% endif %}
-    </div>
-    <div>
-      <h3>Facebook</h3>
+
+  <h3>Facebook</h3>
   {% if facebook_login %}
     <p>Connected as <a href="https://facebook.com/{{ facebook_login.extra_data.id }}/" target="_blank">{{ facebook_login.extra_data.id }}</a></p>
     {% if can_disconnect %}
@@ -35,7 +44,6 @@
   {% else %}
     <a href="{% url 'social:begin' 'facebook' %}">Connect to Facebook</a>
   {% endif %}
-    </div>
 
   <h3>Twitter</h3>
   {% if twitter_login %}
@@ -52,6 +60,5 @@
   {% else %}
     <a href="{% url 'social:begin' 'twitter' %}">Connect to Twitter</a>
   {% endif %}
-  {% endblock %}
 
-  
+</div>

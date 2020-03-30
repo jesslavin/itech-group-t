@@ -1,0 +1,142 @@
+body
+    {
+    font-family:Arial, Helvetica, sans-serif;
+    min-width:1000px;
+    margin:0px;
+    font-size:12px;
+    }
+
+.nav
+    {
+    font-size:12px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    }
+
+.menu
+    {
+    padding:10px 20px;
+    text-align:right;
+    margin-left:auto;
+    }
+
+ul
+    {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+    }
+
+li
+    {
+    float: left;
+    }
+
+li a
+    {
+    display: block;
+    color:black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    width: 70px;
+    }
+
+li a:hover
+    {
+    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(252,150,120,1) 0%, rgba(247,108,127,1) 100.4% );
+    }
+
+input
+    {
+    border-radius:25px;
+    padding:10px;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border:1px solid #dcdcdc;
+    }
+
+#button
+    {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:100px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	padding:10px 24px;
+	text-shadow:0px 1px 0px #ffffff;
+    font-size:12px;
+    }
+
+#button:hover
+    {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+    }
+
+#button:active
+    {
+	position:relative;
+	top:1px;
+    }
+
+.welcome
+    {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:center;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(252,150,120,1) 0%, rgba(247,108,127,1) 100.4% );
+    }
+
+.info
+    {
+    text-align:center;
+    width:50%;
+    padding:30px;
+    }
+
+.register
+    {
+    width:50%;
+    padding:20px;
+    }
+
+.trending
+    {
+    text-align:center;
+    }
+
+#recordartwork
+    {
+    max-width:19%;
+    }
+
+h1
+    {
+    text-align:center;
+    font-size:25px;
+    padding:25px;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(252,150,120,1) 0%, rgba(247,108,127,1) 100.4%);
+    }
+
+h2
+    {
+    font-size:25px
+    }
+
+h3
+    {
+    padding:5px 20px;
+    font-size:18px
+    }
+

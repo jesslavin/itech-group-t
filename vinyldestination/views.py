@@ -16,7 +16,7 @@ def index(request):
 	# Construct a dictionary to pass to the template engine as its context.
 	# Note the key boldmessage matches to {{ boldmessage }} in the template! 
 	artist_list = Artist.objects.order_by('-likes')[:5]
-	record_list = Record.objects.filter(ratings__isnull=False).order_by('ratings__average')
+	record_list = Record.objects.order_by('-views')[:10]
 
 	context_dict = {}
 	context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
