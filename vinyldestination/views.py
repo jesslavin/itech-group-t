@@ -16,7 +16,7 @@ def index(request):
 	# Construct a dictionary to pass to the template engine as its context.
 	# Note the key boldmessage matches to {{ boldmessage }} in the template! 
 	artist_list = Artist.objects.order_by('-likes')[:5]
-	record_list = Record.objects.order_by('-views')[:10]
+	record_list = Record.objects.filter(ratings__isnull=False).order_by('ratings__average')
 
 	context_dict = {}
 	context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
@@ -208,6 +208,8 @@ def show_record(request, record_name_slug):
 		context_dict['artist'] = None
 		context_dict['similar'] = None
 		context_dict['review'] = None
+
+
 	return render(request, 'vinyldestination/record.html', context=context_dict)
 
 def register(request):

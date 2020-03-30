@@ -1,7 +1,9 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
+from django.contrib.contenttypes.fields import GenericRelation
 from django.contrib.auth import get_user_model
+from star_ratings.models import Rating
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
@@ -82,6 +84,7 @@ class Record(models.Model):
     genre = models.CharField(max_length=GENRE_MAX_LENGTH)
     image = models.ImageField(upload_to='images/records/', blank=True)
     description = models.CharField(max_length=DESCRIPTION_MAX_LENGTH, blank=True)
+    ratings = GenericRelation(Rating, related_query_name='records')
     def save(self, *args, **kwargs):
         self.slug = slugify(self.a_id) + "-" + slugify(self.name)
         super(Record, self).save(*args, **kwargs)
