@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from vinyldestination.models import Artist, Record, Review
 from vinyldestination.forms import ArtistForm, PageForm, UserForm, UserProfileForm, ReviewForm
+from star_ratings.models import Rating
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -9,20 +10,49 @@ from datetime import datetime
 from django.contrib.auth.forms import AdminPasswordChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
+from django.conf import settings
 from social_django.models import UserSocialAuth
 
 # Create your views here.
 def index(request):
-	# Construct a dictionary to pass to the template engine as its context.
-	# Note the key boldmessage matches to {{ boldmessage }} in the template! 
-	artist_list = Artist.objects.order_by('-likes')[:5]
-	record_list = Record.objects.filter(ratings__isnull=False).order_by('ratings__average')
+	registered = False
 
+	if request.method == 'POST':
+		user_form = UserForm(request.POST)
+		profile_form = UserProfileForm(request.POST)
+
+		if user_form.is_valid() and profile_form.is_valid():
+			user = user_form.save()
+
+			user.set_password(user.password)
+			user.save()
+			profile = profile_form.save(commit=False)
+			profile.user = user
+
+			if 'picture' in request.FILES:
+				profile.picture = request.FILES['picture']
+
+			profile.save()
+
+			registered = True
+		else:
+			print(user_form.errors, profile_form.errors)
+	else:
+		user_form = UserForm()
+		profile_form = UserProfileForm()
+	
+	artist_list = Artist.objects.order_by('-likes')[:5]
+	record_list = Record.objects.order_by('-views')[:10]
+	record_list = Record.objects.order_by('-ratings__average')[:10]
+	
+# Construct a dictionary to pass to the template engine as its context.
+# Note the key boldmessage matches to {{ boldmessage }} in the template! 
 	context_dict = {}
 	context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
 	context_dict['artists'] = artist_list
 	context_dict['records'] = record_list
-
+	context_dict['user_form'] = user_form
+	context_dict['profile_form'] = profile_form
 	visitor_cookie_handler(request)
 
 	# Return a rendered response to send to the client.
@@ -156,6 +186,7 @@ def add_review(request, record_name_slug):
 			if record:
 				review = form.save(commit=False)
 				review.record = record
+				review.author
 				review.save()
 
 				return redirect(reverse('vinyldestination:show_record',

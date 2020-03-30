@@ -15,7 +15,6 @@ urlpatterns = [
     path('artists/<slug:artist_name_slug>/', views.show_artist,
         name='show_artist'),
     path('register/', views.register, name='register'), 
-    path('restricted/', views.restricted, name='restricted'),
     path('login/', views.user_login, name='login'),
     path('logout/', views.user_logout, name='logout'),
 ]

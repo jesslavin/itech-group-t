@@ -21,10 +21,29 @@ Vinyl Destination
 	</div>
 
 	<div class = "register">
-		****** ADD FORM HERE ******
+		<h2> Register Here </h2>
+		{{ form.non_field_errors }}
+		<div class="fieldWrapper">
+		    {{ form.username.errors }}
+		    <label for="{{ user_form.username.id_for_label }}">Username:</label>
+		    {{ user_form.username }}
+			</div>
+		<br>
+		<div class="fieldWrapper">
+		    {{ form.email.errors }}
+		    <label for="{{ user_form.email.id_for_label }}">Email:</label>
+		    {{ user_form.email }}
+			</div>
+		<br>
+		<div class="fieldWrapper">
+		    {{ form.password.errors }}
+		    <label for="{{ form.sender.id_for_label }}">Password:</label>
+		    {{ user_form.password }}
+			</div>
+			<br>
+			<input type="submit" id="button" name="submit" value="Register" />
+		</div>
 	</div>
-
-</div>
 
 {% endif %}
 

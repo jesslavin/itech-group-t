@@ -7,6 +7,7 @@
 {% block body_block %}
 		<h1>Add a Review</h1>
 		<div>
+			<h2>You are leaving a review for {{record.name}} by {{record.a_id}}
 			<form id="page_form" method="post" action="/vinyldestination/records/{{record.slug}}/add_review/">
 				{% csrf_token %}
                 {% for field in form.visible_fields %}

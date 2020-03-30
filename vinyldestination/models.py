@@ -74,6 +74,7 @@ class Record(models.Model):
     NAME_MAX_LENGTH = 128
     GENRE_MAX_LENGTH = 16
     DESCRIPTION_MAX_LENGTH = 1000
+
     r_id = models.IntegerField(unique=True)
     name = models.CharField(max_length=NAME_MAX_LENGTH, unique=True)
     year = models.IntegerField(default=0, validators=[MaxValueValidator(2020)])
@@ -85,6 +86,7 @@ class Record(models.Model):
     image = models.ImageField(upload_to='images/records/', blank=True)
     description = models.CharField(max_length=DESCRIPTION_MAX_LENGTH, blank=True)
     ratings = GenericRelation(Rating, related_query_name='records')
+    
     def save(self, *args, **kwargs):
         self.slug = slugify(self.a_id) + "-" + slugify(self.name)
         super(Record, self).save(*args, **kwargs)
