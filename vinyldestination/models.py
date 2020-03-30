@@ -139,19 +139,14 @@ class Stock(models.Model):
 
 class Review(models.Model):
     TITLE_MAX_LENGTH = 50
-    RATING = (
-        (1, '1'),
-        (2, '2'),
-        (3, '3'),
-        (4, '4'),
-        (5, '5')
-    )
 
     record = models.ForeignKey(Record, on_delete=models.CASCADE)
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(max_length=TITLE_MAX_LENGTH)
     review = models.TextField()
-    rating = models.IntegerField(choices=RATING, validators=[MaxValueValidator(100), MinValueValidator(1)])
+
+    def set_author(self, author):
+        self.author = author 
 
     def __str__(self):
         return self.title

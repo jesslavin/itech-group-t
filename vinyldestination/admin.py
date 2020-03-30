@@ -21,7 +21,7 @@ class StockAdmin(admin.ModelAdmin):
 
 
 class ReviewAdmin(admin.ModelAdmin):
-     list_display = ('record', 'author', 'title', 'review', 'rating')
+     list_display = ('record', 'author', 'title', 'review')
 
 
 class UserProfileAdmin(admin.ModelAdmin):
