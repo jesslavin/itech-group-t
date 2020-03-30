@@ -171,8 +171,8 @@ def populate():
                                   "this point, and shows off soft, delicately made songs that hadn't quite become "
                                   "fanciful and twee yet. Also, the album artwork is really something, huh?",
                    'genre': 'Alternative',
-                   'views': '0',
-                   'likes': '0'},
+                   'views': '59',
+                   'likes': '32'},
              '1': {'r_id': '20',
                    'name': 'Dear Catastrophe Waitress',
                    'year': '2003',
@@ -184,8 +184,8 @@ def populate():
                                   "'Step into My Office Baby' and 'I'm a Cuckoo', brought a new audience, "
                                   "without betraying their indie-disco cred.",
                    'genre': 'Alternative',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '43',
+                   'likes': '12'}},
         'The Beths':
             {'0': {'r_id': '1',
                    'name': 'Future Me Hates Me',
@@ -198,8 +198,8 @@ def populate():
                                   "jazz chops ensures a higher level of musicianship that one usually finds on these "
                                   "sort of LPs.",
                    'genre': 'Alternative',
-                   'views': '10',
-                   'likes': '10'}},
+                   'views': '171',
+                   'likes': '75'}},
         'Childish Gambino':
             {'0': {'r_id': '2',
                    'name': 'Because the internet',
@@ -213,8 +213,8 @@ def populate():
                                   "with production handled by Gambino himself, Christian Rich, Thundercat and Ludwig "
                                   "Goransson among others.",
                    'genre': 'Hip-Hop',
-                   'views': '0',
-                   'likes': '0'},
+                   'views': '76',
+                   'likes': '35'},
              '1': {'r_id': '21',
                    'name': 'Awaken, My Love',
                    'year': '2016',
@@ -226,8 +226,8 @@ def populate():
                                   "bringing to mind instead the roles of Prince, or even - whisper - Frank Zappa, "
                                   "as band-leader.  ",
                    'genre': 'Hip-Hop',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '189',
+                   'likes': '89'}},
         'Courtney Barnett':
             {'0': {'r_id': '22',
                    'name': 'The Double EP: A Sea of Split Peas',
@@ -239,8 +239,8 @@ def populate():
                                   "debut, the near hour-long runtime was suggestive of the productivity Barnett has "
                                   "continued to achieve in her recording and touring.",
                    'genre': 'Alternative',
-                   'views': '0',
-                   'likes': '0'},
+                   'views': '69',
+                   'likes': '34'},
              '1': {'r_id': '3',
                    'name': 'Tell Me How You Really Feel',
                    'year': '2018',
@@ -250,8 +250,8 @@ def populate():
                                   "more serious tone capturing more obviously the beauty and warmth in her delivery. "
                                   "She's becoming increasingly popular so this will be a big 'un.",
                    'genre': 'Alternative',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '63',
+                   'likes': '23'}},
         'Diet Cig':
             {'0': {'r_id': '4',
                    'name': ' Over Easy',
@@ -262,8 +262,8 @@ def populate():
                                   "progressions and enjoy the bridge built between indie rock and pop punk. Over Easy "
                                   "is five songs, an EP if you will, and it was initially released in 2015.",
                    'genre': 'Alternative',
-                   'views': '10',
-                   'likes': '10'}},
+                   'views': '37',
+                   'likes': '12'}},
         'Fleetwood Mac':
             {'0': {'r_id': '5',
                    'name': 'Rumours',
@@ -275,8 +275,8 @@ def populate():
                                   "but the album has a dark lyrical undertone as the band's internal dynamic "
                                   "was..um..complicated to say the least.",
                    'genre': 'Pop',
-                   'views': '0',
-                   'likes': '0'},
+                   'views': '90',
+                   'likes': '54'},
              '1': {'r_id': '23',
                    'name': 'Tusk',
                    'year': '1979',
@@ -290,8 +290,8 @@ def populate():
                                   "the sounds of a band struggling to come to terms with success, and each other, have "
                                   "seldom sounded so true to its talent.",
                    'genre': 'Pop',
-                   'views': '0',
-                   'likes': '0'},
+                   'views': '87',
+                   'likes': '64'},
              '2': {'r_id': '24',
                    'name': 'Tango in the Night',
                    'year': '1987',
@@ -302,8 +302,8 @@ def populate():
                                   "both the band's continued success at harmonising melody and rhythm, and the its "
                                   "increasing dislocation within the musical landscape.",
                    'genre': 'Pop',
-                   'views': '0',
-                   'likes': '0'}
+                   'views': '199',
+                   'likes': '89'}
              },
         'Girlpool':
             {'0': {'r_id': '6',
@@ -316,8 +316,8 @@ def populate():
                                   'identity, intertwined with unbelievable melodies that are modestly stated but '
                                   'deeply felt. Phew.',
                    'genre': 'Alternative',
-                   'views': '10',
-                   'likes': '10'}},
+                   'views': '77',
+                   'likes': '34'}},
         'Janelle Monae':
             {'0': {'r_id': '7',
                    'name': 'Dirty Computer',
@@ -329,8 +329,8 @@ def populate():
                                   'by the late Prince himself. The album also hosts the dulcet tones of Brian Wilson, '
                                   'Zoë Kravitz, Grimes and Pharrell Williams.',
                    'genre': 'R&B',
-                   'views': '10',
-                   'likes': '10'}},
+                   'views': '176',
+                   'likes': '67'}},
         'Kendrick Lamar':
             {'0': {'r_id': '8',
                    'name': 'DAMN',
@@ -341,8 +341,8 @@ def populate():
                                   'doesn’t need any big-name support to tell a narrative and craft wonderful beats. '
                                   'This soon-to-be-album-of-the-year record is released by Polydor.',
                    'genre': 'Hip-Hop',
-                   'views': '0',
-                   'likes': '0'},
+                   'views': '164',
+                   'likes': '89'},
              '1': {'r_id': '25',
                    'name': 'To Pimp a Butterfly',
                    'year': '2015',
@@ -353,14 +353,14 @@ def populate():
                                   "accomplishment of the record, brought together over five studios and utilising the "
                                   "production talent of KOZ, Pharell Williams, Thundercat and many others.",
                    'genre': 'Hip-Hop',
-                   'views': '0',
-                   'likes': '0'}
+                   'views': '99',
+                   'likes': '45'}
              },
         'Lizzo':
             {'0': {'r_id': '9',
                    'name': 'Cuz I Love You',
                    'year': '2019',
-                   'image': '/images/records/Lizzo - Cuz I Love You.jpg',
+                   'image': '/images/records/Lizzo - Cuz I Love Yo.jpg',
                    'description': 'The debut album from Lizzo, featuring the hit singles "Juice," "Truth Hurts,'
                                   '" and a brand new version of “Good As Hell” featuring Arianna Grande. When you '
                                   'love yourself, anything becomes possible. Channeling boundless self-confidence '
@@ -370,8 +370,8 @@ def populate():
                                   'herself to the fullest, she speaks her mind, censors nothing, and delivers an '
                                   'enviable level of honesty, pure passion, and fresh fire.',
                    'genre': 'Pop',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '86',
+                   'likes': '60'}},
         'Lucy Dacus':
             {'0': {'r_id': '10',
                    'name': 'Historian',
@@ -384,8 +384,8 @@ def populate():
                                   'everyone) and instrumental help from guitarist Jacob Blizzard. LP and CD on '
                                   'Matador.',
                    'genre': 'Indie',
-                   'views': '10',
-                   'likes': '10'}},
+                   'views': '143',
+                   'likes': '89'}},
         'Pictish Trail':
             {'0': {'r_id': '11',
                    'name': 'Thumb World',
@@ -398,8 +398,8 @@ def populate():
                                   'them both imagining that the music was taking place in a retro ‘80s arcade game '
                                   'world.',
                    'genre': 'Alternative',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '45',
+                   'likes': '20'}},
         'Porridge Radio':
             {'0': {'r_id': '12',
                    'name': 'Every Bad',
@@ -411,8 +411,8 @@ def populate():
                                   'tracks, their thoughtful, DIY indie approach has made them one of the most '
                                   'exciting new bands in Britain. ',
                    'genre': 'Alternative',
-                   'views': '10',
-                   'likes': '10'}},
+                   'views': '135',
+                   'likes': '62'}},
         'Proclaimers':
             {'0': {'r_id': '13',
                    'name': 'Sunshine On Leith',
@@ -427,8 +427,8 @@ def populate():
                                   "\"Cap in Hand\" also came to prominence in 2014 with the Scottish Independence "
                                   "referendum.",
                    'genre': 'Rock',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '78',
+                   'likes': '41'}},
         'Robyn':
             {'0': {'r_id': '14',
                    'name': 'Body Talk',
@@ -440,8 +440,8 @@ def populate():
                                   "uncommonly wise \"Cry When You Get Older\", the highlights from the first two "
                                   "mini-albums-- is a deeply affecting pop record.",
                    'genre': 'Dance',
-                   'views': '0',
-                   'likes': '0'},
+                   'views': '89',
+                   'likes': '47'},
              '1': {'r_id': '26',
                    'name': 'Robyn',
                    'year': '2005',
@@ -452,8 +452,8 @@ def populate():
                                   "credence to the new dawn of synth-led dance-pop, spawning a host of pale imitators, "
                                   " if only to leave them in the dust on every subsequent outing. ",
                    'genre': 'Pop',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '76',
+                   'likes': '37'}},
         'Snail Mail':
             {'0': {'r_id': '15',
                    'name': 'Lush',
@@ -466,8 +466,8 @@ def populate():
                                   'times like an emotional rollercoaster, only fitting for Jordan’s explosive, '
                                   'dynamic personality.',
                    'genre': 'Indie',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '122',
+                   'likes': '88'}},
         'Soccer Mommy':
             {'0': {'r_id': '16',
                    'name': 'color theory',
@@ -479,8 +479,8 @@ def populate():
                                   'family. It seems that writing about these issues has been a cathartic process for '
                                   'the resilient 22 year-old.',
                    'genre': 'Alternative',
-                   'views': '0',
-                   'likes': '0'},
+                   'views': '123',
+                   'likes': '76'},
              '1': {'r_id': '27',
                    'name': 'Clean',
                    'year': '2018',
@@ -491,8 +491,8 @@ def populate():
                                   "demonstrates the ongoing development of an artist already in command of "
                                   "considerable songwriting purpose.",
                    'genre': 'Alternative',
-                   'views': '0',
-                   'likes': '0'}
+                   'views': '35',
+                   'likes': '9'}
              },
         'Taylor Swift':
             {'0': {'r_id': '17',
@@ -506,8 +506,8 @@ def populate():
                                   "that have always been the hallmark of Taylor’s music now move front and centre on "
                                   "'1989'.",
                    'genre': 'Pop',
-                   'views': '0',
-                   'likes': '0'},
+                   'views': '97',
+                   'likes': '58'},
              '1': {'r_id': '28',
                    'name': 'Red',
                    'year': '2012',
@@ -521,8 +521,8 @@ def populate():
                                   "Swift-machine, but to the enlarged and enraptured audience Swift had found."
                  ,
                    'genre': 'Pop',
-                   'views': '0',
-                   'likes': '0'},
+                   'views': '73',
+                   'likes': '33'},
              '2': {'r_id': '29',
                    'name': 'Lover',
                    'year': '2019',
@@ -536,8 +536,8 @@ def populate():
                                   "highlights across the 18 tracks with which Swift indicates how fertile her "
                                   "marriage of pop and AOR has been.",
                    'genre': 'Pop',
-                   'views': '0',
-                   'likes': '0'}
+                   'views': '193',
+                   'likes': '80'}
              },
         'Waxahatchee':
             {'0': {'r_id': '18',
@@ -552,8 +552,8 @@ def populate():
                                   "and grieving for her youth seem to have been replaced with control and sheer "
                                   "self-honesty.",
                    'genre': 'Alternative',
-                   'views': '0',
-                   'likes': '0'}},
+                   'views': '77',
+                   'likes': '23'}},
         'Wolf Alice':
             {'0': {'r_id': '19',
                    'name': 'My Love Is Cool',
@@ -564,8 +564,8 @@ def populate():
                                   'strain of motorik krautrock whilst retaining an ear for melody, it’s like a '
                                   'diluted Sonic Youth for the kids. Out on CD and vinyl double LP from Dirty Hit.',
                    'genre': 'Alternative',
-                   'views': '0',
-                   'likes': '0'}}}
+                   'views': '78',
+                   'likes': '42'}}}
 
     shops = [
         {'s_id': '0',
