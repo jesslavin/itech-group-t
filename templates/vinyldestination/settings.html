@@ -1,11 +1,15 @@
+{% extends 'vinyldestination/base.html' %}
 {% load staticfiles %}
 
-<head>
-  <link href="{% static 'css/basic/final_form.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
-  <title>
-    Settings
-  </title>
-</head>
+{% block head %}
+<link href="{% static 'css/basic/final_user.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+{% endblock %}
+
+{% block title_block %}
+Settings
+{% endblock %}
+
+{% block body_block %}
 
 <div class = admin>
 
@@ -65,3 +69,5 @@
   <a href="/settings/password">Change Password</a>
 
 </div>
+
+{% endblock %}

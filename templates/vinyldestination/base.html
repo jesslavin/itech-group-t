@@ -5,9 +5,11 @@
 <html>
 
 <head>
+	{% block head %}
 	<link href="{% static 'css/basic/final_master.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
 	<link href="{% static 'star-ratings/css/star-ratings.css' %}" rel="stylesheet">
 	<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.js' %}"></script>
+	{% endblock %}
 		<title>
             {% block title_block %}
 			{% endblock %}
@@ -18,8 +20,7 @@
 
 	<div class = "nav">
 		<div class = "header">
-		<a href="{% url 'vinyldestination:index' %}"><img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/></a>
-		</div>
+		<a href="{% url 'vinyldestination:index' %}"><img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/></a></div>
 		<div class = "menu">
 			{% if user.is_authenticated %}
 			<ul id="options">

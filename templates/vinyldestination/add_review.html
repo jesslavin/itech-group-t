@@ -1,11 +1,15 @@
+{% extends 'vinyldestination/base.html' %}
 {% load staticfiles %}
 
-<head>
-    <link href="{% static 'css/basic/final_review_form.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
-	<title>
-		Review {{record.name}}
-	</title>
-</head>
+{% block head %}
+<link href="{% static 'css/basic/final_review.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+{% endblock %}
+
+{% block title_block %}
+Review {{record.name}}
+{% endblock %}
+
+{% block body_block %}
 
 <a href="{% url 'vinyldestination:index' %}"><img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/></a>
 
@@ -39,3 +43,5 @@
 	</form>
 	</div>
 </div>
+
+{% endblock %}
