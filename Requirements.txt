@@ -1,2 +1,3 @@
 pip install social-auth-app-django
 pip install django-star-ratings
+pip install python-decouple
