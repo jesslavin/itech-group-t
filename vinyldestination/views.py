@@ -12,6 +12,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from django.conf import settings
 from social_django.models import UserSocialAuth
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def index(request):
@@ -43,7 +44,7 @@ def index(request):
 	
 	artist_list = Artist.objects.order_by('-likes')[:5]
 	record_list = Record.objects.order_by('-views')[:10]
-	record_list = Record.objects.order_by('-ratings__average')[:10]
+	# record_list = Record.objects.order_by('-ratings__average')[:10]
 	
 # Construct a dictionary to pass to the template engine as its context.
 # Note the key boldmessage matches to {{ boldmessage }} in the template! 
@@ -171,18 +172,18 @@ def show_artist(request, artist_name_slug):
 def add_review(request, record_name_slug):
 
 	record = Record.objects.get(slug=record_name_slug)
-
+	author = request.user
 	if request.method == 'POST':
 		review_form = ReviewForm(request.POST)
 
 		if review_form.is_valid():
-			review = review_form.save()
-			review.author = get_user_model()
+			review = review_form.save(commit=False)
+			review.author = author
 			review.record = record
 			review_form.save()
-			return HttpResponseRedirect('/thanks/')
+			return HttpResponseRedirect(reverse('vinyldestination:show_record', args=(record_name_slug,)))
 		else:
-			print()
+			print(review_form.errors)
 	else:
 		review_form = ReviewForm()
 	context_dict = {}

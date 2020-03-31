@@ -682,125 +682,125 @@ def populate():
             {'0': {'title': 'Fab!',
                    'review': 'Cannae believe I managed to track down a copy of this! Caught them at '
                              'the Barras in 1999. All downhill since then. For me, not them!',
-                   'rating': 5},
+                   },
              '2': {'title': 'DIMinishing returns',
                    'review': 'Living up to his name, this aint for fans of Camp.',
-                   'rating': 2},
+                   },
              '4': {'title': 'Better with every listen',
                    'review': 'Though there are only two of them, there is just '
                              'more and more to hear everytime I put this on. '
                              'Sound like a choir. On acid. ',
-                   'rating': 4},
+                   },
              '8': {'title': 'Who can stop him?',
                    'review': 'Resisted for as long as I could. I was wrong. '
                              'This is right. ',
-                   'rating': 4},
+                   },
              '12': {'title': 'Showing guitars still have somewhere to go!',
                     'review': 'Picked this up after seeing them at End of the Pier in 2019. My friend had thrown up '
                               'over my shoes, but I could not move away to clean them up. Entranced!',
-                    'rating': 4}},
+                    }},
         'Kenny_TestUser':
             {'0': {'title': 'Uncle Tam wisnae wrang',
                    'review': 'Even better on vinyl.',
-                   'rating': 4},
+                   },
              '2': {'title': 'Not a weak tune in the bunch',
                    'review': 'Found out about in on the internet, ironically. Even bought a copy for my sister. She '
                              'hated it though, so now I have two. No complaints.',
-                   'rating': 2},
+                   },
              '3': {'title': 'Weird Pressing?',
                    'review': 'My copy shifts about in pitch all over the place. Still manages to sound better than on '
                              'Spotify. Maybe give it a listen before you put your money down.',
-                   'rating': 3},
+                   },
              '5': {'title': 'No arguments here',
-                   'review': 'Classic.', 'rating': 5},
+                   'review': 'Classic.', },
              '7': {'title': 'Better than the purple one',
                    'review': 'Pretty sure Monae is from the future. I hope so anyway, gives me something to look '
                              'forward to!',
-                   'rating': 4}},
+                   }},
         'Fabia_TestUser':
             {'2': {'title': 'CGFTW',
                    'review': "Those who only know Donald Glover from Community are really missing out. I've got "
                              "everything the guy has ever put out, but this is probably my favourite of the lot. "
                              "Funny and funky.",
-                   'rating': 4},
+                   },
              '14': {'title': "Girl's got our backs",
                     'review': 'Robyn really takes her time with her records, and it shows best here. Not a single '
                               'beat or string a moment or note out of place. I stuck it on when I first got together '
                               'with my ex, and then again when we broke up. Worked both ways.',
-                    'rating': 4},
+                    },
              '15': {'title': 'Really coming together',
                     'review': "Snail Mail just keeps getting better and better and Lush proves that she's got miles "
                               "to go yet. Great to fall asleep too, gentle, wistful, mysterious. Also just good!",
-                    'rating': 4}},
+                    }},
         'Brogo_TestUser':
             {'11': {'title': 'More to this guy than just the label!',
                     'review': "I know so many people who listen to the stuff coming out on Lost Maps, who don't pay "
                               "any attention to Johnny's own stuff. His ear for the bands he has on their carries "
                               "over to his own stuff as well!",
-                    'rating': 4},
+                    },
              '16': {'title': 'So disappointed',
                     'review': "Someone told me I should get this, 'cos it sounds like Best Coast. Someone should tell "
                               "her that too.",
-                    'rating': 2}},
+                    }},
         'Maisles_TestUser':
             {'3': {'title': 'Feel real Good.',
                    'review': "Saw someone else on here complaining about the pressing. Mine is fine! Don't know if "
                              "that is good news or bad. She should record with Vile again, can't believe how good "
                              "that would be! Check out Nameless, Faceless. If you don't like that you won't like "
                              "this, and I won't like you!",
-                   'rating': 5},
+                   },
              '9': {'title': 'Can hear this coming down the street from about 3 windows!',
                    'review': "Wish I could get this in Cardi B's hands - Lizzo shows you CAN shout and sing at the "
                              "time.",
-                   'rating': 4},
+                   },
              '17': {'title': 'Bought this for my sis, so I could cover for having a copy in the house!',
                     'review': "Normally wouldn't touch this with yours, but had to admit I loved Style after catching "
                               "myself belting it out in the shower for the whole of last week. I won’t tell you if I "
                               "like any of the others.",
-                    'rating': 3},
+                    },
              '18': {'title': 'Lush',
                     'review': "Caught her live at SXSW in 2017. Can’t believe how well this record nails her sound. "
                               "Or maybe how well she recreates it live haha.",
-                    'rating': 4},
+                    },
              '19': {'title': 'Should be getting more love.',
                     'review': 'Just wish I had a turntable setup for the bath!',
-                    'rating': 4}},
+                    }},
         'Charlie_TestUser':
             {'20': {'title': 'Pose a question',
                     'review': "These poseurs have been chancing their arm for far to long. Beat it.",
-                    'rating': 1},
+                    },
              '21': {'title': 'Pleasantly surprised',
                     'review': "When someone told me Danny Glover had released a p-funk album, I couldn't believe it. "
                               "And on hearing this, I still can't. ",
-                    'rating': 1},
+                    },
              '22': {'title': 'No extras',
                     'review': "Having been there from the start, I already had 'I've Got a Friend Called Emily Ferris' "
                               "and 'How to Carve a Carrot into a Rose' (that one's signed). I'm glad people have a "
                               "chance to pick these up, but c'mon, where were you?",
-                    'rating': 3},
+                    },
              '23': {'title': 'snaggle-tooth',
                     'review': "'Rumours' went straight to their head, apparently. Presumably up their noses.",
-                    'rating': 1},
+                    },
              '24': {'title': 'Tango in the Night',
                     'review': "Candle in the wind more like.",
-                    'rating': 1},
+                    },
              '25': {'title': 'Slathered',
                     'review': "Like an all-you-can-eat buffet, this seems like a good idea at the time, if that time "
                               "was the early 90s. Or wanted to be.",
-                    'rating': 1},
+                    },
              '26': {'title': 'Still sounds fresh',
                     'review': "Worn in to brain from too many listens. I can switch the amp off and still hear every "
                               "beat.",
-                    'rating': 5},
+                    },
              '27': {'title': '6 (out of 10) Music',
                     'review': "This is a real Soccer Mommy or chips moment.",
-                    'rating': 3},
+                    },
              '28': {'title': 'No Country for Old Men',
                     'review': "So glad she's pivoted to pop.",
-                    'rating': 4},
+                    },
              '29': {'title': 'Should be the theme to IndyRef2.',
                     'review': 'What a fall from grace! Am I the only one who can hear it?',
-                    'rating': 1}}
+                    }}
     }
 
     lists = {
@@ -916,8 +916,7 @@ def populate():
                 author = User.objects.get(username=u['username'])
                 title = reviews[u['username']][rev]['title']
                 review = reviews[u['username']][rev]['review']
-                rating = reviews[u['username']][rev]['rating']
-                add_review(record, author, title, review, rating)
+                add_review(record, author, title, review)
         if u['username'] in lists.keys():
             for li in lists[u['username']].keys():
                 author = User.objects.get(username=u['username'])
@@ -971,8 +970,8 @@ def add_user(username, email, password):
     return u
 
 
-def add_review(record, author, title, review, rating):
-    rev = Review.objects.get_or_create(record=record, author=author, title=title, review=review, rating=rating)[0]
+def add_review(record, author, title, review):
+    rev = Review.objects.get_or_create(record=record, author=author, title=title, review=review)[0]
     return rev
 
 

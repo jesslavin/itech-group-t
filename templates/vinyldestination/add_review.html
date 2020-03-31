@@ -12,7 +12,7 @@
 		</div>
 		<hr>
 		<div>
-			<form id="review_form" method="post" action="{% url 'vinyldestination:records' %}"
+			<form id="review_form" method="post" 
 		  enctype="multipart/form-data">
 		  {% csrf_token %}
 		  {{ review_form.non_field_errors }}

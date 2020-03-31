@@ -145,8 +145,9 @@ class Review(models.Model):
     title = models.CharField(max_length=TITLE_MAX_LENGTH)
     review = models.TextField()
 
-    def set_author(self, author):
-        self.author = author 
+    def set_author(self, request, obj, form, change):
+        obj.author = request.user
+        super().save_model(request, obj, form, change)
 
     def __str__(self):
         return self.title
