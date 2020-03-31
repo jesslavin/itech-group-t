@@ -4,7 +4,7 @@
 {% load static %}
 <html>
 
-		<link href="{% static 'css/basic/master.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+		<link href="{% static 'css/basic/3.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
 		<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
 
 		<title>
@@ -21,7 +21,7 @@
 		</div>
 		<div class = "menu">
 			{% if user.is_authenticated %}
-			<ul>
+			<ul id="options">
 				<li><a href="{% url 'vinyldestination:index' %}">{{ user.username }}</a></li>
 				<li><a href="{% url 'vinyldestination:records' %}">Browse</a></li>
 				<li><a href="{% url 'settings' %}">Settings</a></li>
@@ -32,7 +32,7 @@
 				{% csrf_token %}
 				Username: <input type="text" id="input_field" name="username" value=""/>
 				Password: <input type="password" id="input_field" name="password" value=""/>
-				<input type="submit" id="button" value="submit"/>
+				<input type="submit" id="button" value="Sign In"/>
 				</br>
 				</br>
 				or sign in using

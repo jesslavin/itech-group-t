@@ -4,63 +4,79 @@
 
 {% block title_block %} 
 	{% if record %}
-	<h1>{{record.name}}</h1> 
+	Vinyl Destination - {{record.name}}
     {% else %}
-    <h1>Unknown Record</h1>
+    Vinyl Destination - Unknown Record
     {% endif %}
 {% endblock %}
 
 {% block body_block %}
-	{% if record %}
-	<img id="recordartwork" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
-	<h1>{{record.name}}</h1> 
-	<h2>by {{record.a_id}}</h2>
-	<p>{{record.description}}</p>
-	
+
+<div class = "maincontainer">
+
+	<div class = "recordcontainer">
+		{% if record %}
+		<h4>{{record.name}} by {{record.a_id}}</h4>
+		</br>
+		<div class = "statscontainer">
+				<img id="singleimage" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
+			<div class = "stats">
+				<strong>Released in {{record.year}}</strong></br>
+				<strong>Genre:</strong> {{record.genre}}</br>
+				<strong>Likes:</strong> {{record.likes}}</br>
+				<strong>Views:</strong> {{record.views}}</br>
+			</div>
+		</div>
+	{% endif %}
+		</br>
+		<div class = "recorddescription">
+			{{artist.description}}
+		</div>
+	</div>
+
+	<div class = "artistcontainer">
+		{% if artist %}
+		<h4>About the artist:</h4>
+		</br>
+		<div class = "artistimagecontainer">
+			<img id="artistimage" src="{{MEDIA_URL}}{{ artist.image }}" alt="{{ record.name }}"></a>
+		</div>
+		</br>
+		<div class = "artistdescription">
+			{{artist.description}}
+		</div>
+	</div>
+
+	{% endif %}
+</div>
+
+<div class = similar>
+	{% if similar %}
+	<h2>Similar records in {{record.genre}}</h2>
+	{% for record in similar%}
+	<a href="/vinyldestination/records/{{ record.slug }}/"><img id="recordartwork" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
+	{% endfor %}
+	{% else %}
+	There are no records present.
+	{% endif %}
+</div>
+
 	{% block content %}
 		{% ratings record %}
 	{% endblock content %}
 
-	<h2>Released in {{record.year}}</h2>
-	<h2>Genre: {{record.genre}}</h2>
-	<h2>Likes: {{record.likes}}</h2>
-	<h2>Views: {{record.views}}</h2>
-	{% endif %}
-
-	{% if artist %}
-	<img id="recordartwork" src="{{MEDIA_URL}}{{ artist.image }}" alt="{{ record.name }}"></a>
-	<p>About the artist: {{artist.description}}</p>
-	{% endif %}
-
-	<div class = "similar">
-			{% if similar %}
-			<h2>Similar records in {{record.genre}}</h2>
-				{% for record in similar%}
-				<a href="/vinyldestination/records/{{ record.slug }}/"><img id="recordartwork" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
-					{% endfor %}
-			{% else %}
-			There are no records present.
-			{% endif %}
-	</div>
-
-	
-
-	<div class = "review">
 		{% if user.is_authenticated %}
-		<div class ="review button">
 			<a href="/vinyldestination/records/{{ record.slug }}/add_review" title="Add a review to this record">Add A Review</a>
-		</div>
 	{% endif %}
 			{% if review %}
-			<h2>Reviews of {{record.name}}</h2>
+			Reviews of {{record.name}}
 				<ol type="1">
 				{% for review in review%}
-				<li><h3>{{review.title}} by {{review.author}}</h3><p>{{review.review}}</p>
-				</li>
+				<li><h3>{{review.title}} by {{review.author}}</h3><p>{{review.review}}</p></li>
 					{% endfor %}
 			{% else %}
 			There are no reviews present.
 			{% endif %}
-	</div>
+				</ol>
 {% endblock body_block%}
 

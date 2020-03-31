@@ -10,51 +10,50 @@ Vinyl Destination
 {% if user.is_authenticated %}
 
 <div class = "home">
-	{{ user.username }}'s Lastest Updates
+	<h1>{{ user.username }}'s Top Rated Records</h1>
+		<div class = "records">
+			{% if records %}
+				{% for record in records %}
+				<a href="{% url 'vinyldestination:records' %}{{ record.slug }}/"><img id="recordartwork" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
+					{% endfor %}
+			{% else %}
+			There are no records present.
+			{% endif %}
+		</div>
 </div>
 
 {% else %}
 
 <div class = "welcome">
 	<div class = "info">
-		<h2>Vinyl Destination, the most convenient way to manage and grow your vinyl collection.</h2>
+		<h2>vinyldestination, the most convenient way to manage and grow your vinyl collection.</h2>
 	</div>
-
 	<div class = "register">
-		<h2> Register Here </h2>
-		<form id="form" method="post" action="{% url 'vinyldestination:register' %}"
-		  enctype="multipart/form-data">
-			{% csrf_token %}
 		{{ form.non_field_errors }}
-		<div class="fieldWrapper">
-		    {{ form.username.errors }}
-		    <label for="{{ user_form.username.id_for_label }}">Username:</label>
-		    {{ user_form.username }}
+		<form id="form" method="post" action="{% url 'vinyldestination:register' %}"
+			  enctype="multipart/form-data">
+			{% csrf_token %}
+			<ul id="fields">
+				<h2>New here? Create a free account!</h2>
+				{{ user_form.as_ul }}
+				{{ profile_form.as_ul }}
+			</ul>
+			<div class = terms>
+				<input type="submit" id="button" name="submit" value="Sign Up"/>
+				<p>by clicking "Sign Up" I agree to the vinyldestination Term of Service and confirm that I am at least 13 years old</p>
 			</div>
-		<br>
-		<div class="fieldWrapper">
-		    {{ form.email.errors }}
-		    <label for="{{ user_form.email.id_for_label }}">Email:</label>
-		    {{ user_form.email }}
-			</div>
-		<br>
-		<div class="fieldWrapper">
-		    {{ form.password.errors }}
-		    <label for="{{ form.sender.id_for_label }}">Password:</label>
-		    {{ user_form.password }}
-			</div>
-			<br>
-			<input type="submit" id="button" name="submit" value="Register" />
-			<form>
-		</div>
+		</form>
 	</div>
-
 {% endif %}
-
+</div>
+{% if user.is_authenticated %}
+<h1>Trending records</h1>
+{% else %}
 <h3>Trending records</h3>
-		<div class = "trending">
-			{% if records %}
-				{% for record in records%}
+{% endif %}
+		<div class = "records">
+			{% if trending %}
+				{% for record in trending %}
 				<a href="{% url 'vinyldestination:records' %}{{ record.slug }}/"><img id="recordartwork" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
 					{% endfor %}
 			{% else %}

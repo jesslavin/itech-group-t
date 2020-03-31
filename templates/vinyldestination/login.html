@@ -1,7 +1,7 @@
 {% load staticfiles %}
 
 <head>
-	<link href="{% static 'css/basic/setting.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+	<link href="{% static 'css/basic/finaladmin.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
 	<title>
 		Vinyl Destination - Login
 	</title>
@@ -21,13 +21,9 @@
 	<form id="form" method="post" action="{% url 'vinyldestination:login' %}">
 		{% csrf_token %}
 		Username:
-		<br/>
 		<input type="text" name="username" value=""/>
-		<br/>
 		Password:
-		<br/>
 		<input type="password" name="password" value=""/>
-		<br/>
 		<p><input type="submit" id="button" value="submit" /></p>
 	</form>
 	<a href="{% url 'social:begin' 'github' %}">Login with GitHub</a>

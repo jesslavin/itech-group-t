@@ -1,12 +1,14 @@
 {% load staticfiles %}
 
 <head>
-	<link href="{% static 'css/basic/setting.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+	<link href="{% static 'css/basic/finaladmin.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
 	<title>
 		Vinyl Destination - Register
 	</title>
 </head>
 
+<div class = padding>
+</div>
 
 <div class = admin>
 
@@ -26,11 +28,17 @@
 	<form id="form" method="post" action="{% url 'vinyldestination:register' %}"
 		  enctype="multipart/form-data">
 		{% csrf_token %}
-		{{ user_form.as_p }}
-		{{ profile_form.as_p }}
-		<input type="submit" id="button" name="submit" value="Register" />
+		<ul>
+		{{ user_form.as_ul }}
+		{{ profile_form.as_ul }}
+		</ul>
+		<p><input type="submit" id="button" name="submit" value="Register"/></p>
 	</form>
+
 	{% endif %}
 	{% endif %}
 
+</div>
+
+<div class = padding>
 </div>

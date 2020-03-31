@@ -16,6 +16,13 @@ a
     color: white;
     }
 
+ul
+    {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+
 .admin
     {
     padding:60px 40px;
@@ -24,9 +31,14 @@ a
 	border-radius:25px;
     }
 
+.padding
+    {
+    padding:20px;
+    }
+
 #form
     {
-    line-height: 40px;
+    line-height: 30px;
     }
 
 input
@@ -38,6 +50,8 @@ input
 	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
 	background-color:#ffffff;
 	border:1px solid #dcdcdc;
+	display: block;
+	margin:0 auto;
     }
 
 #button

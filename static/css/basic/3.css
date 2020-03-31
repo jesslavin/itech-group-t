@@ -3,12 +3,12 @@ body
     font-family:Arial, Helvetica, sans-serif;
     min-width:1000px;
     margin:0px;
-    font-size:12px;
+    font-size:14px;
     }
 
 .nav
     {
-    font-size:12px;
+    font-size:14px;
     display:flex;
     flex-direction:row;
     flex-wrap:nowrap;
@@ -16,12 +16,12 @@ body
 
 .menu
     {
-    padding:10px 20px;
+    padding:15px 20px;
     text-align:right;
     margin-left:auto;
     }
 
-ul
+#options
     {
     list-style-type: none;
     margin: 0;
@@ -29,6 +29,31 @@ ul
     overflow: hidden;
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
+    }
+
+#fields
+    {
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    text-align:left;
+    line-height:20px;
+    }
+
+#fields input
+    {
+	display: block;
+	width: 85%;
+    }
+
+.terms
+    {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 70px;
+    padding-right: 70px;
     }
 
 li
@@ -73,7 +98,7 @@ input
 	color:black;
 	padding:10px 24px;
 	text-shadow:0px 1px 0px #ffffff;
-    font-size:12px;
+    font-size:14px;
     }
 
 #button:hover
@@ -108,10 +133,9 @@ input
 .register
     {
     width:50%;
-    padding:20px;
     }
 
-.trending
+.records
     {
     text-align:center;
     }
@@ -119,6 +143,71 @@ input
 #recordartwork
     {
     max-width:19%;
+    }
+
+#singleimage
+    {
+    width:60%;
+    }
+
+#artistimage
+    {
+    width:100%;
+    }
+
+.maincontainer
+    {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    padding:0px 20px;
+    }
+
+.recordcontainer
+    {
+    width: 300%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border: 1px solid #e7e7e7;
+    }
+
+.statscontainer
+    {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    }
+
+.stats
+    {
+    align-self:center;
+    line-height:50px;
+    font-size:18px;
+    padding: 30px;
+    }
+
+.artistcontainer
+    {
+    width: 150%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding:20px;
+    text-align:center;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(252,150,120,1) 0%, rgba(247,108,127,1) 100.4% );
+    }
+
+.artistdescription
+    {
+    align-self:center;
+    }
+
+.similar
+    {
+    padding:0px 20px;
     }
 
 h1
@@ -131,7 +220,7 @@ h1
 
 h2
     {
-    font-size:25px
+    font-size:25px;
     }
 
 h3
@@ -140,3 +229,9 @@ h3
     font-size:18px
     }
 
+h4
+    {
+    text-align:center;
+    font-size:25px;
+    margin:0px;
+    }
