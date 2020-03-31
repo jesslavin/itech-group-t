@@ -6,6 +6,50 @@ from django.contrib.auth import get_user_model
 from star_ratings.models import Rating
 from django.core.validators import MaxValueValidator, MinValueValidator
 
+
+# class Artist(models.Model):
+#     name = models.CharField(max_length=128, unique=True)
+#     views = models.IntegerField(default=0)
+#     likes = models.IntegerField(default=0)
+#     slug = models.SlugField(blank=True)
+
+#     class Meta:
+#         permissions = (
+#             ('perm_add_artist', 'Can add artist'),
+#         )
+
+#     def save(self, *args, **kwargs):
+#         self.slug = slugify(self.name)
+#         super(Artist, self).save(*args, **kwargs)
+
+#     def __str__(self): # For Python 2, use __unicode__ too
+#         return self.name
+
+#     def get_absolute_url(self):
+#         return reverse('artist-detail', kwargs={'slug': self.slug})
+
+# class Album(models.Model):
+#     name = models.CharField(max_length=128, unique=True)
+#     artist = models.ForeignKey(Artist)
+#     views = models.IntegerField(default=0)
+#     likes = models.IntegerField(default=0)
+#     slug = models.SlugField(blank=True)
+
+#     class Meta:
+#         permissions = (
+#             ('perm_add_album', 'Can add album'),
+#         )
+
+#     def save(self, *args, **kwargs):
+#         self.slug = slugify(self.name)
+#         super(Album, self).save(*args, **kwargs)
+
+#     def __str__(self): # For Python 2, use __unicode__ too
+#         return self.name
+
+#     def get_absolute_url(self):
+#         return reverse('album-detail', kwargs={'slug': self.slug})
+
 class Artist(models.Model):
     NAME_MAX_LENGTH = 128
     DESCRIPTION_MAX_LENGTH = 1000
@@ -35,6 +79,7 @@ class Record(models.Model):
     name = models.CharField(max_length=NAME_MAX_LENGTH, unique=True)
     year = models.IntegerField(default=0, validators=[MaxValueValidator(2020)])
     views = models.IntegerField(default=0)
+    likes = models.IntegerField(default=0)
     slug = models.SlugField(unique=True)
     a_id = models.ForeignKey(Artist, on_delete=models.CASCADE)
     genre = models.CharField(max_length=GENRE_MAX_LENGTH)
@@ -60,6 +105,7 @@ class Shop(models.Model):
     name = models.CharField(max_length=NAME_MAX_LENGTH)
     description = models.CharField(max_length=DESCRIPTION_MAX_LENGTH)
     views = models.IntegerField(default=0)
+    likes = models.IntegerField(default=0)
     slug = models.SlugField(unique=True)
     image = models.ImageField(upload_to='images/shops/', blank=True)
 
@@ -124,6 +170,20 @@ class List(models.Model):
 
     def __str__(self):
         return self.list_name
+
+
+class Page(models.Model):
+    TITLE_MAX_LENGTH = 128
+    URL_MAX_LENGTH = 200
+
+    category = models.ForeignKey(Artist, on_delete=models.CASCADE)
+    title = models.CharField(max_length=TITLE_MAX_LENGTH)
+    url = models.URLField()
+    views = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.title
+
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

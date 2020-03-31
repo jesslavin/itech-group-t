@@ -1,5 +1,5 @@
 from django.contrib import admin
-from vinyldestination.models import Artist, Record, Shop, Stock, UserProfile, List, Review
+from vinyldestination.models import Artist, Record, Shop, Stock, Page, UserProfile, List, Review
 
 
 # Register your models here.
@@ -9,11 +9,11 @@ class ArtistAdmin(admin.ModelAdmin):
 
 
 class RecordAdmin(admin.ModelAdmin):
-    list_display = ('name', 'year', 'views', 'slug', 'a_id', 'genre')
+    list_display = ('name', 'year', 'views', 'likes', 'slug', 'a_id', 'genre')
 
 
 class ShopAdmin(admin.ModelAdmin):
-    list_display = ('s_id', 'name', 'description', 'views', 'slug')
+    list_display = ('s_id', 'name', 'description', 'views', 'likes', 'slug')
 
 
 class StockAdmin(admin.ModelAdmin):
