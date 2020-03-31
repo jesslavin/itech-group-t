@@ -57,13 +57,13 @@
 </div>
 
 <div class = "similar">
-	{% if similar %}
 	<h2>Similar records in {{record.genre}}</h2>
+	{% if similar %}
 	{% for record in similar%}
 	<a href="/vinyldestination/records/{{ record.slug }}/"><img id="recordartwork" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
 	{% endfor %}
 	{% else %}
-	There are no records present.
+	<h3>There are no records present.</h3>
 	{% endif %}
 </div>
 
