@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from vinyldestination.models import Artist, Record, Review
-from vinyldestination.forms import ArtistForm, PageForm, UserForm, UserProfileForm, ReviewForm
+from vinyldestination.forms import ArtistForm, UserForm, UserProfileForm, ReviewForm
 from star_ratings.models import Rating
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
@@ -43,7 +43,7 @@ def index(request):
         user_form = UserForm()
         profile_form = UserProfileForm()
 
-        artist_list = Artist.objects.order_by('-likes')[:5]
+        artist_list = Artist.objects.order_by('-views')[:5]
         trending_list = Record.objects.order_by('-views')[:10]
         record_list = Record.objects.order_by('-ratings__average')[:10]
 
@@ -143,23 +143,6 @@ def visitor_cookie_handler(request):
     # Update/set the visits cookie
     request.session['visits'] = visits
 
-
-@login_required
-def add_category(request):
-    form = CategoryForm()
-
-    if request.method == 'POST':
-        form = CategoryForm(request.POST)
-
-        if form.is_valid():
-            form.save(commit=True)
-            return redirect('/vinyldestination/')
-        else:
-            print(form.errors)
-
-    return render(request, 'vinyldestination/add_category.html', {'form': form})
-
-
 def show_artist(request, artist_name_slug):
     context_dict = {}
 
@@ -175,7 +158,6 @@ def show_artist(request, artist_name_slug):
         context_dict['records'] = None
 
     return render(request, 'vinyldestination/artist.html', context=context_dict)
-
 
 @login_required
 def add_review(request, record_name_slug):
@@ -199,24 +181,20 @@ def add_review(request, record_name_slug):
     context_dict['record'] = record
     return render(request, 'vinyldestination/add_review.html', context=context_dict)
 
+# def artists(request):
+#     context_dict = {}
+#     artist_list = Artist.objects
 
-def artists(request):
-    context_dict = {}
-    artist_list = Artist.objects
+#     context_dict['artists'] = artist_list
+#     visitor_cookie_handler(request)
 
-    context_dict['artists'] = artist_list
-    visitor_cookie_handler(request)
-
-    response = render(request, 'vinyldestination/artists.html', context=context_dict)
-    return response
-
+#     response = render(request, 'vinyldestination/artists.html', context=context_dict)
+#     return response
 
 def records(request):
     context_dict = {}
-    record_list = Record.objects.order_by('-likes')[:10]
     all_record_list = Record.objects.order_by('name')
 
-    context_dict['records_pop'] = record_list
     context_dict['records_all'] = all_record_list
 
     visitor_cookie_handler(request)

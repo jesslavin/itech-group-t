@@ -5,7 +5,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE',
 import django
 
 django.setup()
-from vinyldestination.models import Artist, Record, Shop, Review, Page, UserProfile, Stock, List
+from vinyldestination.models import Artist, Record, Shop, Review, UserProfile, Stock, List
 from django.contrib.auth.models import User
 
 
@@ -172,7 +172,7 @@ def populate():
                                   "fanciful and twee yet. Also, the album artwork is really something, huh?",
                    'genre': 'Alternative',
                    'views': '59',
-                   'likes': '32'},
+                   },
              '1': {'r_id': '20',
                    'name': 'Dear Catastrophe Waitress',
                    'year': '2003',
@@ -185,7 +185,7 @@ def populate():
                                   "without betraying their indie-disco cred.",
                    'genre': 'Alternative',
                    'views': '43',
-                   'likes': '12'}},
+                   }},
         'The Beths':
             {'0': {'r_id': '1',
                    'name': 'Future Me Hates Me',
@@ -199,7 +199,7 @@ def populate():
                                   "sort of LPs.",
                    'genre': 'Alternative',
                    'views': '171',
-                   'likes': '75'}},
+                   }},
         'Childish Gambino':
             {'0': {'r_id': '2',
                    'name': 'Because the internet',
@@ -214,7 +214,7 @@ def populate():
                                   "Goransson among others.",
                    'genre': 'Hip-Hop',
                    'views': '76',
-                   'likes': '35'},
+                   },
              '1': {'r_id': '21',
                    'name': 'Awaken, My Love',
                    'year': '2016',
@@ -227,7 +227,7 @@ def populate():
                                   "as band-leader.  ",
                    'genre': 'Hip-Hop',
                    'views': '189',
-                   'likes': '89'}},
+                   }},
         'Courtney Barnett':
             {'0': {'r_id': '22',
                    'name': 'The Double EP: A Sea of Split Peas',
@@ -240,7 +240,7 @@ def populate():
                                   "continued to achieve in her recording and touring.",
                    'genre': 'Alternative',
                    'views': '69',
-                   'likes': '34'},
+                   },
              '1': {'r_id': '3',
                    'name': 'Tell Me How You Really Feel',
                    'year': '2018',
@@ -251,7 +251,7 @@ def populate():
                                   "She's becoming increasingly popular so this will be a big 'un.",
                    'genre': 'Alternative',
                    'views': '63',
-                   'likes': '23'}},
+                   }},
         'Diet Cig':
             {'0': {'r_id': '4',
                    'name': ' Over Easy',
@@ -263,7 +263,7 @@ def populate():
                                   "is five songs, an EP if you will, and it was initially released in 2015.",
                    'genre': 'Alternative',
                    'views': '37',
-                   'likes': '12'}},
+                   }},
         'Fleetwood Mac':
             {'0': {'r_id': '5',
                    'name': 'Rumours',
@@ -276,7 +276,7 @@ def populate():
                                   "was..um..complicated to say the least.",
                    'genre': 'Pop',
                    'views': '90',
-                   'likes': '54'},
+                   },
              '1': {'r_id': '23',
                    'name': 'Tusk',
                    'year': '1979',
@@ -291,7 +291,7 @@ def populate():
                                   "seldom sounded so true to its talent.",
                    'genre': 'Pop',
                    'views': '87',
-                   'likes': '64'},
+                   },
              '2': {'r_id': '24',
                    'name': 'Tango in the Night',
                    'year': '1987',
@@ -303,7 +303,7 @@ def populate():
                                   "increasing dislocation within the musical landscape.",
                    'genre': 'Pop',
                    'views': '199',
-                   'likes': '89'}
+                   }
              },
         'Girlpool':
             {'0': {'r_id': '6',
@@ -317,7 +317,7 @@ def populate():
                                   'deeply felt. Phew.',
                    'genre': 'Alternative',
                    'views': '77',
-                   'likes': '34'}},
+                   }},
         'Janelle Monae':
             {'0': {'r_id': '7',
                    'name': 'Dirty Computer',
@@ -330,7 +330,7 @@ def populate():
                                   'Zoë Kravitz, Grimes and Pharrell Williams.',
                    'genre': 'R&B',
                    'views': '176',
-                   'likes': '67'}},
+                   }},
         'Kendrick Lamar':
             {'0': {'r_id': '8',
                    'name': 'DAMN',
@@ -342,7 +342,7 @@ def populate():
                                   'This soon-to-be-album-of-the-year record is released by Polydor.',
                    'genre': 'Hip-Hop',
                    'views': '164',
-                   'likes': '89'},
+                   },
              '1': {'r_id': '25',
                    'name': 'To Pimp a Butterfly',
                    'year': '2015',
@@ -354,7 +354,7 @@ def populate():
                                   "production talent of KOZ, Pharell Williams, Thundercat and many others.",
                    'genre': 'Hip-Hop',
                    'views': '99',
-                   'likes': '45'}
+                   }
              },
         'Lizzo':
             {'0': {'r_id': '9',
@@ -371,7 +371,7 @@ def populate():
                                   'enviable level of honesty, pure passion, and fresh fire.',
                    'genre': 'Pop',
                    'views': '86',
-                   'likes': '60'}},
+                   }},
         'Lucy Dacus':
             {'0': {'r_id': '10',
                    'name': 'Historian',
@@ -385,7 +385,7 @@ def populate():
                                   'Matador.',
                    'genre': 'Indie',
                    'views': '143',
-                   'likes': '89'}},
+                   }},
         'Pictish Trail':
             {'0': {'r_id': '11',
                    'name': 'Thumb World',
@@ -399,7 +399,7 @@ def populate():
                                   'world.',
                    'genre': 'Alternative',
                    'views': '45',
-                   'likes': '20'}},
+                   }},
         'Porridge Radio':
             {'0': {'r_id': '12',
                    'name': 'Every Bad',
@@ -412,7 +412,7 @@ def populate():
                                   'exciting new bands in Britain. ',
                    'genre': 'Alternative',
                    'views': '135',
-                   'likes': '62'}},
+                   }},
         'Proclaimers':
             {'0': {'r_id': '13',
                    'name': 'Sunshine On Leith',
@@ -428,7 +428,7 @@ def populate():
                                   "referendum.",
                    'genre': 'Rock',
                    'views': '78',
-                   'likes': '41'}},
+                   }},
         'Robyn':
             {'0': {'r_id': '14',
                    'name': 'Body Talk',
@@ -441,7 +441,7 @@ def populate():
                                   "mini-albums-- is a deeply affecting pop record.",
                    'genre': 'Dance',
                    'views': '89',
-                   'likes': '47'},
+                   },
              '1': {'r_id': '26',
                    'name': 'Robyn',
                    'year': '2005',
@@ -453,7 +453,7 @@ def populate():
                                   " if only to leave them in the dust on every subsequent outing. ",
                    'genre': 'Pop',
                    'views': '76',
-                   'likes': '37'}},
+                   }},
         'Snail Mail':
             {'0': {'r_id': '15',
                    'name': 'Lush',
@@ -467,7 +467,7 @@ def populate():
                                   'dynamic personality.',
                    'genre': 'Indie',
                    'views': '122',
-                   'likes': '88'}},
+                   }},
         'Soccer Mommy':
             {'0': {'r_id': '16',
                    'name': 'color theory',
@@ -480,7 +480,7 @@ def populate():
                                   'the resilient 22 year-old.',
                    'genre': 'Alternative',
                    'views': '123',
-                   'likes': '76'},
+                   },
              '1': {'r_id': '27',
                    'name': 'Clean',
                    'year': '2018',
@@ -492,7 +492,7 @@ def populate():
                                   "considerable songwriting purpose.",
                    'genre': 'Alternative',
                    'views': '35',
-                   'likes': '9'}
+                   }
              },
         'Taylor Swift':
             {'0': {'r_id': '17',
@@ -507,7 +507,7 @@ def populate():
                                   "'1989'.",
                    'genre': 'Pop',
                    'views': '97',
-                   'likes': '58'},
+                   },
              '1': {'r_id': '28',
                    'name': 'Red',
                    'year': '2012',
@@ -522,7 +522,7 @@ def populate():
                  ,
                    'genre': 'Pop',
                    'views': '73',
-                   'likes': '33'},
+                   },
              '2': {'r_id': '29',
                    'name': 'Lover',
                    'year': '2019',
@@ -537,7 +537,7 @@ def populate():
                                   "marriage of pop and AOR has been.",
                    'genre': 'Pop',
                    'views': '193',
-                   'likes': '80'}
+                   }
              },
         'Waxahatchee':
             {'0': {'r_id': '18',
@@ -553,7 +553,7 @@ def populate():
                                   "self-honesty.",
                    'genre': 'Alternative',
                    'views': '77',
-                   'likes': '23'}},
+                   }},
         'Wolf Alice':
             {'0': {'r_id': '19',
                    'name': 'My Love Is Cool',
@@ -565,7 +565,7 @@ def populate():
                                   'diluted Sonic Youth for the kids. Out on CD and vinyl double LP from Dirty Hit.',
                    'genre': 'Alternative',
                    'views': '78',
-                   'likes': '42'}}}
+                   }}}
 
     shops = [
         {'s_id': '0',
@@ -576,7 +576,7 @@ def populate():
                         ' CableCar focused on showcasing the best of the Scottish independent scene,'
                         ' past and present, and cultivating a sense of community between artist and listener.',
          'views': '0',
-         'likes': '0'},
+         },
         {'s_id': '1',
          'name': 'Roundabout Records',
          'image': '/images/shops/Roundabout Records.jpg',
@@ -584,7 +584,7 @@ def populate():
                         ' Roundabout Records is a decades-old city institution. If we don’t have it,'
                         ' you wouldn’t want to be listening to it.',
          'views': '0',
-         'likes': '0'},
+         },
         {'s_id': '2',
          'name': 'Whiteinch 12inch',
          'image': '/images/shops/Whiteinch 12inch.jpg',
@@ -592,7 +592,7 @@ def populate():
                         ' across the globe. Check out our instore white-labels and'
                         ' exclusive pressings of the best work from local producers.',
          'views': '0',
-         'likes': '0'},
+         },
         {'s_id': '3',
          'name': 'Lost + Found',
          'image': '/images/shops/Lost + Found.jpg',
@@ -601,7 +601,7 @@ def populate():
                         'the 60s to the 80s - our collection covers everything from Acid Folk to Zouk, and all points '
                         'in between.',
          'views': '0',
-         'likes': '0'}]
+         }]
 
     stock = {
         'CableCar Music':
@@ -890,17 +890,16 @@ def populate():
                 year = records[a['name']][r]['year']
                 image = records[a['name']][r]['image']
                 views = records[a['name']][r]['views']
-                likes = records[a['name']][r]['likes']
                 description = records[a['name']][r]['description']
                 genre = records[a['name']][r]['genre']
-                add_record(r_id, artist, name, year, image, views, likes, description, genre)
+                add_record(r_id, artist, name, year, image, views, description, genre)
 
     #    for r in records:
     #        artist = Artist.objects.get(name=r['artist'])
     #        add_record(r['r_id'], artist, r['name'], r['year'], r['image'], r['views'], r['likes'])
 
     for s in shops:
-        add_shop(s['s_id'], s['name'], s['description'], s['views'], s['likes'], s['image'])
+        add_shop(s['s_id'], s['name'], s['description'], s['views'], s['image'])
         if s['name'] in stock.keys():
             for st in stock[s['name']].keys():
                 shop = Shop.objects.get(name=s['name'])
@@ -947,16 +946,15 @@ def add_artist(name, description, image, insta):
     return a
 
 
-def add_record(r_id, artist, name, year, image, views, likes, description, genre):
+def add_record(r_id, artist, name, year, image, views, description, genre):
     r = Record.objects.get_or_create(r_id=r_id,
                                      a_id=artist, name=name, year=year, image=image, views=views,
-                                     likes=likes, description=description, genre=genre)[0]
+                                    description=description, genre=genre)[0]
     return r
 
 
-def add_shop(s_id, name, description, views, likes, image):
-    s = Shop.objects.get_or_create(s_id=s_id, name=name, description=description, views=views,
-                                   likes=likes, image=image)[0]
+def add_shop(s_id, name, description, views, image):
+    s = Shop.objects.get_or_create(s_id=s_id, name=name, description=description, views=views, image=image)[0]
     return s
 
 

@@ -6,7 +6,7 @@ from vinyldestination import views
 app_name = 'vinyldestination'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('artists/', views.artists, name='artists'),
+    # path('artists/', views.artists, name='artists'),
     path('records/', views.records, name='records'),
     path('records/<slug:record_name_slug>/', views.show_record,
         name='show_record'),
