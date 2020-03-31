@@ -56,12 +56,12 @@ body
     padding-right: 70px;
     }
 
-li
+#options li
     {
     float: left;
     }
 
-li a
+#options li a
     {
     display: block;
     color:black;
@@ -71,7 +71,7 @@ li a
     width: 70px;
     }
 
-li a:hover
+#options li a:hover
     {
     background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(252,150,120,1) 0%, rgba(247,108,127,1) 100.4% );
     }
@@ -223,6 +223,16 @@ input
     padding: 10px;
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
+    }
+
+#logo
+    {
+    width:400px;
+    }
+
+#socials
+    {
+    width:20px;
     }
 
 h1

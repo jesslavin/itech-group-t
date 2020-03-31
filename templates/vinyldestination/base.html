@@ -5,9 +5,11 @@
 <html>
 
 <head>
-	<link href="{% static 'css/basic/final_master.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+	{% block head %}
+	<link href="{% static 'css/basic/final_base.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
 	<link href="{% static 'star-ratings/css/star-ratings.css' %}" rel="stylesheet">
 	<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.js' %}"></script>
+	{% endblock %}
 		<title>
             {% block title_block %}
 			{% endblock %}
@@ -18,7 +20,7 @@
 
 	<div class = "nav">
 		<div class = "header">
-		<a href="{% url 'vinyldestination:index' %}"><img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/></a>
+		<a href="{% url 'vinyldestination:index' %}"><img id="logo" src="{% static 'images/logo.png' %}" alt="Vinyl Destination"/></a>
 		</div>
 		<div class = "menu">
 			{% if user.is_authenticated %}
@@ -37,9 +39,9 @@
 				</br>
 				</br>
 				or sign in using
-				<a href="{% url 'social:begin' 'github' %}"><img src="{% static 'images/github.png' %}" alt="github" style="width:20px;"/></a>
-				<a href="{% url 'social:begin' 'facebook' %}"><img src="{% static 'images/facebook.png' %}" alt="facebook" style="width:20px;"/></a>
-				<a href="{% url 'social:begin' 'twitter' %}"><img src="{% static 'images/twit.png' %}" alt="twitter" style="width:20px;"/></a>
+				<a href="{% url 'social:begin' 'github' %}"><img id="socials" src="{% static 'images/github.png' %}" alt="github"/></a>
+				<a href="{% url 'social:begin' 'facebook' %}"><img id="socials" src="{% static 'images/facebook.png' %}" alt="facebook"/></a>
+				<a href="{% url 'social:begin' 'twitter' %}"><img id="socials" src="{% static 'images/twit.png' %}" alt="twitter"></a>
 			</form>
 			{% endif %}
 		</div>

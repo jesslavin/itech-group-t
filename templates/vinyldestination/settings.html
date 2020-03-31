@@ -1,16 +1,20 @@
+{% extends 'vinyldestination/base.html' %}
 {% load staticfiles %}
 
-<head>
-  <link href="{% static 'css/basic/final_form.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
-  <title>
-    Settings
-  </title>
-</head>
+{% block head %}
+<link href="{% static 'css/basic/final_admin.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+{% endblock %}
+
+{% block title_block %}
+Settings
+{% endblock %}
+
+{% block body_block %}
 
 <div class = admin>
 
   <div class = "header">
-    <a href="{% url 'vinyldestination:index' %}"><img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/></a>
+    <a href="{% url 'vinyldestination:index' %}"><img id="logo" src="{% static 'images/logo.png' %}" alt="Vinyl Destination"/></a>
   </div>
 
   <h3>GitHub</h3>
@@ -23,7 +27,7 @@
       </form>
     {% else %}
       <button type="button" disabled>Disconnect from GitHub</button>
-      <p style="color: red">You must <a href="{% url 'password' %}">define a password</a> for your account before disconnecting from Github.</p>
+      <p>You must <a href="{% url 'password' %}">define a password</a> for your account before disconnecting from Github.</p>
     {% endif %}
   {% else %}
     <a href="{% url 'social:begin' 'github' %}">Connect to GitHub</a>
@@ -39,7 +43,7 @@
       </form>
     {% else %}
       <button type="button" disabled>Disconnect from Facebook</button>
-      <p style="color: red">You must <a href="{% url 'password' %}">define a password</a> for your account before disconnecting from Facebook.</p>
+      <p>You must <a href="{% url 'password' %}">define a password</a> for your account before disconnecting from Facebook.</p>
     {% endif %}
   {% else %}
     <a href="{% url 'social:begin' 'facebook' %}">Connect to Facebook</a>
@@ -55,7 +59,7 @@
       </form>
     {% else %}
       <button type="button" disabled>Disconnect from Twitter</button>
-      <p style="color: red">You must <a href="{% url 'password' %}">define a password</a> for your account before disconnecting from Twitter.</p>
+      <p>You must <a href="{% url 'password' %}">define a password</a> for your account before disconnecting from Twitter.</p>
     {% endif %}
   {% else %}
     <a href="{% url 'social:begin' 'twitter' %}">Connect to Twitter</a>
@@ -65,3 +69,5 @@
   <a href="/settings/password">Change Password</a>
 
 </div>
+
+{% endblock %}

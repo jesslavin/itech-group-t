@@ -1,16 +1,20 @@
+{% extends 'vinyldestination/base.html' %}
 {% load staticfiles %}
 
-<head>
-	<link href="{% static 'css/basic/final_form.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
-	<title>
-		Login
-	</title>
-</head>
+{% block head %}
+<link href="{% static 'css/basic/final_admin.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+{% endblock %}
+
+{% block title_block %}
+Login
+{% endblock %}
+
+{% block body_block %}
 
 <div class = admin>
 
 	<div class = "header">
-		<a href="{% url 'vinyldestination:index' %}"><img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/></a>
+		<a href="{% url 'vinyldestination:index' %}"><img id="logo" src="{% static 'images/logo.png' %}" alt="Vinyl Destination"/></a>
 	</div>
 
 	{% if user.is_authenticated %}
@@ -34,3 +38,5 @@
 	{% endif %}
 
 </div>
+
+{% endblock %}

@@ -9,6 +9,12 @@ body
     text-align:center;
     justify-content:center;
     align-items:center;
+    padding:60px 40px;
+    }
+
+.nav
+    {
+    display: none;
     }
 
 a
@@ -30,11 +36,6 @@ ul
     width:80%;background-color: #2f4353;
     background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(252,150,120,1) 0%, rgba(247,108,127,1) 100.4% );
 	border-radius:25px;
-    }
-
-.padding
-    {
-    padding:20px;
     }
 
 #form
@@ -81,3 +82,8 @@ input
 	position:relative;
 	top:1px;
     }
+#logo
+    {
+    width:400px;
+    }
+
