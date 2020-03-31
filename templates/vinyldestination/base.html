@@ -4,16 +4,17 @@
 {% load static %}
 <html>
 
-		<link href="{% static 'css/basic/3.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
-		<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
-
+<head>
+	<link href="{% static 'css/basic/final_master.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+	<link href="{% static 'star-ratings/css/star-ratings.css' %}" rel="stylesheet">
+	<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.js' %}"></script>
 		<title>
             {% block title_block %}
 			{% endblock %}
 		</title>
-	</head>
+</head>
 
-	<body>
+<body>
 
 	<div class = "nav">
 		<div class = "header">
@@ -47,9 +48,6 @@
 	{% block body_block %}
 	{% get_artist_list artist %}
 	{% endblock %}
-	{% block content %}
-    {% endblock content %}
-    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.js' %}"></script>
 
 	</body>
 </html>

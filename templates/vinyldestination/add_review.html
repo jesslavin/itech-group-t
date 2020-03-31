@@ -1,34 +1,41 @@
-{% extends 'vinyldestination/base.html' %}
+{% load staticfiles %}
 
-{% block title_block %}
-	Add a Review
-{% endblock %}
+<head>
+    <link href="{% static 'css/basic/final_review_form.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+	<title>
+		Review {{record.name}}
+	</title>
+</head>
 
-{% block body_block %}
-		<div>
-		<h1>Add a Review...</h1>
-		<img id="recordartwork" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}">
-		<h2>You are leaving a review for {{record.name}} by {{record.a_id}}</h2>
-		</div>
-		<hr>
-		<div>
-			<form id="review_form" method="post" 
+<a href="{% url 'vinyldestination:index' %}"><img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/></a>
+
+<div class="container">
+
+	<div class = "block">
+		<img src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}" width="400px"/>
+	</div>
+
+	<div class = "block">
+	<form id="review_form" method="post"
 		  enctype="multipart/form-data">
-		  {% csrf_token %}
-		  {{ review_form.non_field_errors }}
+		<h3>You are logged in as {{ user.username }}</h3>
+		<h3>You are leaving a review for {{record.name}} by {{record.a_id}}</h3>
+		{% csrf_token %}
+		{{ review_form.non_field_errors }}
+
 		<div class="fieldWrapper">
-		    {{ review_form.title.errors }}
-		    <label for="{{ review_form.title.id_for_label }}">Title of review:</label>
-		    {{ review_form.title }}
+			<label for="{{ review_form.title.id_for_label }}">Title of review:</label></br>
+			{{ review_form.title }}
 		</div>
 		<br>
+
 		<div class="fieldWrapper">
-		    {{ review_form.non_field.errors }}
-		    <label for="{{ form.review.id_for_label }}">Your review:</label>
-		    {{ review_form.review }}
+			{{ review_form.non_field.errors }}
+			<label for="{{ form.review.id_for_label }}">Your review:</label></br>
+			{{ review_form.review }}
 		</div>
 		<br>
-		<input type="submit" id="button" name="submit" value="Submit Review" />
-			<form>
-		</div>
-{% endblock %}
+		<center><input type="submit" id="button" name="submit" value="Submit Review" /><center>
+	</form>
+	</div>
+</div>

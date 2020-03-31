@@ -1,12 +1,12 @@
-{% extends 'vinyldestination/base.html' %} 
+{% extends 'vinyldestination/base.html' %}
 {% load staticfiles %}
 {% load ratings %}
 
-{% block title_block %} 
+{% block title_block %}
 	{% if record %}
-	Vinyl Destination - {{record.name}}
+	{{record.a_id}} - {{record.name}}
     {% else %}
-    Vinyl Destination - Unknown Record
+    Unknown Artist - Unknown Record
     {% endif %}
 {% endblock %}
 
@@ -21,10 +21,16 @@
 		<div class = "statscontainer">
 				<img id="singleimage" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
 			<div class = "stats">
-				<strong>Released in {{record.year}}</strong></br>
-				<strong>Genre:</strong> {{record.genre}}</br>
-				<strong>Likes:</strong> {{record.likes}}</br>
-				<strong>Views:</strong> {{record.views}}</br>
+				Released in {{record.year}}</strong></br>
+				Genre: {{record.genre}}</br>
+				Likes: {{record.likes}}</br>
+				Views: {{record.views}}</br>
+				{% block content %}
+				{% ratings record %}
+				{% endblock content %}
+				{% if user.is_authenticated %}</br>
+				<a id="reviewbutton" href="/vinyldestination/records/{{ record.slug }}/add_review" title="review">Leave A Review</a>
+				{% endif %}
 			</div>
 		</div>
 	{% endif %}
@@ -50,7 +56,7 @@
 	{% endif %}
 </div>
 
-<div class = similar>
+<div class = "similar">
 	{% if similar %}
 	<h2>Similar records in {{record.genre}}</h2>
 	{% for record in similar%}
@@ -61,22 +67,21 @@
 	{% endif %}
 </div>
 
-	{% block content %}
-		{% ratings record %}
-	{% endblock content %}
-
-		{% if user.is_authenticated %}
-			<a href="/vinyldestination/records/{{ record.slug }}/add_review" title="Add a review to this record">Add A Review</a>
+<div class = "reviews">
+	<h2>Reviews of {{record.name}}</h2>
+	{% if review %}
+	{% for review in review %}
+	<div class = singlereview>
+		<h5>{{review.title}} by {{review.author}}</h5>
+		<p>{{review.review}}</p>
+	</div>
+	</br>
+	{% endfor %}
+	{% else %}
+	<div class = singlereview>
+		There are no reviews present.
+	</div>
+	</br>
 	{% endif %}
-			{% if review %}
-			Reviews of {{record.name}}
-				<ol type="1">
-				{% for review in review%}
-				<li><h3>{{review.title}} by {{review.author}}</h3><p>{{review.review}}</p></li>
-					{% endfor %}
-			{% else %}
-			There are no reviews present.
-			{% endif %}
-				</ol>
-{% endblock body_block%}
-
+	{% endblock body_block%}
+</div>
