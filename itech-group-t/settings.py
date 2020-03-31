@@ -14,7 +14,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 from decouple import config
 config.encoding = 'cp1251'
-SECRET_KEY = config('SECRET_KEY')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
@@ -28,7 +27,8 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = config('DEBUG', default=True, cast=bool)
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['.itechgroupt.pythonanywhere.com']
 
