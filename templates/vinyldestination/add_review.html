@@ -11,12 +11,12 @@ Review {{record.name}}
 
 {% block body_block %}
 
-<a href="{% url 'vinyldestination:index' %}"><img src="{% static 'images/logo.png' %}" alt="Vinyl Destination" style="width:400px;"/></a>
+<a href="{% url 'vinyldestination:index' %}"><img id="logo" src="{% static 'images/logo.png' %}" alt="Vinyl Destination"/></a>
 
 <div class="container">
 
 	<div class = "block">
-		<img src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}" width="400px"/>
+		<img id="singleimage" src="{{MEDIA_URL}}{{ record.image }}" alt="{{ record.name }}"></a>
 	</div>
 
 	<div class = "block">

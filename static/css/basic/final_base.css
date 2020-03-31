@@ -225,6 +225,16 @@ input
     background-color: #f3f3f3;
     }
 
+#logo
+    {
+    width:400px;
+    }
+
+#socials
+    {
+    width:20px;
+    }
+
 h1
     {
     text-align:center;
