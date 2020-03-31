@@ -21,11 +21,15 @@ class ArtistForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     title = forms.CharField(max_length=50, help_text="Please give your review a title.")
     review = forms.TextInput()
-    rating = forms.IntegerField(validators=[MaxValueValidator(5)])
-    author = settings.AUTH_USER_MODEL
+    
+    
+    # def __init__(self, *args, **kwargs):
+    #     super(ReviewForm, self).__init__(*args, **kwargs)
+    #     self.fields['author'].initial = self.data
+
     class Meta:
         model = Review
-        fields = ('title', 'review', 'rating')
+        fields = ('title', 'review')
 
 
 class PageForm(forms.ModelForm):
