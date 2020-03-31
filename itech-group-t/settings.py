@@ -1,3 +1,4 @@
+
 """
 Django settings for vinyldestination project.
 
@@ -11,7 +12,9 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-
+from decouple import config
+config.encoding = 'cp1251'
+SECRET_KEY = config('SECRET_KEY')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
@@ -22,10 +25,10 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w2gvmmaqd)$lkgn80&^#=*i19x1!rg5_#6k!g$*0j&mbceea=%'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -154,17 +157,17 @@ LOGOUT_URL = 'logout'
 
 LOGIN_REDIRECT_URL = 'index'
 
-SOCIAL_AUTH_GITHUB_KEY = '9fc4d1accec482d309f2'
+SOCIAL_AUTH_GITHUB_KEY = config('SOCIAL_AUTH_GITHUB_KEY')
 
-SOCIAL_AUTH_GITHUB_SECRET = '3a4b21ffbb90f5e3d326e8989b623463a237a172'
+SOCIAL_AUTH_GITHUB_SECRET = config('SOCIAL_AUTH_GITHUB_SECRET')
 
-SOCIAL_AUTH_FACEBOOK_KEY = '200431681286063'  # App ID
+SOCIAL_AUTH_FACEBOOK_KEY = config('SOCIAL_AUTH_FACEBOOK_KEY')
 
-SOCIAL_AUTH_FACEBOOK_SECRET = '9c2bab10ceb9fd2eeaec4218fa632cb8'  # App Secret
+SOCIAL_AUTH_FACEBOOK_SECRET = config('SOCIAL_AUTH_FACEBOOK_SECRET')
 
-SOCIAL_AUTH_TWITTER_KEY = 'aDFmzSkIsrcrbpkgBxnO9ebPR'
+SOCIAL_AUTH_TWITTER_KEY = config('SOCIAL_AUTH_TWITTER_KEY')
 
-SOCIAL_AUTH_TWITTER_SECRET = 'NbLzWAR2nV8dFbZVuIp3jnlUMEMWV8RPIL71BWUAXKDkMetRAX'
+SOCIAL_AUTH_TWITTER_SECRET = config('SOCIAL_AUTH_TWITTER_SECRET')
 
 SOCIAL_AUTH_LOGIN_ERROR_URL = '/settings/'
 
