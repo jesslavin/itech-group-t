@@ -30,7 +30,9 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=True, cast=bool)
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['.itechgroupt.pythonanywhere.com','localhost']
+ALLOWED_HOSTS = ['.itechgroupt.pythonanywhere.com',
+                 'localhost']
+
 
 # Application definition
 INSTALLED_APPS = [
