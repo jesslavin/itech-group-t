@@ -1,7 +1,7 @@
 {% load staticfiles %}
 
 <head>
-  <link href="{% static 'css/basic/setting.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
+  <link href="{% static 'css/basic/finaladmin.css' %}" rel="stylesheet" title="basicstyle" type="text/css"/>
   <title>
     Vinyl Destination - Settings
   </title>
@@ -60,5 +60,8 @@
   {% else %}
     <a href="{% url 'social:begin' 'twitter' %}">Connect to Twitter</a>
   {% endif %}
+
+  <h3>Change Password</h3>
+  <a href="/settings/password">Change Password</a>
 
 </div>
