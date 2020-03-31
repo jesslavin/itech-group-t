@@ -43,20 +43,20 @@ def index(request):
         user_form = UserForm()
         profile_form = UserProfileForm()
 
-	artist_list = Artist.objects.order_by('-likes')[:5]
-	trending_list = Record.objects.order_by('-views')[:10]
-	record_list = Record.objects.order_by('-ratings__average')[:10]
+        artist_list = Artist.objects.order_by('-likes')[:5]
+        trending_list = Record.objects.order_by('-views')[:10]
+        record_list = Record.objects.order_by('-ratings__average')[:10]
 
-    # Construct a dictionary to pass to the template engine as its context.
-    # Note the key boldmessage matches to {{ boldmessage }} in the template!
-	context_dict = {}
-	context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
-	context_dict['artists'] = artist_list
-	context_dict['trending'] = trending_list
-	context_dict['records'] = record_list
-	context_dict['user_form'] = user_form
-	context_dict['profile_form'] = profile_form
-	visitor_cookie_handler(request)
+        # Construct a dictionary to pass to the template engine as its context.
+        # Note the key boldmessage matches to {{ boldmessage }} in the template!
+        context_dict = {}
+        context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
+        context_dict['artists'] = artist_list
+        context_dict['trending'] = trending_list
+        context_dict['records'] = record_list
+        context_dict['user_form'] = user_form
+        context_dict['profile_form'] = profile_form
+        visitor_cookie_handler(request)
 
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier. # Note that the first parameter is the template we wish to use.
